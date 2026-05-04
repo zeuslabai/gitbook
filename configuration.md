@@ -6,6 +6,8 @@
 
 All Zeus configuration lives in `~/.zeus/config.toml`. This page documents every section and option.
 
+![Provider Freedom Matrix](../provider-freedom-matrix.svg)
+
 ---
 
 ## Full Config Example

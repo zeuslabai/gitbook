@@ -159,6 +159,8 @@ The Titans aren't isolated. They're designed to work together:
 
 This is what makes Zeus different. Not a chatbot. Not a model. A **fleet** — and you're the admiral.
 
+![Titan Fleet Constellation](../titan-fleet-constellation.svg)
+
 ---
 
 **Previous:** [What is Zeus?](what-is-zeus.md) · **Next:** [Installation →](installation.md)

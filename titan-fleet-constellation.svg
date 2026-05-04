@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" style="stop-color:#0d1117"/>
+      <stop offset="100%" style="stop-color:#060912"/>
+    </radialGradient>
+    <filter id="glow-lg"><feGaussianBlur stdDeviation="6" result="c"/><feMerge><feMergeNode in="c"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="glow-sm"><feGaussianBlur stdDeviation="3" result="c"/><feMerge><feMergeNode in="c"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="star-glow"><feGaussianBlur stdDeviation="2.5" result="c"/><feMerge><feMergeNode in="c"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <!-- Background -->
+  <rect width="960" height="600" fill="url(#bg)"/>
+  <!-- Star field -->
+  <g fill="#fff" opacity="0.3">
+    <circle cx="30" cy="40" r="0.8"/><circle cx="80" cy="90" r="0.6"/><circle cx="140" cy="30" r="1"/>
+    <circle cx="200" cy="70" r="0.5"/><circle cx="260" cy="20" r="0.8"/><circle cx="330" cy="55" r="0.7"/>
+    <circle cx="390" cy="15" r="1"/><circle cx="450" cy="80" r="0.6"/><circle cx="510" cy="35" r="0.8"/>
+    <circle cx="570" cy="90" r="0.5"/><circle cx="630" cy="25" r="0.9"/><circle cx="690" cy="65" r="0.7"/>
+    <circle cx="750" cy="40" r="1"/><circle cx="810" cy="85" r="0.6"/><circle cx="870" cy="30" r="0.8"/>
+    <circle cx="930" cy="70" r="0.5"/><circle cx="60" cy="150" r="0.7"/><circle cx="120" cy="200" r="0.9"/>
+    <circle cx="180" cy="140" r="0.6"/><circle cx="240" cy="190" r="0.8"/><circle cx="300" cy="130" r="1"/>
+    <circle cx="360" cy="175" r="0.5"/><circle cx="420" cy="145" r="0.7"/><circle cx="480" cy="195" r="0.9"/>
+    <circle cx="540" cy="125" r="0.6"/><circle cx="600" cy="185" r="0.8"/><circle cx="660" cy="135" r="1"/>
+    <circle cx="720" cy="170" r="0.5"/><circle cx="780" cy="130" r="0.7"/><circle cx="840" cy="180" r="0.9"/>
+    <circle cx="900" cy="140" r="0.6"/><circle cx="40" cy="270" r="0.8"/><circle cx="100" cy="320" r="0.6"/>
+    <circle cx="160" cy="260" r="1"/><circle cx="220" cy="310" r="0.7"/><circle cx="280" cy="250" r="0.9"/>
+    <circle cx="340" cy="300" r="0.5"/><circle cx="400" cy="265" r="0.8"/><circle cx="460" cy="295" r="1"/>
+    <circle cx="520" cy="255" r="0.6"/><circle cx="580" cy="305" r="0.7"/><circle cx="640" cy="270" r="0.9"/>
+    <circle cx="700" cy="310" r="0.5"/><circle cx="760" cy="260" r="0.8"/><circle cx="820" cy="295" r="1"/>
+    <circle cx="880" cy="250" r="0.6"/><circle cx="940" cy="300" r="0.7"/><circle cx="50" cy="390" r="0.9"/>
+    <circle cx="110" cy="430" r="0.5"/><circle cx="170" cy="380" r="0.8"/><circle cx="230" cy="420" r="0.6"/>
+    <circle cx="290" cy="370" r="1"/><circle cx="350" cy="410" r="0.7"/><circle cx="410" cy="385" r="0.9"/>
+    <circle cx="470" cy="415" r="0.5"/><circle cx="530" cy="375" r="0.8"/><circle cx="590" cy="405" r="1"/>
+    <circle cx="650" cy="380" r="0.6"/><circle cx="710" cy="420" r="0.7"/><circle cx="770" cy="370" r="0.9"/>
+    <circle cx="830" cy="410" r="0.5"/><circle cx="890" cy="385" r="0.8"/><circle cx="950" cy="405" r="0.6"/>
+    <circle cx="20" cy="490" r="0.7"/><circle cx="80" cy="530" r="0.9"/><circle cx="140" cy="470" r="0.5"/>
+    <circle cx="200" cy="520" r="0.8"/><circle cx="260" cy="480" r="1"/><circle cx="320" cy="525" r="0.6"/>
+    <circle cx="380" cy="490" r="0.7"/><circle cx="440" cy="535" r="0.9"/><circle cx="500" cy="475" r="0.5"/>
+    <circle cx="560" cy="530" r="0.8"/><circle cx="620" cy="485" r="1"/><circle cx="680" cy="520" r="0.6"/>
+    <circle cx="740" cy="470" r="0.7"/><circle cx="800" cy="530" r="0.9"/><circle cx="860" cy="480" r="0.5"/>
+    <circle cx="920" cy="525" r="0.8"/><circle cx="970" cy="495" r="0.7"/>
+  </g>
+
+  <!-- Constellation connection lines (Zeus center to all) -->
+  <!-- Aegis -->
+  <line x1="480" y1="300" x2="210" y2="160" stroke="#00ff88" stroke-width="1" opacity="0.4" stroke-dasharray="5,5"/>
+  <!-- Mnemosyne -->
+  <line x1="480" y1="300" x2="750" y2="160" stroke="#bf5af2" stroke-width="1" opacity="0.4" stroke-dasharray="5,5"/>
+  <!-- Pantheon -->
+  <line x1="480" y1="300" x2="210" y2="440" stroke="#ff6b35" stroke-width="1" opacity="0.4" stroke-dasharray="5,5"/>
+  <!-- Hermes -->
+  <line x1="480" y1="300" x2="750" y2="440" stroke="#00d4ff" stroke-width="1" opacity="0.4" stroke-dasharray="5,5"/>
+
+  <!-- Inter-Titan connections -->
+  <line x1="210" y1="160" x2="210" y2="440" stroke="#00ff88" stroke-width="0.5" opacity="0.2" stroke-dasharray="3,6"/>
+  <line x1="750" y1="160" x2="750" y2="440" stroke="#bf5af2" stroke-width="0.5" opacity="0.2" stroke-dasharray="3,6"/>
+  <line x1="210" y1="160" x2="750" y2="160" stroke="#00ff88" stroke-width="0.5" opacity="0.2" stroke-dasharray="3,6"/>
+  <line x1="210" y1="440" x2="750" y2="440" stroke="#00d4ff" stroke-width="0.5" opacity="0.2" stroke-dasharray="3,6"/>
+  <!-- Cross connections via Zeus -->
+  <line x1="210" y1="160" x2="480" y2="300" stroke="#00ff88" stroke-width="0.5" opacity="0.15" stroke-dasharray="3,6"/>
+  <line x1="480" y1="300" x2="210" y2="440" stroke="#ff6b35" stroke-width="0.5" opacity="0.15" stroke-dasharray="3,6"/>
+
+  <!-- ZEUS — center node (largest) -->
+  <g filter="url(#glow-lg)">
+    <circle cx="480" cy="300" r="65" fill="#ffd700" opacity="0.08"/>
+    <circle cx="480" cy="300" r="52" fill="#0d1117" stroke="#ffd700" stroke-width="3"/>
+    <circle cx="480" cy="300" r="44" fill="#0d1117"/>
+    <text x="480" y="292" text-anchor="middle" fill="#ffd700" font-size="13" font-weight="800" font-family="system-ui">⚡ ZEUS</text>
+    <text x="480" y="307" text-anchor="middle" fill="#ffd700" font-size="8" font-family="system-ui" opacity="0.8">FLEET COORDINATOR</text>
+  </g>
+
+  <!-- AEGIS — top-left -->
+  <g filter="url(#glow-sm)">
+    <circle cx="180" cy="160" r="46" fill="#00ff88" opacity="0.06"/>
+    <circle cx="180" cy="160" r="38" fill="#0d1117" stroke="#00ff88" stroke-width="2.5"/>
+    <text x="180" y="153" text-anchor="middle" fill="#00ff88" font-size="11" font-weight="700" font-family="system-ui">🛡️ AEGIS</text>
+    <text x="180" y="168" text-anchor="middle" fill="#00ff88" font-size="7.5" font-family="system-ui" opacity="0.75">SECURITY</text>
+  </g>
+  <text x="180" y="118" text-anchor="middle" fill="#00ff88" font-size="7.5" font-family="system-ui" opacity="0.6">Zero-Trust Auth</text>
+
+  <!-- MNEMOSYNE — top-right -->
+  <g filter="url(#glow-sm)">
+    <circle cx="780" cy="160" r="46" fill="#bf5af2" opacity="0.06"/>
+    <circle cx="780" cy="160" r="38" fill="#0d1117" stroke="#bf5af2" stroke-width="2.5"/>
+    <text x="780" y="153" text-anchor="middle" fill="#bf5af2" font-size="11" font-weight="700" font-family="system-ui">🧠 MNEMOSYNE</text>
+    <text x="780" y="168" text-anchor="middle" fill="#bf5af2" font-size="7.5" font-family="system-ui" opacity="0.75">MEMORY</text>
+  </g>
+  <text x="780" y="118" text-anchor="middle" fill="#bf5af2" font-size="7.5" font-family="system-ui" opacity="0.6">Persistent Context</text>
+
+  <!-- PANTHEON — bottom-left -->
+  <g filter="url(#glow-sm)">
+    <circle cx="180" cy="440" r="46" fill="#ff6b35" opacity="0.06"/>
+    <circle cx="180" cy="440" r="38" fill="#0d1117" stroke="#ff6b35" stroke-width="2.5"/>
+    <text x="180" y="433" text-anchor="middle" fill="#ff6b35" font-size="11" font-weight="700" font-family="system-ui">⚙️ PANTHEON</text>
+    <text x="180" y="448" text-anchor="middle" fill="#ff6b35" font-size="7.5" font-family="system-ui" opacity="0.75">ORCHESTRATION</text>
+  </g>
+  <text x="180" y="492" text-anchor="middle" fill="#ff6b35" font-size="7.5" font-family="system-ui" opacity="0.6">Multi-Agent War Rooms</text>
+
+  <!-- HERMES — bottom-right -->
+  <g filter="url(#glow-sm)">
+    <circle cx="780" cy="440" r="46" fill="#00d4ff" opacity="0.06"/>
+    <circle cx="780" cy="440" r="38" fill="#0d1117" stroke="#00d4ff" stroke-width="2.5"/>
+    <text x="780" y="433" text-anchor="middle" fill="#00d4ff" font-size="11" font-weight="700" font-family="system-ui">📡 HERMES</text>
+    <text x="780" y="448" text-anchor="middle" fill="#00d4ff" font-size="7.5" font-family="system-ui" opacity="0.75">COMMUNICATION</text>
+  </g>
+  <text x="780" y="492" text-anchor="middle" fill="#00d4ff" font-size="7.5" font-family="system-ui" opacity="0.6">8 Channels</text>
+
+  <!-- Title -->
+  <text x="480" y="40" text-anchor="middle" fill="#e6edf3" font-size="16" font-weight="700" font-family="system-ui">THE TITAN FLEET</text>
+  <text x="480" y="58" text-anchor="middle" fill="#7d8590" font-size="10" font-family="system-ui">5 autonomous agents — each specialized, all coordinated</text>
+
+  <!-- Legend -->
+  <g transform="translate(360, 565)">
+    <circle r="5" fill="#ffd700" filter="url(#star-glow)"/>
+    <text x="10" y="4" fill="#7d8590" font-size="8" font-family="system-ui">Zeus (Coordinator)</text>
+    <circle cx="120" cy="0" r="5" fill="#00ff88" filter="url(#star-glow)"/>
+    <text x="130" y="4" fill="#7d8590" font-size="8" font-family="system-ui">Aegis</text>
+    <circle cx="195" cy="0" r="5" fill="#bf5af2" filter="url(#star-glow)"/>
+    <text x="205" y="4" fill="#7d8590" font-size="8" font-family="system-ui">Mnemosyne</text>
+    <circle cx="300" cy="0" r="5" fill="#ff6b35" filter="url(#star-glow)"/>
+    <text x="310" y="4" fill="#7d8590" font-size="8" font-family="system-ui">Pantheon</text>
+    <circle cx="390" cy="0" r="5" fill="#00d4ff" filter="url(#star-glow)"/>
+    <text x="400" y="4" fill="#7d8590" font-size="8" font-family="system-ui">Hermes</text>
+  </g>
+</svg>

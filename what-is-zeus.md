@@ -19,6 +19,8 @@ The true power of Zeus emerges from its fleet of specialized **Titan agents** â€
 
 This is the architecture of intelligence that doesn't lock you in. This is what it means to run Sentient AI on your terms.
 
+![Zeus Fleet Architecture](../what-is-zeus-fleet.svg)
+
 ---
 
 ## The Core Loop

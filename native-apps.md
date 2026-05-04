@@ -163,3 +163,5 @@ Because all frontends connect to one daemon, state is inherently shared. When yo
 ---
 
 Whether you prefer the precision of a terminal, the visual clarity of a desktop window, the convenience of a phone in your pocket, or the accessibility of a browser, Zeus meets you where you are. Every interface is a first-class citizen, every screen delivers the same underlying power, and every interaction reflects the current truth of your infrastructure. That's Zeus: the agent platform that adapts to your workflow instead of forcing you into its own.
+
+![Use Cases — Platform Matrix](../use-cases-quadrant.svg)
