@@ -8,6 +8,8 @@ Skills are how you extend Zeus. A Skill is a structured capability package — a
 
 ---
 
+![Skill Manifest Structure](./skill-manifest-structure.svg)
+
 ## What is a Skill?
 
 A Skill is a directory with a `SKILL.md` manifest and associated resources:

@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <filter id="glow6">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <rect width="800" height="600" fill="#0a0a14"/>
+  
+  <!-- Title -->
+  <text x="400" y="35" text-anchor="middle" fill="#ffffff" font-family="monospace" font-size="16" font-weight="bold" letter-spacing="2">COGNITIVE ENGINE PIPELINE</text>
+  <text x="400" y="55" text-anchor="middle" fill="#666" font-family="monospace" font-size="11">Observe → Think → Act → Remember → Coordinate · Event-driven runtime</text>
+  
+  <!-- Pipeline stages -->
+  <!-- OBSERVE -->
+  <rect x="30" y="100" width="130" height="80" rx="8" fill="#1a1a2e" stroke="#ff44cc" stroke-width="2"/>
+  <text x="95" y="132" text-anchor="middle" fill="#ff44cc" font-family="monospace" font-size="14" font-weight="bold">OBSERVE</text>
+  <text x="95" y="152" text-anchor="middle" fill="#888" font-family="monospace" font-size="9">Ingest events</text>
+  <text x="95" y="165" text-anchor="middle" fill="#666" font-family="monospace" font-size="8">User messages</text>
+  <text x="95" y="176" text-anchor="middle" fill="#666" font-family="monospace" font-size="8">API calls</text>
+  
+  <!-- Arrow -->
+  <path d="M165 140 L205 140" fill="none" stroke="#ff44cc" stroke-width="2"/>
+  <path d="M200 133 L210 140 L200 147" fill="none" stroke="#ff44cc" stroke-width="2" stroke-linecap="round"/>
+  
+  <!-- THINK -->
+  <rect x="215" y="100" width="130" height="80" rx="8" fill="#1a1a2e" stroke="#00ff88" stroke-width="2"/>
+  <text x="280" y="132" text-anchor="middle" fill="#00ff88" font-family="monospace" font-size="14" font-weight="bold">THINK</text>
+  <text x="280" y="152" text-anchor="middle" fill="#888" font-family="monospace" font-size="9">Reason + Plan</text>
+  <text x="280" y="165" text-anchor="middle" fill="#666" font-family="monospace" font-size="8">LLM inference</text>
+  <text x="280" y="176" text-anchor="middle" fill="#666" font-family="monospace" font-size="8">Context window</text>
+  
+  <!-- Arrow -->
+  <path d="M350 140 L390 140" fill="none" stroke="#00ff88" stroke-width="2"/>
+  <path d="M385 133 L395 140 L385 147" fill="none" stroke="#00ff88" stroke-width="2" stroke-linecap="round"/>
+  
+  <!-- ACT -->
+  <rect x="400" y="100" width="130" height="80" rx="8" fill="#1a1a2e" stroke="#ffaa00" stroke-width="2"/>
+  <text x="465" y="132" text-anchor="middle" fill="#ffaa00" font-family="monospace" font-size="14" font-weight="bold">ACT</text>
+  <text x="465" y="152" text-anchor="middle" fill="#888" font-family="monospace" font-size="9">Execute tools</text>
+  <text x="465" y="165" text-anchor="middle" fill="#666" font-family="monospace" font-size="8">Tool calls</text>
+  <text x="465" y="176" text-anchor="middle" fill="#666" font-family="monospace" font-size="8">MCP protocols</text>
+  
+  <!-- Arrow -->
+  <path d="M535 140 L575 140" fill="none" stroke="#ffaa00" stroke-width="2"/>
+  <path d="M570 133 L580 140 L570 147" fill="none" stroke="#ffaa00" stroke-width="2" stroke-linecap="round"/>
+  
+  <!-- REMEMBER -->
+  <rect x="585" y="100" width="130" height="80" rx="8" fill="#1a1a2e" stroke="#00d4ff" stroke-width="2"/>
+  <text x="650" y="132" text-anchor="middle" fill="#00d4ff" font-family="monospace" font-size="14" font-weight="bold">REMEMBER</text>
+  <text x="650" y="152" text-anchor="middle" fill="#888" font-family="monospace" font-size="9">Store + Retrieve</text>
+  <text x="650" y="165" text-anchor="middle" fill="#666" font-family="monospace" font-size="8">Mnemosyne</text>
+  <text x="650" y="176" text-anchor="middle" fill="#666" font-family="monospace" font-size="8">Vector search</text>
+  
+  <!-- Arrow looping back -->
+  <path d="M650 180 Q650 250 465 280" fill="none" stroke="#00d4ff" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <path d="M475 273 L465 283 L453 276" fill="none" stroke="#00d4ff" stroke-width="1.5" stroke-linecap="round"/>
+  
+  <!-- COORDINATE (center bottom) -->
+  <rect x="280" y="260" width="185" height="80" rx="8" fill="#1a1a2e" stroke="#ff44cc" stroke-width="2" filter="url(#glow6)"/>
+  <text x="372" y="292" text-anchor="middle" fill="#ff44cc" font-family="monospace" font-size="14" font-weight="bold">COORDINATE</text>
+  <text x="372" y="312" text-anchor="middle" fill="#888" font-family="monospace" font-size="9">Titan orchestration</text>
+  <text x="372" y="325" text-anchor="middle" fill="#666" font-family="monospace" font-size="8">Pantheon · War Rooms</text>
+  <text x="372" y="338" text-anchor="middle" fill="#666" font-family="monospace" font-size="8">Missions · Plan Cards</text>
+  
+  <!-- Event loop indicator -->
+  <rect x="280" y="370" width="185" height="50" rx="6" fill="rgba(0,212,255,0.08)" stroke="#00d4ff" stroke-width="1.5"/>
+  <text x="372" y="393" text-anchor="middle" fill="#00d4ff" font-family="monospace" font-size="11">EVENT LOOP</text>
+  <text x="372" y="410" text-anchor="middle" fill="#888" font-family="monospace" font-size="9">Unified event stream · Non-blocking</text>
+  
+  <!-- Event sources -->
+  <text x="400" y="460" text-anchor="middle" fill="#888" font-family="monospace" font-size="11">Event Sources:</text>
+  
+  <rect x="60" y="475" width="100" height="28" rx="4" fill="rgba(255,68,204,0.1)" stroke="#ff44cc" stroke-width="1"/>
+  <text x="110" y="494" text-anchor="middle" fill="#ff44cc" font-family="monospace" font-size="10">User messages</text>
+  
+  <rect x="175" y="475" width="100" height="28" rx="4" fill="rgba(0,255,136,0.1)" stroke="#00ff88" stroke-width="1"/>
+  <text x="225" y="494" text-anchor="middle" fill="#00ff88" font-family="monospace" font-size="10">API calls</text>
+  
+  <rect x="290" y="475" width="100" height="28" rx="4" fill="rgba(255,170,0,0.1)" stroke="#ffaa00" stroke-width="1"/>
+  <text x="340" y="494" text-anchor="middle" fill="#ffaa00" font-family="monospace" font-size="10">Tool responses</text>
+  
+  <rect x="405" y="475" width="100" height="28" rx="4" fill="rgba(0,212,255,0.1)" stroke="#00d4ff" stroke-width="1"/>
+  <text x="455" y="494" text-anchor="middle" fill="#00d4ff" font-family="monospace" font-size="10">Triggers</text>
+  
+  <rect x="520" y="475" width="100" height="28" rx="4" fill="rgba(255,68,204,0.1)" stroke="#ff44cc" stroke-width="1"/>
+  <text x="570" y="494" text-anchor="middle" fill="#ff44cc" font-family="monospace" font-size="10">Webhooks</text>
+  
+  <rect x="635" y="475" width="100" height="28" rx="4" fill="rgba(0,255,136,0.1)" stroke="#00ff88" stroke-width="1"/>
+  <text x="685" y="494" text-anchor="middle" fill="#00ff88" font-family="monospace" font-size="10">Schedules</text>
+  
+  <!-- Provider freedom -->
+  <rect x="220" y="530" width="360" height="40" rx="6" fill="rgba(0,212,255,0.06)" stroke="#00d4ff" stroke-width="1"/>
+  <text x="400" y="550" text-anchor="middle" fill="#00d4ff" font-family="monospace" font-size="11">19 LLM Providers · Bring your own API key · No Zeus lock-in</text>
+  <text x="400" y="566" text-anchor="middle" fill="#888" font-family="monospace" font-size="9">OpenAI · Anthropic · Google · Azure · AWS · MiniMax · Ollama · and 12 more</text>
+  
+  <!-- Footer -->
+  <text x="400" y="590" text-anchor="middle" fill="#444" font-family="monospace" font-size="10">Zeus Core · Lightweight · Event-driven · Self-hosted · Yours</text>
+</svg>

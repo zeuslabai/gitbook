@@ -8,6 +8,8 @@ Getting Zeus running takes about 5 minutes. No complex setup, no cloud account r
 
 ---
 
+![Supported Platforms](./supported-platforms.svg)
+
 ## Supported Platforms
 
 Zeus runs anywhere Rust runs:

@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <filter id="glow5">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <rect width="800" height="600" fill="#0a0a14"/>
+  
+  <!-- Title -->
+  <text x="400" y="35" text-anchor="middle" fill="#ffffff" font-family="monospace" font-size="16" font-weight="bold" letter-spacing="2">HERMES CHANNELS</text>
+  <text x="400" y="55" text-anchor="middle" fill="#666" font-family="monospace" font-size="11">8 first-class channels · Same Titan · Same memory · Any platform</text>
+  
+  <!-- Central Zeus core -->
+  <circle cx="400" cy="260" r="70" fill="rgba(0,212,255,0.1)" stroke="#00d4ff" stroke-width="2.5" filter="url(#glow5)"/>
+  <circle cx="400" cy="260" r="50" fill="rgba(0,212,255,0.05)" stroke="#00d4ff" stroke-width="1.5"/>
+  <text x="400" y="252" text-anchor="middle" fill="#00d4ff" font-family="monospace" font-size="13" font-weight="bold">ZEUS</text>
+  <text x="400" y="270" text-anchor="middle" fill="#888" font-family="monospace" font-size="10">Core</text>
+  <text x="400" y="285" text-anchor="middle" fill="#666" font-family="monospace" font-size="9">Mnemosyne</text>
+  
+  <!-- Channel nodes arranged in circle -->
+  <!-- Discord - top right -->
+  <circle cx="580" cy="150" r="35" fill="#1a1a2e" stroke="#5865F2" stroke-width="2"/>
+  <text x="580" y="147" text-anchor="middle" fill="#5865F2" font-family="monospace" font-size="11" font-weight="bold">Discord</text>
+  <text x="580" y="162" text-anchor="middle" fill="#888" font-family="monospace" font-size="9">✅ Stable</text>
+  
+  <!-- Telegram - right -->
+  <circle cx="650" cy="260" r="35" fill="#1a1a2e" stroke="#0088cc" stroke-width="2"/>
+  <text x="650" y="257" text-anchor="middle" fill="#0088cc" font-family="monospace" font-size="11" font-weight="bold">Telegram</text>
+  <text x="650" y="272" text-anchor="middle" fill="#888" font-family="monospace" font-size="9">✅ Stable</text>
+  
+  <!-- Slack - bottom right -->
+  <circle cx="600" cy="380" r="35" fill="#1a1a2e" stroke="#4A154B" stroke-width="2"/>
+  <text x="600" y="377" text-anchor="middle" fill="#E01E5A" font-family="monospace" font-size="11" font-weight="bold">Slack</text>
+  <text x="600" y="392" text-anchor="middle" fill="#888" font-family="monospace" font-size="9">✅ Stable</text>
+  
+  <!-- Email - bottom -->
+  <circle cx="400" cy="420" r="35" fill="#1a1a2e" stroke="#00d4ff" stroke-width="2"/>
+  <text x="400" y="417" text-anchor="middle" fill="#00d4ff" font-family="monospace" font-size="12" font-weight="bold">Email</text>
+  <text x="400" y="432" text-anchor="middle" fill="#888" font-family="monospace" font-size="9">✅ Stable</text>
+  
+  <!-- iMessage - bottom left -->
+  <circle cx="200" cy="380" r="35" fill="#1a1a2e" stroke="#00d4ff" stroke-width="2"/>
+  <text x="200" y="377" text-anchor="middle" fill="#00d4ff" font-family="monospace" font-size="12" font-weight="bold">iMessage</text>
+  <text x="200" y="392" text-anchor="middle" fill="#888" font-family="monospace" font-size="9">✅ Stable</text>
+  
+  <!-- WhatsApp - left -->
+  <circle cx="130" cy="260" r="35" fill="#1a1a2e" stroke="#25D366" stroke-width="2"/>
+  <text x="130" y="257" text-anchor="middle" fill="#25D366" font-family="monospace" font-size="10" font-weight="bold">WhatsApp</text>
+  <text x="130" y="272" text-anchor="middle" fill="#888" font-family="monospace" font-size="9">✅ Stable</text>
+  
+  <!-- Signal - top left -->
+  <circle cx="180" cy="150" r="35" fill="#1a1a2e" stroke="#009688" stroke-width="2"/>
+  <text x="180" y="147" text-anchor="middle" fill="#009688" font-family="monospace" font-size="12" font-weight="bold">Signal</text>
+  <text x="180" y="162" text-anchor="middle" fill="#888" font-family="monospace" font-size="9">✅ Stable</text>
+  
+  <!-- Matrix - top -->
+  <circle cx="400" cy="110" r="35" fill="#1a1a2e" stroke="#0DBD8B" stroke-width="2"/>
+  <text x="400" y="107" text-anchor="middle" fill="#0DBD8B" font-family="monospace" font-size="12" font-weight="bold">Matrix</text>
+  <text x="400" y="122" text-anchor="middle" fill="#888" font-family="monospace" font-size="9">✅ Stable</text>
+  
+  <!-- Connecting lines -->
+  <path d="M540 195 Q500 210 460 230" fill="none" stroke="#00d4ff" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <path d="M610 210 Q560 225 500 245" fill="none" stroke="#5865F2" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <path d="M650 295 Q580 290 470 275" fill="none" stroke="#0088cc" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <path d="M620 355 Q560 320 470 285" fill="none" stroke="#E01E5A" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <path d="M450 330 Q440 360 435 355" fill="none" stroke="#00d4ff" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <path d="M320 355 Q340 320 370 290" fill="none" stroke="#00d4ff" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <path d="M180 295 Q230 285 330 275" fill="none" stroke="#25D366" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <path d="M200 190 Q260 175 340 155" fill="none" stroke="#009688" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <path d="M365 145 Q380 160 385 175" fill="none" stroke="#0DBD8B" stroke-width="1.5" stroke-dasharray="5,3"/>
+  
+  <!-- Context flows across channels -->
+  <rect x="220" y="470" width="360" height="40" rx="6" fill="rgba(0,212,255,0.08)" stroke="#00d4ff" stroke-width="1.5"/>
+  <text x="400" y="493" text-anchor="middle" fill="#00d4ff" font-family="monospace" font-size="11">Context flows across all channels · No silos</text>
+  <text x="400" y="508" text-anchor="middle" fill="#888" font-family="monospace" font-size="9">User asks on Discord → Follows up on Telegram → Sends Email → Same Titan knows all</text>
+  
+  <!-- Aegis note -->
+  <rect x="260" y="530" width="280" height="30" rx="4" fill="rgba(255,68,204,0.08)" stroke="#ff44cc" stroke-width="1"/>
+  <text x="400" y="550" text-anchor="middle" fill="#ff44cc" font-family="monospace" font-size="10">Aegis Channel Guard: Rate limiting · Injection prevention · Audit logging</text>
+  
+  <!-- Footer -->
+  <text x="400" y="585" text-anchor="middle" fill="#444" font-family="monospace" font-size="10">All channels are first-class citizens · Same Titan · Same memory · Same tools</text>
+</svg>

@@ -2,6 +2,8 @@
 
 Getting Zeus running in your environment should take minutes, not hours. This guide walks you through the complete operator journey: installing the daemon, configuring your first integrations, deploying to production, and setting up the monitoring infrastructure that keeps your Titans healthy. Whether you're running Zeus on a single Mac mini at home or distributing a Titan swarm across a dozen servers, the workflow remains consistent and straightforward.
 
+![Operator Workflow](./operator-workflow.svg)
+
 ## Installation
 
 ### Package Manager Installation

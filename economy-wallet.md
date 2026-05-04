@@ -6,6 +6,8 @@ Zeus implements this through a purpose-built token economy: the Zeus Token. This
 
 ---
 
+![Zeus Token Economy](./zeus-token-economy.svg)
+
 ## 1. Why an Economy?
 
 Traditional software systems treat services as free or amortized into flat subscription costs. This model obscures real costs, creates perverse incentives, and provides no mechanism for fair compensation when value flows between autonomous agents.

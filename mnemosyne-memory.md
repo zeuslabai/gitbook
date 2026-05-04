@@ -4,7 +4,11 @@ Large language models are extraordinarily capable — but they share one fundame
 
 This is not a minor inconvenience. It is a fundamental barrier to building AI systems that are genuinely useful over time. A customer support AI that forgets what a user asked yesterday cannot provide continuity of service. A coding assistant that forgets your project's conventions cannot give relevant suggestions. A personal AI assistant that forgets your preferences is just a stranger wearing your name.
 
-Zeus solves this with **Mnemosyne** — a persistent, queryable, cross-session memory system that gives every Titan in your fleet the ability to remember, learn, and grow. Named after the Greek goddess of memory, Mnemosyne is not a simple cache or conversation log. It is a sophisticated memory architecture built around how humans actually retain and recall information.
+Zeus solves this with **Mnemosyne** — a persistent, queryable, cross-session memory system that gives every Titan in your fleet the ability to remember, learn, and grow.
+
+![Mnemosyne Memory Architecture](./mnemosyne-memory-architecture.svg)
+
+Named after the Greek goddess of memory, Mnemosyne is not a simple cache or conversation log. It is a sophisticated memory architecture built around how humans actually retain and recall information.
 
 ## 1. The Memory Problem
 

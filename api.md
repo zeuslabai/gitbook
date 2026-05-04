@@ -8,6 +8,8 @@ Zeus exposes a full REST + WebSocket API. Every capability in the TUI and Web UI
 
 ---
 
+![API Architecture](./api-architecture.svg)
+
 ## Base URL
 
 ```bash

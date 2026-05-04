@@ -2,6 +2,8 @@
 
 Zeus is not a simple chatbot wrapper. Under the hood lies a sophisticated cognitive architecture designed for autonomous operation at scale — a system that observes, reasons, acts, remembers, and coordinates across multiple intelligent agents. This document provides a comprehensive technical tour of that architecture, from the cognitive engine at Zeus's core to the distributed deployment topology that keeps everything running.
 
+![Cognitive Engine Pipeline](./cognitive-engine-pipeline.svg)
+
 ## 1. The Cognitive Engine (Zeus Core)
 
 The Cognitive Engine is the brain of Zeus — a lightweight, event-driven runtime that orchestrates the entire intelligence pipeline. Unlike monolithic AI systems that lump everything into a single opaque process, Zeus Core is deliberately decomposed into well-defined stages: **Observe → Think → Act → Remember → Coordinate**. Each stage has clear inputs, outputs, and failure modes, making the system debuggable, extensible, and predictable.

@@ -2,6 +2,8 @@
 
 Security is not an afterthought in Zeus — it is woven into the architecture at every layer. Aegis is the name given to Zeus's comprehensive security subsystem, a multi-layered defense strategy built on the principle that trust must be earned, not assumed. In this chapter, we examine the zero-trust philosophy that underpins everything, and walk through each of the four independent security layers that protect your Zeus deployment.
 
+![Aegis 4-Layer Security](./aegis-4-layers.svg)
+
 ## 1. The Zero-Trust Model
 
 The security industry has spent decades learning that perimeter-based security — firewalls, VPNs, "trust this network" — fails catastrophically when the perimeter dissolves. Modern deployments span multiple clouds, include remote workers, and handle sensitive data that must be protected everywhere it goes. Zeus was designed from day one with this reality in mind.

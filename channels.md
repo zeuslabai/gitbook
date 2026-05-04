@@ -8,6 +8,8 @@ Hermes connects Zeus to the outside world. Each channel is a first-class citizen
 
 ---
 
+![Hermes Channels](./channels-hub.svg)
+
 ## Supported Channels
 
 | Channel | Status | Protocol | Notes |

@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <filter id="glow8">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <rect width="800" height="600" fill="#0a0a14"/>
+  
+  <!-- Title -->
+  <text x="400" y="35" text-anchor="middle" fill="#ffffff" font-family="monospace" font-size="16" font-weight="bold" letter-spacing="2">SUPPORTED PLATFORMS</text>
+  <text x="400" y="55" text-anchor="middle" fill="#666" font-family="monospace" font-size="11">Zeus runs anywhere Rust runs · 2GB RAM minimum</text>
+  
+  <!-- macOS -->
+  <rect x="60" y="90" width="200" height="70" rx="8" fill="#1a1a2e" stroke="#00d4ff" stroke-width="2"/>
+  <text x="160" y="120" text-anchor="middle" fill="#00d4ff" font-family="monospace" font-size="14" font-weight="bold">macOS</text>
+  <text x="160" y="140" text-anchor="middle" fill="#888" font-family="monospace" font-size="10">Intel + Apple Silicon</text>
+  <rect x="100" y="148" width="120" height="6" rx="2" fill="rgba(0,212,255,0.3)"/>
+  <text x="160" y="165" text-anchor="middle" fill="#00ff88" font-family="monospace" font-size="10">✅ Full</text>
+  
+  <!-- macOS Homebrew -->
+  <rect x="60" y="175" width="200" height="50" rx="6" fill="#1a1a2e" stroke="#00d4ff" stroke-width="1.5"/>
+  <text x="160" y="200" text-anchor="middle" fill="#888" font-family="monospace" font-size="11">Homebrew install</text>
+  <text x="160" y="215" text-anchor="middle" fill="#666" font-family="monospace" font-size="9">brew install zeuslabai/tap/zeus</text>
+  
+  <!-- Linux -->
+  <rect x="300" y="90" width="200" height="70" rx="8" fill="#1a1a2e" stroke="#00ff88" stroke-width="2"/>
+  <text x="400" y="120" text-anchor="middle" fill="#00ff88" font-family="monospace" font-size="14" font-weight="bold">Linux</text>
+  <text x="400" y="140" text-anchor="middle" fill="#888" font-family="monospace" font-size="10">x86_64 · ARM/RPI · RISC-V</text>
+  <rect x="340" y="148" width="120" height="6" rx="2" fill="rgba(0,255,136,0.3)"/>
+  <text x="400" y="165" text-anchor="middle" fill="#00ff88" font-family="monospace" font-size="10">✅ Full</text>
+  
+  <!-- Linux distros -->
+  <rect x="300" y="175" width="200" height="50" rx="6" fill="#1a1a2e" stroke="#00ff88" stroke-width="1.5"/>
+  <text x="400" y="200" text-anchor="middle" fill="#888" font-family="monospace" font-size="11">Ubuntu · Debian · Fedora · Arch</text>
+  <text x="400" y="215" text-anchor="middle" fill="#666" font-family="monospace" font-size="9">Raspberry Pi · OrangePi · ARM SBCs</text>
+  
+  <!-- FreeBSD -->
+  <rect x="540" y="90" width="200" height="70" rx="8" fill="#1a1a2e" stroke="#ffaa00" stroke-width="2"/>
+  <text x="640" y="120" text-anchor="middle" fill="#ffaa00" font-family="monospace" font-size="14" font-weight="bold">FreeBSD</text>
+  <text x="640" y="140" text-anchor="middle" fill="#888" font-family="monospace" font-size="10">cargo install or binary</text>
+  <rect x="580" y="148" width="120" height="6" rx="2" fill="rgba(255,170,0,0.3)"/>
+  <text x="640" y="165" text-anchor="middle" fill="#00ff88" font-family="monospace" font-size="10">✅ Full</text>
+  
+  <!-- Windows WSL2 -->
+  <rect x="540" y="175" width="200" height="50" rx="6" fill="#1a1a2e" stroke="#ffaa00" stroke-width="1.5"/>
+  <text x="640" y="200" text-anchor="middle" fill="#888" font-family="monospace" font-size="11">Windows (WSL2)</text>
+  <text x="640" y="215" text-anchor="middle" fill="#666" font-family="monospace" font-size="9">Recommended on Windows</text>
+  
+  <!-- Docker -->
+  <rect x="60" y="280" width="680" height="70" rx="8" fill="#1a1a2e" stroke="#00d4ff" stroke-width="2" filter="url(#glow8)"/>
+  <text x="400" y="310" text-anchor="middle" fill="#00d4ff" font-family="monospace" font-size="14" font-weight="bold">Docker</text>
+  <text x="400" y="330" text-anchor="middle" fill="#888" font-family="monospace" font-size="11">Official images on GitHub Container Registry</text>
+  <text x="400" y="345" text-anchor="middle" fill="#666" font-family="monospace" font-size="9">docker run zeuslabai/zeus:latest</text>
+  
+  <!-- Quick install -->
+  <rect x="60" y="380" width="680" height="80" rx="8" fill="rgba(0,212,255,0.06)" stroke="#00d4ff" stroke-width="1.5"/>
+  <text x="400" y="410" text-anchor="middle" fill="#00d4ff" font-family="monospace" font-size="13" font-weight="bold">QUICK INSTALL</text>
+  <text x="400" y="435" text-anchor="middle" fill="#ffffff" font-family="monospace" font-size="12">curl -fsSL https://raw.githubusercontent.com/zeuslabai/Zeus/main/install.sh | bash</text>
+  <text x="400" y="455" text-anchor="middle" fill="#888" font-family="monospace" font-size="10">One command · Detects platform · No cloud account needed</text>
+  
+  <!-- Min requirements -->
+  <rect x="60" y="490" width="320" height="60" rx="6" fill="#1a1a2e" stroke="#666" stroke-width="1"/>
+  <text x="220" y="518" text-anchor="middle" fill="#888" font-family="monospace" font-size="12">MINIMUM REQUIREMENTS</text>
+  <text x="220" y="538" text-anchor="middle" fill="#666" font-family="monospace" font-size="11">2GB RAM · 1GB disk</text>
+  
+  <rect x="420" y="490" width="320" height="60" rx="6" fill="#1a1a2e" stroke="#666" stroke-width="1"/>
+  <text x="580" y="518" text-anchor="middle" fill="#888" font-family="monospace" font-size="12">RECOMMENDED</text>
+  <text x="580" y="538" text-anchor="middle" fill="#666" font-family="monospace" font-size="11">4GB+ RAM for full TUI/desktop</text>
+  
+  <!-- Footer -->
+  <text x="400" y="580" text-anchor="middle" fill="#444" font-family="monospace" font-size="10">Zero external dependencies · Self-hosted · Yours</text>
+</svg>

@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="brainGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="100%" style="stop-color:#16213e"/>
+    </linearGradient>
+    <filter id="glow2">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <rect width="800" height="600" fill="#0a0a14"/>
+  
+  <!-- Title -->
+  <text x="400" y="35" text-anchor="middle" fill="#ffffff" font-family="monospace" font-size="16" font-weight="bold" letter-spacing="2">MNEMOSYNE MEMORY ARCHITECTURE</text>
+  <text x="400" y="55" text-anchor="middle" fill="#666" font-family="monospace" font-size="11">Persistent · Queryable · Cross-Session Intelligence</text>
+  
+  <!-- Session boxes - left side (past) -->
+  <rect x="40" y="90" width="120" height="50" rx="6" fill="#1a1a2e" stroke="#ff44cc" stroke-width="1.5"/>
+  <text x="100" y="110" text-anchor="middle" fill="#ff44cc" font-family="monospace" font-size="10">SESSION 1</text>
+  <text x="100" y="125" text-anchor="middle" fill="#888" font-family="monospace" font-size="9">Yesterday</text>
+  
+  <rect x="40" y="160" width="120" height="50" rx="6" fill="#1a1a2e" stroke="#ff44cc" stroke-width="1.5"/>
+  <text x="100" y="180" text-anchor="middle" fill="#ff44cc" font-family="monospace" font-size="10">SESSION 2</text>
+  <text x="100" y="195" text-anchor="middle" fill="#888" font-family="monospace" font-size="9">Last Week</text>
+  
+  <rect x="40" y="230" width="120" height="50" rx="6" fill="#1a1a2e" stroke="#ff44cc" stroke-width="1.5"/>
+  <text x="100" y="250" text-anchor="middle" fill="#ff44cc" font-family="monospace" font-size="10">SESSION 3</text>
+  <text x="100" y="265" text-anchor="middle" fill="#888" font-family="monospace" font-size="9">Last Month</text>
+  
+  <!-- Arrows from sessions to Mnemosyne -->
+  <path d="M160 115 Q220 115 280 200" fill="none" stroke="#ff44cc" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <path d="M160 185 Q220 185 280 230" fill="none" stroke="#ff44cc" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <path d="M160 255 Q220 255 280 260" fill="none" stroke="#ff44cc" stroke-width="1.5" stroke-dasharray="4,3"/>
+  
+  <!-- Mnemosyne core -->
+  <ellipse cx="360" cy="230" rx="120" ry="160" fill="rgba(0,212,255,0.08)" stroke="#00d4ff" stroke-width="2" filter="url(#glow2)"/>
+  <ellipse cx="360" cy="230" rx="90" ry="120" fill="rgba(0,212,255,0.05)" stroke="#00d4ff" stroke-width="1" stroke-dasharray="6,3"/>
+  
+  <text x="360" y="195" text-anchor="middle" fill="#00d4ff" font-family="monospace" font-size="16" font-weight="bold">MNEMOSYNE</text>
+  <text x="360" y="215" text-anchor="middle" fill="#888" font-family="monospace" font-size="10">Persistent Memory Store</text>
+  
+  <!-- Memory types inside -->
+  <rect x="290" y="235" width="140" height="22" rx="4" fill="rgba(0,255,136,0.1)" stroke="#00ff88" stroke-width="1"/>
+  <text x="360" y="250" text-anchor="middle" fill="#00ff88" font-family="monospace" font-size="10">EPISODIC · Conversations</text>
+  
+  <rect x="290" y="265" width="140" height="22" rx="4" fill="rgba(255,170,0,0.1)" stroke="#ffaa00" stroke-width="1"/>
+  <text x="360" y="280" text-anchor="middle" fill="#ffaa00" font-family="monospace" font-size="10">SEMANTIC · Facts</text>
+  
+  <rect x="290" y="295" width="140" height="22" rx="4" fill="rgba(255,68,204,0.1)" stroke="#ff44cc" stroke-width="1"/>
+  <text x="360" y="310" text-anchor="middle" fill="#ff44cc" font-family="monospace" font-size="10">PROCEDURAL · Skills</text>
+  
+  <rect x="290" y="325" width="140" height="22" rx="4" fill="rgba(0,212,255,0.1)" stroke="#00d4ff" stroke-width="1"/>
+  <text x="360" y="340" text-anchor="middle" fill="#00d4ff" font-family="monospace" font-size="10">WORKING · Context</text>
+  
+  <!-- Embeddings indicator -->
+  <rect x="305" y="355" width="110" height="18" rx="3" fill="rgba(0,212,255,0.15)" stroke="#00d4ff" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="360" y="367" text-anchor="middle" fill="#00d4ff" font-family="monospace" font-size="9">1536-dim embeddings</text>
+  
+  <!-- Arrow from Mnemosyne to current session -->
+  <path d="M480 230 Q540 200 580 150" fill="none" stroke="#00d4ff" stroke-width="2" stroke-dasharray="6,3"/>
+  <path d="M575 143 L583 152 L572 155" fill="none" stroke="#00d4ff" stroke-width="1.5" stroke-linecap="round"/>
+  
+  <!-- Current session - right side -->
+  <rect x="580" y="100" width="160" height="60" rx="8" fill="#1a1a2e" stroke="#00ff88" stroke-width="2"/>
+  <text x="660" y="125" text-anchor="middle" fill="#00ff88" font-family="monospace" font-size="12" font-weight="bold">CURRENT SESSION</text>
+  <text x="660" y="145" text-anchor="middle" fill="#888" font-family="monospace" font-size="10">Full context from all past sessions</text>
+  
+  <!-- Query indicator -->
+  <path d="M480 260 Q540 260 580 280" fill="none" stroke="#00ff88" stroke-width="2" stroke-dasharray="6,3"/>
+  <path d="M575 273 L583 282 L572 285" fill="none" stroke="#00ff88" stroke-width="1.5" stroke-linecap="round"/>
+  
+  <rect x="580" y="260" width="160" height="50" rx="6" fill="#1a1a2e" stroke="#00ff88" stroke-width="1.5"/>
+  <text x="660" y="280" text-anchor="middle" fill="#00ff88" font-family="monospace" font-size="10">Query + Retrieve</text>
+  <text x="660" y="298" text-anchor="middle" fill="#888" font-family="monospace" font-size="9">Vector similarity search</text>
+  
+  <!-- Titan labels -->
+  <rect x="60" y="400" width="140" height="30" rx="4" fill="rgba(255,68,204,0.1)" stroke="#ff44cc" stroke-width="1"/>
+  <text x="130" y="419" text-anchor="middle" fill="#ff44cc" font-family="monospace" font-size="10">All Titans share memory</text>
+  
+  <rect x="240" y="400" width="140" height="30" rx="4" fill="rgba(255,68,204,0.1)" stroke="#ff44cc" stroke-width="1"/>
+  <text x="310" y="419" text-anchor="middle" fill="#ff44cc" font-family="monospace" font-size="10">Namespace isolation</text>
+  
+  <rect x="420" y="400" width="140" height="30" rx="4" fill="rgba(0,212,255,0.1)" stroke="#00d4ff" stroke-width="1"/>
+  <text x="490" y="419" text-anchor="middle" fill="#00d4ff" font-family="monospace" font-size="10">Forgetting policy</text>
+  
+  <rect x="600" y="400" width="140" height="30" rx="4" fill="rgba(0,255,136,0.1)" stroke="#00ff88" stroke-width="1"/>
+  <text x="670" y="419" text-anchor="middle" fill="#00ff88" font-family="monospace" font-size="10">Zero data leaves env</text>
+  
+  <!-- Footer -->
+  <text x="400" y="575" text-anchor="middle" fill="#444" font-family="monospace" font-size="10">Remember what matters · Forget what doesn't · Cross-session continuity</text>
+</svg>

@@ -4,6 +4,8 @@ In the mythology of old, a pantheon represented the gathered strength of gods wo
 
 ---
 
+![Pantheon Orchestration](./pantheon-orchestration.svg)
+
 ## 1. The Problem: Coordination at Scale
 
 Every AI system has a ceiling. A single agent, however capable, operates within the constraints of its context window, its specialized knowledge base, and its capacity to manage parallel tasks. Real-world challenges rarely arrive as neatly bounded problems with obvious solutions. They span domains, require diverse expertise, demand rapid iteration, and unfold in unpredictable ways.

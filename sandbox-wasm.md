@@ -4,6 +4,8 @@ The power of an extensible AI platform lies in its ability to incorporate new ca
 
 But extensibility introduces risk. Code that runs within the same process as Zeus Core has access to everything Zeus Core has access to: file systems, network connections, environment variables, system calls. A single malicious or buggy skill could compromise the entire platform, exfiltrate sensitive data, or crash the system.
 
+![Zeus Sandbox WASM](./zeus-sandbox-wasm.svg)
+
 Traditional solutions—process isolation, containerization, virtual machines—introduce unacceptable overhead for high-frequency skill invocations. A Docker container cold start takes seconds; Zeus skills should execute in milliseconds. We needed something faster, lighter, and more granular than containers, with security guarantees that hold even when running untrusted code.
 
 The answer is WebAssembly. Specifically, we built **zeus-sandbox**: a WebAssembly runtime purpose-built for AI agent capability enforcement.

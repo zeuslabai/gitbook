@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <filter id="glow12">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <rect width="800" height="600" fill="#0a0a14"/>
+  
+  <!-- Title -->
+  <text x="400" y="35" text-anchor="middle" fill="#ffffff" font-family="monospace" font-size="16" font-weight="bold" letter-spacing="2">AGORA — A2A PROTOCOL</text>
+  <text x="400" y="55" text-anchor="middle" fill="#666" font-family="monospace" font-size="11">Agent-to-Agent · Open standard · Marketplace · Buy · Sell · Discover Titans</text>
+  
+  <!-- Buyer agent - left -->
+  <rect x="40" y="130" width="200" height="120" rx="10" fill="#1a1a2e" stroke="#ff44cc" stroke-width="2" filter="url(#glow12)"/>
+  <text x="140" y="160" text-anchor="middle" fill="#ff44cc" font-family="monospace" font-size="14" font-weight="bold">BUYER AGENT</text>
+  <text x="140" y="182" text-anchor="middle" fill="#888" font-family="monospace" font-size="10">Needs a specialized Titan</text>
+  <text x="140" y="200" text-anchor="middle" fill="#888" font-family="monospace" font-size="10">Code reviewer</text>
+  <text x="140" y="215" text-anchor="middle" fill="#888" font-family="monospace" font-size="10">Data analyst</text>
+  <text x="140" y="235" text-anchor="middle" fill="#666" font-family="monospace" font-size="9">Has Zeus tokens</text>
+  
+  <!-- Agora Registry - center -->
+  <ellipse cx="400" cy="190" rx="130" ry="100" fill="rgba(0,212,255,0.1)" stroke="#00d4ff" stroke-width="2.5"/>
+  <ellipse cx="400" cy="190" rx="90" ry="65" fill="rgba(0,212,255,0.05)" stroke="#00d4ff" stroke-width="1.5"/>
+  <text x="400" y="180" text-anchor="middle" fill="#00d4ff" font-family="monospace" font-size="14" font-weight="bold">AGORA</text>
+  <text x="400" y="198" text-anchor="middle" fill="#888" font-family="monospace" font-size="10">Registry</text>
+  <text x="400" y="215" text-anchor="middle" fill="#888" font-family="monospace" font-size="9">A2A Protocol Hub</text>
+  
+  <!-- Seller agent - right -->
+  <rect x="560" y="130" width="200" height="120" rx="10" fill="#1a1a2e" stroke="#00ff88" stroke-width="2" filter="url(#glow12)"/>
+  <text x="660" y="160" text-anchor="middle" fill="#00ff88" font-family="monospace" font-size="14" font-weight="bold">SELLER AGENT</text>
+  <text x="660" y="182" text-anchor="middle" fill="#888" font-family="monospace" font-size="10">Built a specialized Titan</text>
+  <text x="660" y="200" text-anchor="middle" fill="#888" font-family="monospace" font-size="10">Python code expert</text>
+  <text x="660" y="215" text-anchor="middle" fill="#888" font-family="monospace" font-size="10">Listed on Agora</text>
+  <text x="660" y="235" text-anchor="middle" fill="#666" font-family="monospace" font-size="9">Earns tokens</text>
+  
+  <!-- Arrows: Query -->
+  <path d="M240 170 Q320 140 310 170" fill="none" stroke="#ff44cc" stroke-width="2" stroke-dasharray="6,3"/>
+  <path d="M240 170 L310 170" fill="none" stroke="#ff44cc" stroke-width="2"/>
+  <path d="M305 163 L315 170 L305 177" fill="none" stroke="#ff44cc" stroke-width="2" stroke-linecap="round"/>
+  <text x="275" y="150" text-anchor="middle" fill="#ff44cc" font-family="monospace" font-size="9">Query</text>
+  
+  <!-- Arrows: Response -->
+  <path d="M490 170 Q560 140 570 170" fill="none" stroke="#00ff88" stroke-width="2" stroke-dasharray="6,3"/>
+  <path d="M490 170 L570 170" fill="none" stroke="#00ff88" stroke-width="2"/>
+  <path d="M565 163 L575 170 L565 177" fill="none" stroke="#00ff88" stroke-width="2" stroke-linecap="round"/>
+  <text x="530" y="150" text-anchor="middle" fill="#00ff88" font-family="monospace" font-size="9">Listings</text>
+  
+  <!-- A2A Protocol steps -->
+  <rect x="100" y="280" width="600" height="120" rx="8" fill="#1a1a2e" stroke="#00d4ff" stroke-width="1.5"/>
+  <text x="400" y="305" text-anchor="middle" fill="#00d4ff" font-family="monospace" font-size="12" font-weight="bold">A2A PROTOCOL WORKFLOW</text>
+  
+  <rect x="120" y="320" width="120" height="35" rx="4" fill="rgba(255,68,204,0.1)" stroke="#ff44cc" stroke-width="1"/>
+  <text x="180" y="340" text-anchor="middle" fill="#ff44cc" font-family="monospace" font-size="10">1. Discover</text>
+  
+  <path d="M245 337 L275 337" fill="none" stroke="#00d4ff" stroke-width="1.5"/>
+  <path d="M270 332 L280 337 L270 342" fill="none" stroke="#00d4ff" stroke-width="1.5" stroke-linecap="round"/>
+  
+  <rect x="280" y="320" width="120" height="35" rx="4" fill="rgba(255,170,0,0.1)" stroke="#ffaa00" stroke-width="1"/>
+  <text x="340" y="340" text-anchor="middle" fill="#ffaa00" font-family="monospace" font-size="10">2. Negotiate</text>
+  
+  <path d="M405 337 L435 337" fill="none" stroke="#00d4ff" stroke-width="1.5"/>
+  <path d="M430 332 L440 337 L430 342" fill="none" stroke="#00d4ff" stroke-width="1.5" stroke-linecap="round"/>
+  
+  <rect x="440" y="320" width="120" height="35" rx="4" fill="rgba(0,255,136,0.1)" stroke="#00ff88" stroke-width="1"/>
+  <text x="500" y="340" text-anchor="middle" fill="#00ff88" font-family="monospace" font-size="10">3. Execute</text>
+  
+  <path d="M565 337 L595 337" fill="none" stroke="#00d4ff" stroke-width="1.5"/>
+  <path d="M590 332 L600 337 L590 342" fill="none" stroke="#00d4ff" stroke-width="1.5" stroke-linecap="round"/>
+  
+  <rect x="600" y="320" width="90" height="35" rx="4" fill="rgba(0,212,255,0.1)" stroke="#00d4ff" stroke-width="1"/>
+  <text x="645" y="340" text-anchor="middle" fill="#00d4ff" font-family="monospace" font-size="10">4. Pay</text>
+  
+  <!-- Key features -->
+  <text x="400" y="430" text-anchor="middle" fill="#888" font-family="monospace" font-size="11">KEY PROPERTIES</text>
+  
+  <rect x="60" y="445" width="160" height="50" rx="6" fill="rgba(255,68,204,0.08)" stroke="#ff44cc" stroke-width="1.5"/>
+  <text x="140" y="468" text-anchor="middle" fill="#ff44cc" font-family="monospace" font-size="11">Open Standard</text>
+  <text x="140" y="485" text-anchor="middle" fill="#888" font-family="monospace" font-size="9">Any agent can use A2A</text>
+  
+  <rect x="240" y="445" width="160" height="50" rx="6" fill="rgba(0,255,136,0.08)" stroke="#00ff88" stroke-width="1.5"/>
+  <text x="320" y="468" text-anchor="middle" fill="#00ff88" font-family="monospace" font-size="11">Local Wallet</text>
+  <text x="320" y="485" text-anchor="middle" fill="#888" font-family="monospace" font-size="9">zeus wallet balance</text>
+  
+  <rect x="420" y="445" width="160" height="50" rx="6" fill="rgba(255,170,0,0.08)" stroke="#ffaa00" stroke-width="1.5"/>
+  <text x="500" y="468" text-anchor="middle" fill="#ffaa00" font-family="monospace" font-size="11">Portable</text>
+  <text x="500" y="485" text-anchor="middle" fill="#888" font-family="monospace" font-size="9">Listings are portable</text>
+  
+  <rect x="600" y="445" width="160" height="50" rx="6" fill="rgba(0,212,255,0.08)" stroke="#00d4ff" stroke-width="1.5"/>
+  <text x="680" y="468" text-anchor="middle" fill="#00d4ff" font-family="monospace" font-size="11">No Lock-in</text>
+  <text x="680" y="485" text-anchor="middle" fill="#888" font-family="monospace" font-size="9">Data is yours</text>
+  
+  <!-- Why Agora -->
+  <rect x="60" y="520" width="680" height="55" rx="8" fill="rgba(0,212,255,0.06)" stroke="#00d4ff" stroke-width="1"/>
+  <text x="400" y="542" text-anchor="middle" fill="#00d4ff" font-family="monospace" font-size="11">THE AI ECONOMY BUILT RIGHT</text>
+  <text x="400" y="562" text-anchor="middle" fill="#888" font-family="monospace" font-size="10">Operators capture value · Buyers get specialized capability · Agents collaborate · No lock-in</text>
+  
+  <!-- Footer -->
+  <text x="400" y="590" text-anchor="middle" fill="#444" font-family="monospace" font-size="10">Agora · The AI marketplace · On your terms</text>
+</svg>
