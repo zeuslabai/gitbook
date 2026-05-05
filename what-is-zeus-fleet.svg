@@ -1,60 +1,157 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 580">
   <defs>
-    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
-      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    <!-- Glow filters -->
+    <filter id="glow-soft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
-    <marker id="arrow" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto">
-      <path d="M0,0 L0,6 L7,3 z" fill="#ff3c14"/>
+    <filter id="glow-strong" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="8" result="b1"/>
+      <feGaussianBlur stdDeviation="3" in="SourceGraphic" result="b2"/>
+      <feMerge><feMergeNode in="b1"/><feMergeNode in="b2"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glow-inner" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <!-- Background gradient -->
+    <radialGradient id="bg-rad" cx="50%" cy="40%" r="80%">
+      <stop offset="0%" stop-color="#12100e" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#050403" stop-opacity="1"/>
+    </radialGradient>
+
+    <!-- Scan lines pattern -->
+    <pattern id="scanlines" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="4" y2="0" stroke="#ff3c14" stroke-width="0.4" opacity="0.04"/>
+    </pattern>
+
+    <!-- Grid pattern -->
+    <pattern id="grid" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ff3c14" stroke-width="0.5" opacity="0.05"/>
+    </pattern>
+
+    <!-- Arrow markers -->
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,1 L0,9 L10,5 Z" fill="#ff3c14"/>
     </marker>
+    <marker id="arrow-amber" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,1 L0,9 L10,5 Z" fill="#ffa050"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,1 L0,9 L10,5 Z" fill="#22c55e"/>
+    </marker>
+    <marker id="arrow-cyan" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,1 L0,9 L10,5 Z" fill="#06b6d4"/>
+    </marker>
+
+    <!-- Focal core gradient -->
+    <radialGradient id="core-rad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff6842" stop-opacity="0.9"/>
+      <stop offset="60%" stop-color="#ff3c14" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#ff3c14" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Glow orb gradients per accent -->
+    <radialGradient id="orb-crimson" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff3c14" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#ff3c14" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orb-amber" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffa050" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#ffa050" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orb-green" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#22c55e" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#22c55e" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orb-cyan" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0"/>
+    </radialGradient>
   </defs>
-  <rect width="800" height="520" fill="#0a0a0f"/>
-  <text x="400" y="30" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="15" font-weight="bold" letter-spacing="2">WHAT IS ZEUS — FLEET COORDINATOR</text>
-  <text x="400" y="48" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="10">Multi-agent orchestration · Provider freedom · Self-hosted</text>
-  <!-- User (left) -->
-  <rect x="30" y="170" width="120" height="70" rx="8" fill="#1a1a2e" stroke="#ff3c14" stroke-width="2" filter="url(#glow)"/>
-  <text x="90" y="200" text-anchor="middle" fill="#ff3c14" font-family="monospace" font-size="11" font-weight="bold">USER</text>
-  <text x="90" y="218" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">any channel</text>
-  <!-- Arrow User → Zeus Core -->
-  <line x1="150" y1="205" x2="210" y2="205" stroke="#ff3c14" stroke-width="2" marker-end="url(#arrow)"/>
-  <!-- Zeus Core (center) -->
-  <rect x="220" y="150" width="180" height="110" rx="8" fill="#1a1a2e" stroke="#ff3c14" stroke-width="3" filter="url(#glow)"/>
-  <text x="310" y="178" text-anchor="middle" fill="#ff3c14" font-family="monospace" font-size="13" font-weight="bold">ZEUS CORE</text>
-  <text x="310" y="198" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="10">Cognitive Engine</text>
-  <text x="310" y="215" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="10">Event-driven runtime</text>
-  <text x="310" y="232" text-anchor="middle" fill="#22c55e" font-family="monospace" font-size="10">● Daemon running</text>
-  <!-- Arrow Zeus Core → Titan Fleet -->
-  <line x1="400" y1="205" x2="460" y2="205" stroke="#ff3c14" stroke-width="2" marker-end="url(#arrow)"/>
-  <!-- Titan Fleet (right) -->
-  <rect x="470" y="140" width="160" height="130" rx="8" fill="#1a1a2e" stroke="#ff3c14" stroke-width="2" filter="url(#glow)"/>
-  <text x="550" y="168" text-anchor="middle" fill="#ff3c14" font-family="monospace" font-size="12" font-weight="bold">TITAN FLEET</text>
-  <text x="550" y="188" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="10">Zeus · Hermes</text>
-  <text x="550" y="205" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="10">Aegis · Mnemosyne</text>
-  <text x="550" y="222" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="10">fbsd2 · Your Titan</text>
-  <text x="550" y="242" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">+ community Titans</text>
-  <!-- Bottom tier: Provider, Memory, Channels -->
-  <rect x="40" y="310" width="160" height="90" rx="8" fill="#1a1a2e" stroke="#22c55e" stroke-width="2"/>
-  <text x="120" y="338" text-anchor="middle" fill="#22c55e" font-family="monospace" font-size="11" font-weight="bold">MEMORY</text>
-  <text x="120" y="358" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="10">Mnemosyne</text>
-  <text x="120" y="375" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="10">Vector + FTS</text>
-  <text x="120" y="392" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">Self-hosted</text>
-  <rect x="230" y="310" width="160" height="90" rx="8" fill="#1a1a2e" stroke="#22c55e" stroke-width="2"/>
-  <text x="310" y="338" text-anchor="middle" fill="#22c55e" font-family="monospace" font-size="11" font-weight="bold">CHANNELS</text>
-  <text x="310" y="358" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="10">Discord · Telegram</text>
-  <text x="310" y="375" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="10">Slack · Email +4</text>
-  <text x="310" y="392" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">8 platforms</text>
-  <rect x="420" y="310" width="160" height="90" rx="8" fill="#1a1a2e" stroke="#22c55e" stroke-width="2"/>
-  <text x="500" y="338" text-anchor="middle" fill="#22c55e" font-family="monospace" font-size="11" font-weight="bold">SKILLS</text>
-  <text x="500" y="358" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="10">70+ built-in</text>
-  <text x="500" y="375" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="10">MCP bridging</text>
-  <text x="500" y="392" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">Hot-reload</text>
-  <rect x="600" y="310" width="160" height="90" rx="8" fill="#1a1a2e" stroke="#22c55e" stroke-width="2"/>
-  <text x="680" y="338" text-anchor="middle" fill="#22c55e" font-family="monospace" font-size="11" font-weight="bold">PROVIDERS</text>
-  <text x="680" y="358" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="10">19 LLM providers</text>
-  <text x="680" y="375" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="10">Anthropic · OpenAI</text>
-  <text x="680" y="392" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">Provider-agnostic</text>
-  <!-- Bottom note -->
-  <rect x="40" y="425" width="720" height="45" rx="6" fill="#1a1a2e" stroke="rgba(255,60,20,0.25)" stroke-width="1"/>
-  <text x="400" y="448" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="10">Modular · Extensible · Self-hosted · No Zeus cloud dependency · Zero vendor lock-in</text>
-  <text x="400" y="490" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="10">38 crates · ~400K lines of Rust · 7,307 tests · 212 tools · 19 providers</text>
+  
+  <!-- Background layers -->
+  <rect width="900" height="580" fill="#050403"/>
+  <rect width="900" height="580" fill="url(#bg-rad)"/>
+  <rect width="900" height="580" fill="url(#grid)"/>
+  <rect width="900" height="580" fill="url(#scanlines)"/>
+
+  <!-- Corner brackets -->
+  <g stroke="#a0301a" stroke-width="1.5" fill="none" opacity="0.6">
+    <path d="M 14 14 L 14 36 M 14 14 L 36 14"/>
+    <path d="M 886 14 L 886 36 M 886 14 L 864 14"/>
+    <path d="M 14 566 L 14 544 M 14 566 L 36 566"/>
+    <path d="M 886 566 L 886 544 M 886 566 L 864 566"/>
+  </g>
+
+  <!-- Top header bar -->
+  <line x1="40" y1="46" x2="100" y2="46" stroke="#ff3c14" stroke-width="1.5"/>
+  <text x="40" y="40" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#ff3c14" font-weight="700" letter-spacing="4">ZEUS</text>
+  <text x="120" y="40" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#8a8278" letter-spacing="3">01 · OVERVIEW</text>
+  <text x="860" y="40" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#5a5650" text-anchor="end" letter-spacing="2">NOVAXAI · 2026</text>
+
+  <!-- Title -->
+  <text x="40" y="80" font-family="Tektur, 'Tektur', 'Inter', 'Helvetica Neue', sans-serif" font-size="24" fill="#f5f0eb" font-weight="700" letter-spacing="2">What is Zeus</text>
+  <text x="40" y="102" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="13" fill="#8a8278" font-style="italic" letter-spacing="0.5">An autonomous AI operating system that runs on your hardware</text>
+
+
+  
+  <line x1="218" y1="275.0" x2="360" y2="306.5"
+        stroke="#ffa050" stroke-width="1.2" opacity="0.5" stroke-dasharray="3,3"/>
+  <rect x="60" y="230" width="150" height="90" fill="#12100e" stroke="#2e2218" stroke-width="1"/>
+  <rect x="60" y="230" width="3" height="90" fill="#ffa050"/>
+  <text x="75" y="252" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#ffa050" font-weight="700" letter-spacing="3">MEM</text>
+  <text x="75" y="272" font-family="Tektur, 'Tektur', 'Inter', 'Helvetica Neue', sans-serif" font-size="14" fill="#f5f0eb" font-weight="700" letter-spacing="1">MEMORY</text>
+  <text x="75" y="290" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="11" fill="#d4cfc8">Mnemosyne · Vector + FTS</text>
+
+  <line x1="218" y1="395.0" x2="360" y2="342.5"
+        stroke="#3b82f6" stroke-width="1.2" opacity="0.5" stroke-dasharray="3,3"/>
+  <rect x="60" y="350" width="150" height="90" fill="#12100e" stroke="#2e2218" stroke-width="1"/>
+  <rect x="60" y="350" width="3" height="90" fill="#3b82f6"/>
+  <text x="75" y="372" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#3b82f6" font-weight="700" letter-spacing="3">CHN</text>
+  <text x="75" y="392" font-family="Tektur, 'Tektur', 'Inter', 'Helvetica Neue', sans-serif" font-size="14" fill="#f5f0eb" font-weight="700" letter-spacing="1">CHANNELS</text>
+  <text x="75" y="410" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="11" fill="#d4cfc8">8 platforms · unified</text>
+
+  <line x1="692" y1="275.0" x2="540" y2="306.5"
+        stroke="#ff3c14" stroke-width="1.2" opacity="0.5" stroke-dasharray="3,3"/>
+  <rect x="700" y="230" width="150" height="90" fill="#12100e" stroke="#2e2218" stroke-width="1"/>
+  <rect x="700" y="230" width="3" height="90" fill="#ff3c14"/>
+  <text x="715" y="252" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#ff3c14" font-weight="700" letter-spacing="3">TLN</text>
+  <text x="715" y="272" font-family="Tektur, 'Tektur', 'Inter', 'Helvetica Neue', sans-serif" font-size="14" fill="#f5f0eb" font-weight="700" letter-spacing="1">TITAN FLEET</text>
+  <text x="715" y="290" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="11" fill="#d4cfc8">Multi-host · Sovereign</text>
+
+  <line x1="692" y1="395.0" x2="540" y2="342.5"
+        stroke="#a855f7" stroke-width="1.2" opacity="0.5" stroke-dasharray="3,3"/>
+  <rect x="700" y="350" width="150" height="90" fill="#12100e" stroke="#2e2218" stroke-width="1"/>
+  <rect x="700" y="350" width="3" height="90" fill="#a855f7"/>
+  <text x="715" y="372" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#a855f7" font-weight="700" letter-spacing="3">PRV</text>
+  <text x="715" y="392" font-family="Tektur, 'Tektur', 'Inter', 'Helvetica Neue', sans-serif" font-size="14" fill="#f5f0eb" font-weight="700" letter-spacing="1">PROVIDERS</text>
+  <text x="715" y="410" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="11" fill="#d4cfc8">11+ LLMs · Agnostic</text>
+
+
+  <!-- Central core: glow halo + ring + label -->
+  <circle cx="450" cy="320" r="180" fill="url(#orb-crimson)" opacity="0.5"/>
+  <circle cx="450" cy="320" r="120" fill="url(#orb-crimson)" opacity="0.6"/>
+
+  <!-- Orbital rings -->
+  <circle cx="450" cy="320" r="100" fill="none" stroke="#a0301a" stroke-width="0.5" opacity="0.4" stroke-dasharray="2,4"/>
+  <circle cx="450" cy="320" r="140" fill="none" stroke="#a0301a" stroke-width="0.5" opacity="0.3"/>
+
+  <!-- Core: sentient orb -->
+  <circle cx="450" cy="320" r="75" fill="#050403" stroke="#ff3c14" stroke-width="2" filter="url(#glow-strong)"/>
+  <circle cx="450" cy="320" r="55" fill="url(#core-rad)"/>
+  <circle cx="450" cy="320" r="20" fill="#f5f0eb" opacity="0.95"/>
+  <circle cx="450" cy="320" r="10" fill="#ff6842"/>
+
+  <!-- Core label -->
+  <text x="450" y="225" text-anchor="middle" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#a0301a" font-weight="700" letter-spacing="4">ZEUS CORE</text>
+  <text x="450" y="425" text-anchor="middle" font-family="Tektur, 'Tektur', 'Inter', 'Helvetica Neue', sans-serif" font-size="18" fill="#f5f0eb" font-weight="700" letter-spacing="2">Cognitive Engine</text>
+  <text x="450" y="445" text-anchor="middle" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="12" fill="#8a8278" font-style="italic">Event-driven · Tool-using · Persistent</text>
+  <text x="450" y="468" text-anchor="middle" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="10" fill="#22c55e" letter-spacing="2">● daemon online</text>
+
+  <!-- Bottom strip -->
+  <line x1="40" y1="510" x2="860" y2="510" stroke="#2e2218" stroke-width="0.5"/>
+  <text x="450.0" y="535" text-anchor="middle" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="10" fill="#a0301a" font-weight="700" letter-spacing="3">38 CRATES  ·  391K LINES RUST  ·  365 TOOLS  ·  7,801 TESTS  ·  11 PROVIDERS</text>
+  <text x="450.0" y="555" text-anchor="middle" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="11" fill="#5a5650" font-style="italic">Self-hosted · Modular · Zero cloud dependency</text>
 </svg>

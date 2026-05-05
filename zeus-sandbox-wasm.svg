@@ -1,54 +1,147 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 580">
   <defs>
-    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
-      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    <!-- Glow filters -->
+    <filter id="glow-soft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
-    <marker id="arrow" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto">
-      <path d="M0,0 L0,6 L7,3 z" fill="#ff3c14"/>
+    <filter id="glow-strong" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="8" result="b1"/>
+      <feGaussianBlur stdDeviation="3" in="SourceGraphic" result="b2"/>
+      <feMerge><feMergeNode in="b1"/><feMergeNode in="b2"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glow-inner" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <!-- Background gradient -->
+    <radialGradient id="bg-rad" cx="50%" cy="40%" r="80%">
+      <stop offset="0%" stop-color="#12100e" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#050403" stop-opacity="1"/>
+    </radialGradient>
+
+    <!-- Scan lines pattern -->
+    <pattern id="scanlines" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="4" y2="0" stroke="#ff3c14" stroke-width="0.4" opacity="0.04"/>
+    </pattern>
+
+    <!-- Grid pattern -->
+    <pattern id="grid" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ff3c14" stroke-width="0.5" opacity="0.05"/>
+    </pattern>
+
+    <!-- Arrow markers -->
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,1 L0,9 L10,5 Z" fill="#ff3c14"/>
     </marker>
+    <marker id="arrow-amber" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,1 L0,9 L10,5 Z" fill="#ffa050"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,1 L0,9 L10,5 Z" fill="#22c55e"/>
+    </marker>
+    <marker id="arrow-cyan" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,1 L0,9 L10,5 Z" fill="#06b6d4"/>
+    </marker>
+
+    <!-- Focal core gradient -->
+    <radialGradient id="core-rad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff6842" stop-opacity="0.9"/>
+      <stop offset="60%" stop-color="#ff3c14" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#ff3c14" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Glow orb gradients per accent -->
+    <radialGradient id="orb-crimson" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff3c14" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#ff3c14" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orb-amber" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffa050" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#ffa050" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orb-green" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#22c55e" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#22c55e" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orb-cyan" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0"/>
+    </radialGradient>
   </defs>
-  <rect width="800" height="500" fill="#0a0a0f"/>
-  <text x="400" y="30" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="15" font-weight="bold" letter-spacing="2">ZEUS SANDBOX + WASM</text>
-  <text x="400" y="48" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="10">Isolated code execution · WASM plugin runtime · Zero systemic risk</text>
-  <!-- Sandbox boundary -->
-  <rect x="120" y="75" width="560" height="320" rx="12" fill="#1a1a2e" stroke="#ff3c14" stroke-width="2" stroke-dasharray="8,5" filter="url(#glow)"/>
-  <text x="400" y="100" text-anchor="middle" fill="#ff3c14" font-family="monospace" font-size="12" font-weight="bold">SANDBOXED EXECUTION ENVIRONMENT</text>
-  <text x="400" y="116" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">WASM runtime · Memory isolated · No filesystem access · Network blocked</text>
-  <!-- Code input -->
-  <rect x="160" y="135" width="200" height="90" rx="8" fill="#0a0a0f" stroke="#ff3c14" stroke-width="1.5"/>
-  <text x="260" y="158" text-anchor="middle" fill="#ff3c14" font-family="monospace" font-size="11" font-weight="bold">CODE INPUT</text>
-  <text x="260" y="178" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">Python · JavaScript</text>
-  <text x="260" y="194" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">Rust compiled to WASM</text>
-  <text x="260" y="215" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">zeus exec --sandbox</text>
-  <!-- Arrow -->
-  <line x1="360" y1="180" x2="400" y2="180" stroke="#ff3c14" stroke-width="2" marker-end="url(#arrow)"/>
-  <!-- WASM Runtime -->
-  <rect x="400" y="135" width="250" height="90" rx="8" fill="#1a1a2e" stroke="#ff3c14" stroke-width="2" filter="url(#glow)"/>
-  <text x="525" y="158" text-anchor="middle" fill="#ff3c14" font-family="monospace" font-size="12" font-weight="bold">WASM PLUGIN RUNTIME</text>
-  <text x="525" y="178" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">Wasmtime · WASMER · WasmEdge</text>
-  <text x="525" y="195" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">Sandboxed by design · Capability-based</text>
-  <text x="525" y="212" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">security model</text>
-  <!-- Output -->
-  <rect x="250" y="250" width="300" height="60" rx="8" fill="#0a0a0f" stroke="#22c55e" stroke-width="1.5"/>
-  <text x="400" y="275" text-anchor="middle" fill="#22c55e" font-family="monospace" font-size="11" font-weight="bold">OUTPUT / RESULT</text>
-  <text x="400" y="295" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">stdout · return value · structured JSON</text>
-  <!-- Arrow down to result -->
-  <line x1="400" y1="310" x2="400" y2="350" stroke="#22c55e" stroke-width="2" marker-end="url(#arrow)"/>
-  <!-- Features row -->
-  <rect x="160" y="360" width="150" height="70" rx="6" fill="#1a1a2e" stroke="rgba(255,60,20,0.25)" stroke-width="1"/>
-  <text x="235" y="385" text-anchor="middle" fill="#ff3c14" font-family="monospace" font-size="10" font-weight="bold">MEMORY ISOLATION</text>
-  <text x="235" y="403" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">No cross-request state</text>
-  <text x="235" y="418" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">leakage possible</text>
-  <rect x="325" y="360" width="150" height="70" rx="6" fill="#1a1a2e" stroke="rgba(255,60,20,0.25)" stroke-width="1"/>
-  <text x="400" y="385" text-anchor="middle" fill="#ff3c14" font-family="monospace" font-size="10" font-weight="bold">NETWORK BLOCKED</text>
-  <text x="400" y="403" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">No outbound connections</text>
-  <text x="400" y="418" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">from sandboxed code</text>
-  <rect x="490" y="360" width="150" height="70" rx="6" fill="#1a1a2e" stroke="rgba(255,60,20,0.25)" stroke-width="1"/>
-  <text x="565" y="385" text-anchor="middle" fill="#ff3c14" font-family="monospace" font-size="10" font-weight="bold">TIMEOUT ENFORCED</text>
-  <text x="565" y="403" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">Max execution time</text>
-  <text x="565" y="418" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">enforced at runtime</text>
-  <!-- Bottom note -->
-  <rect x="40" y="450" width="720" height="40" rx="6" fill="#1a1a2e" stroke="rgba(255,60,20,0.25)" stroke-width="1"/>
-  <text x="400" y="472" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="10">Skills run inside sandbox · zeus exec --sandbox &lt;code&gt; · WASM plugins via zeus plugin install</text>
+  
+  <!-- Background layers -->
+  <rect width="900" height="580" fill="#050403"/>
+  <rect width="900" height="580" fill="url(#bg-rad)"/>
+  <rect width="900" height="580" fill="url(#grid)"/>
+  <rect width="900" height="580" fill="url(#scanlines)"/>
+
+  <!-- Corner brackets -->
+  <g stroke="#a0301a" stroke-width="1.5" fill="none" opacity="0.6">
+    <path d="M 14 14 L 14 36 M 14 14 L 36 14"/>
+    <path d="M 886 14 L 886 36 M 886 14 L 864 14"/>
+    <path d="M 14 566 L 14 544 M 14 566 L 36 566"/>
+    <path d="M 886 566 L 886 544 M 886 566 L 864 566"/>
+  </g>
+
+  <!-- Top header bar -->
+  <line x1="40" y1="46" x2="100" y2="46" stroke="#ff3c14" stroke-width="1.5"/>
+  <text x="40" y="40" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#ff3c14" font-weight="700" letter-spacing="4">ZEUS</text>
+  <text x="120" y="40" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#8a8278" letter-spacing="3">10 · SANDBOX</text>
+  <text x="860" y="40" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#5a5650" text-anchor="end" letter-spacing="2">NOVAXAI · 2026</text>
+
+  <!-- Title -->
+  <text x="40" y="80" font-family="Tektur, 'Tektur', 'Inter', 'Helvetica Neue', sans-serif" font-size="24" fill="#f5f0eb" font-weight="700" letter-spacing="2">Zeus Sandbox + WASM</text>
+  <text x="40" y="102" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="13" fill="#8a8278" font-style="italic" letter-spacing="0.5">Isolated code execution · WASM plugin runtime · Zero systemic risk</text>
+
+  
+  <rect x="60" y="160" width="780" height="320" fill="#12100e" stroke="#ff3c14" stroke-width="1.5" stroke-dasharray="6,4" filter="url(#glow-soft)"/>
+  <rect x="60" y="160" width="780" height="3" fill="#ff3c14"/>
+  <text x="80" y="184" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="10" fill="#ff3c14" font-weight="700" letter-spacing="3">SANDBOXED EXECUTION ENVIRONMENT</text>
+  <text x="80" y="200" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="11" fill="#8a8278" font-style="italic">Untrusted code · Memory isolated · No systemcall risk</text>
+
+  <!-- Three modules side by side -->
+
+  <rect x="90" y="230" width="220" height="180" fill="#1a1410" stroke="#06b6d4" stroke-width="1.5"/>
+  <rect x="90" y="230" width="3" height="180" fill="#06b6d4"/>
+  <text x="108" y="252" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#06b6d4" font-weight="700" letter-spacing="3">CODE</text>
+  <text x="108" y="278" font-family="Tektur, 'Tektur', 'Inter', 'Helvetica Neue', sans-serif" font-size="14" fill="#f5f0eb" font-weight="700" letter-spacing="1">CODE INPUT</text>
+  <text x="108" y="296" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#8a8278" font-style="italic">Python · JavaScript · Rust</text>
+  <line x1="108" y1="305" x2="292" y2="305" stroke="#2e2218" stroke-width="0.5"/>
+<text x="112" y="327" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="11" fill="#d4cfc8">↳ User-submitted</text><text x="112" y="347" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="11" fill="#d4cfc8">↳ Skill-provided</text><text x="112" y="367" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="11" fill="#d4cfc8">↳ MCP plugin code</text>
+  <rect x="340" y="230" width="220" height="180" fill="#1a1410" stroke="#ff3c14" stroke-width="1.5"/>
+  <rect x="340" y="230" width="3" height="180" fill="#ff3c14"/>
+  <text x="358" y="252" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#ff3c14" font-weight="700" letter-spacing="3">RT</text>
+  <text x="358" y="278" font-family="Tektur, 'Tektur', 'Inter', 'Helvetica Neue', sans-serif" font-size="14" fill="#f5f0eb" font-weight="700" letter-spacing="1">WASM PLUGIN RUNTIME</text>
+  <text x="358" y="296" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#8a8278" font-style="italic">wasmtime · WASIp1</text>
+  <line x1="358" y1="305" x2="542" y2="305" stroke="#2e2218" stroke-width="0.5"/>
+<text x="362" y="327" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="11" fill="#d4cfc8">↳ Standalone</text><text x="362" y="347" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="11" fill="#d4cfc8">↳ Capability-based</text><text x="362" y="367" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="11" fill="#d4cfc8">↳ Identity-aware</text>
+  <rect x="590" y="230" width="220" height="180" fill="#1a1410" stroke="#22c55e" stroke-width="1.5"/>
+  <rect x="590" y="230" width="3" height="180" fill="#22c55e"/>
+  <text x="608" y="252" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#22c55e" font-weight="700" letter-spacing="3">OUT</text>
+  <text x="608" y="278" font-family="Tektur, 'Tektur', 'Inter', 'Helvetica Neue', sans-serif" font-size="14" fill="#f5f0eb" font-weight="700" letter-spacing="1">OUTPUT / RESULT</text>
+  <text x="608" y="296" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#8a8278" font-style="italic">stdout · returnval · JSON</text>
+  <line x1="608" y1="305" x2="792" y2="305" stroke="#2e2218" stroke-width="0.5"/>
+<text x="612" y="327" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="11" fill="#d4cfc8">↳ Captured</text><text x="612" y="347" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="11" fill="#d4cfc8">↳ Sanitized</text><text x="612" y="367" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="11" fill="#d4cfc8">↳ Returned</text><line x1="310" y1="320" x2="338" y2="320" stroke="#ff3c14" stroke-width="1.5" marker-end="url(#arrow)"/><line x1="560" y1="320" x2="588" y2="320" stroke="#ff3c14" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="72.0" y="425" width="180" height="42" fill="#12100e" stroke="#2e2218" stroke-width="0.75"/>
+  <rect x="72.0" y="425" width="3" height="42" fill="#22c55e"/>
+  <text x="87.0" y="443" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#22c55e" font-weight="700" letter-spacing="2">✓ MEMORY ISOLATION</text>
+  <text x="87.0" y="459" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="10" fill="#8a8278" font-style="italic">No shared heap</text>
+
+  <rect x="264.0" y="425" width="180" height="42" fill="#12100e" stroke="#2e2218" stroke-width="0.75"/>
+  <rect x="264.0" y="425" width="3" height="42" fill="#22c55e"/>
+  <text x="279.0" y="443" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#22c55e" font-weight="700" letter-spacing="2">✓ NETWORK BLOCKED</text>
+  <text x="279.0" y="459" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="10" fill="#8a8278" font-style="italic">No outbound traffic</text>
+
+  <rect x="456.0" y="425" width="180" height="42" fill="#12100e" stroke="#2e2218" stroke-width="0.75"/>
+  <rect x="456.0" y="425" width="3" height="42" fill="#22c55e"/>
+  <text x="471.0" y="443" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#22c55e" font-weight="700" letter-spacing="2">✓ TIMEOUT ENFORCED</text>
+  <text x="471.0" y="459" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="10" fill="#8a8278" font-style="italic">Cooperative cancel</text>
+
+  <rect x="648.0" y="425" width="180" height="42" fill="#12100e" stroke="#2e2218" stroke-width="0.75"/>
+  <rect x="648.0" y="425" width="3" height="42" fill="#22c55e"/>
+  <text x="663.0" y="443" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#22c55e" font-weight="700" letter-spacing="2">✓ CAPS DECLARED</text>
+  <text x="663.0" y="459" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="10" fill="#8a8278" font-style="italic">Explicit grants only</text>
+<text x="450.0" y="510" text-anchor="middle" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="11" fill="#5a5650" font-style="italic">Devils run inside sandbox · Zeus core stays sovereign · WASM plugins use proven primitives</text>
 </svg>

@@ -1,52 +1,142 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 580">
   <defs>
-    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
-      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    <!-- Glow filters -->
+    <filter id="glow-soft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
+    <filter id="glow-strong" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="8" result="b1"/>
+      <feGaussianBlur stdDeviation="3" in="SourceGraphic" result="b2"/>
+      <feMerge><feMergeNode in="b1"/><feMergeNode in="b2"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glow-inner" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <!-- Background gradient -->
+    <radialGradient id="bg-rad" cx="50%" cy="40%" r="80%">
+      <stop offset="0%" stop-color="#12100e" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#050403" stop-opacity="1"/>
+    </radialGradient>
+
+    <!-- Scan lines pattern -->
+    <pattern id="scanlines" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="4" y2="0" stroke="#ff3c14" stroke-width="0.4" opacity="0.04"/>
+    </pattern>
+
+    <!-- Grid pattern -->
+    <pattern id="grid" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ff3c14" stroke-width="0.5" opacity="0.05"/>
+    </pattern>
+
+    <!-- Arrow markers -->
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,1 L0,9 L10,5 Z" fill="#ff3c14"/>
+    </marker>
+    <marker id="arrow-amber" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,1 L0,9 L10,5 Z" fill="#ffa050"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,1 L0,9 L10,5 Z" fill="#22c55e"/>
+    </marker>
+    <marker id="arrow-cyan" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,1 L0,9 L10,5 Z" fill="#06b6d4"/>
+    </marker>
+
+    <!-- Focal core gradient -->
+    <radialGradient id="core-rad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff6842" stop-opacity="0.9"/>
+      <stop offset="60%" stop-color="#ff3c14" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#ff3c14" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Glow orb gradients per accent -->
+    <radialGradient id="orb-crimson" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff3c14" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#ff3c14" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orb-amber" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffa050" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#ffa050" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orb-green" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#22c55e" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#22c55e" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orb-cyan" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0"/>
+    </radialGradient>
   </defs>
-  <rect width="800" height="500" fill="#0a0a0f"/>
-  <text x="400" y="30" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="15" font-weight="bold" letter-spacing="2">USE CASES</text>
-  <text x="400" y="48" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="10">4-quadrant capability map · Zeus handles it all</text>
-  <!-- Divider lines -->
-  <line x1="400" y1="70" x2="400" y2="420" stroke="rgba(255,60,20,0.25)" stroke-width="1"/>
-  <line x1="50" y1="245" x2="750" y2="245" stroke="rgba(255,60,20,0.25)" stroke-width="1"/>
-  <!-- Q1: Top-left — Personal Assistant -->
-  <rect x="55" y="75" width="330" height="160" rx="8" fill="#1a1a2e" stroke="#ff3c14" stroke-width="2" filter="url(#glow)"/>
-  <text x="220" y="105" text-anchor="middle" fill="#ff3c14" font-family="monospace" font-size="13" font-weight="bold">PERSONAL ASSISTANT</text>
-  <text x="220" y="130" text-anchor="middle" fill="#22c55e" font-family="monospace" font-size="10">● HIGH FIT</text>
-  <text x="220" y="155" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="10">Schedule management</text>
-  <text x="220" y="172" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="10">Email triage & drafting</text>
-  <text x="220" y="189" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="10">Research & summarization</text>
-  <text x="220" y="206" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="10">Multi-channel unified inbox</text>
-  <text x="220" y="223" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">Discord · Telegram · Email</text>
-  <!-- Q2: Top-right — Developer Tools -->
-  <rect x="415" y="75" width="330" height="160" rx="8" fill="#1a1a2e" stroke="#ff3c14" stroke-width="2" filter="url(#glow)"/>
-  <text x="580" y="105" text-anchor="middle" fill="#ff3c14" font-family="monospace" font-size="13" font-weight="bold">DEVELOPER TOOLS</text>
-  <text x="580" y="130" text-anchor="middle" fill="#22c55e" font-family="monospace" font-size="10">● HIGH FIT</text>
-  <text x="580" y="155" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="10">Code review & debugging</text>
-  <text x="580" y="172" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="10">CI/CD automation</text>
-  <text x="580" y="189" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="10">Repo management</text>
-  <text x="580" y="206" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="10">Documentation generation</text>
-  <text x="580" y="223" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">Skills: code-exec · git · shell</text>
-  <!-- Q3: Bottom-left — Business/Enterprise -->
-  <rect x="55" y="260" width="330" height="160" rx="8" fill="#1a1a2e" stroke="#ff3c14" stroke-width="2" filter="url(#glow)"/>
-  <text x="220" y="290" text-anchor="middle" fill="#ff3c14" font-family="monospace" font-size="13" font-weight="bold">BUSINESS AUTOMATION</text>
-  <text x="220" y="315" text-anchor="middle" fill="#22c55e" font-family="monospace" font-size="10">● HIGH FIT</text>
-  <text x="220" y="340" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="10">Customer support (8 channels)</text>
-  <text x="220" y="357" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="10">Workflow automation</text>
-  <text x="220" y="374" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="10">Multi-agent coordination</text>
-  <text x="220" y="391" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="10">Reporting & analytics</text>
-  <text x="220" y="408" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">Slack · Discord · Email · Matrix</text>
-  <!-- Q4: Bottom-right — Security/Research -->
-  <rect x="415" y="260" width="330" height="160" rx="8" fill="#1a1a2e" stroke="#ff3c14" stroke-width="2" filter="url(#glow)"/>
-  <text x="580" y="290" text-anchor="middle" fill="#ff3c14" font-family="monospace" font-size="13" font-weight="bold">SECURITY & RESEARCH</text>
-  <text x="580" y="315" text-anchor="middle" fill="#22c55e" font-family="monospace" font-size="10">● HIGH FIT</text>
-  <text x="580" y="340" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="10">Threat intelligence</text>
-  <text x="580" y="357" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="10">Code security scanning</text>
-  <text x="580" y="374" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="10">Deep research (Pantheon)</text>
-  <text x="580" y="391" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="10">Multi-source synthesis</text>
-  <text x="580" y="408" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">Aegis · Mnemosyne · A2A</text>
-  <!-- Footer -->
-  <text x="400" y="460" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="10">All use cases share the same core: self-hosted · provider-agnostic · skill-extensible · fleet-ready</text>
+  
+  <!-- Background layers -->
+  <rect width="900" height="580" fill="#050403"/>
+  <rect width="900" height="580" fill="url(#bg-rad)"/>
+  <rect width="900" height="580" fill="url(#grid)"/>
+  <rect width="900" height="580" fill="url(#scanlines)"/>
+
+  <!-- Corner brackets -->
+  <g stroke="#a0301a" stroke-width="1.5" fill="none" opacity="0.6">
+    <path d="M 14 14 L 14 36 M 14 14 L 36 14"/>
+    <path d="M 886 14 L 886 36 M 886 14 L 864 14"/>
+    <path d="M 14 566 L 14 544 M 14 566 L 36 566"/>
+    <path d="M 886 566 L 886 544 M 886 566 L 864 566"/>
+  </g>
+
+  <!-- Top header bar -->
+  <line x1="40" y1="46" x2="100" y2="46" stroke="#ff3c14" stroke-width="1.5"/>
+  <text x="40" y="40" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#ff3c14" font-weight="700" letter-spacing="4">ZEUS</text>
+  <text x="120" y="40" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#8a8278" letter-spacing="3">16 · USE CASES</text>
+  <text x="860" y="40" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#5a5650" text-anchor="end" letter-spacing="2">NOVAXAI · 2026</text>
+
+  <!-- Title -->
+  <text x="40" y="80" font-family="Tektur, 'Tektur', 'Inter', 'Helvetica Neue', sans-serif" font-size="24" fill="#f5f0eb" font-weight="700" letter-spacing="2">Use Cases</text>
+  <text x="40" y="102" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="13" fill="#8a8278" font-style="italic" letter-spacing="0.5">Same Zeus binary · Five different fleets · All on user hardware</text>
+
+  
+  <line x1="60" y1="320" x2="840" y2="320" stroke="#a0301a" stroke-width="0.75" opacity="0.4" stroke-dasharray="3,3"/>
+  <line x1="450.0" y1="135" x2="450.0" y2="510" stroke="#a0301a" stroke-width="0.75" opacity="0.4" stroke-dasharray="3,3"/>
+
+  <!-- Axis labels -->
+  <text x="835" y="312" text-anchor="end" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#5a5650" letter-spacing="3">→ EXTERNAL</text>
+  <text x="65" y="312" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#5a5650" letter-spacing="3">INTERNAL ←</text>
+  <text x="455.0" y="143" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#5a5650" letter-spacing="3">↑ CREATIVE</text>
+  <text x="455.0" y="510" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#5a5650" letter-spacing="3">↓ OPERATIONAL</text>
+
+  <rect x="110" y="165" width="280" height="165" fill="#12100e" stroke="#ff3c14" stroke-width="1.5" filter="url(#glow-inner)"/>
+  <rect x="110" y="165" width="3" height="165" fill="#ff3c14"/>
+  <text x="128" y="189" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="10" fill="#ff3c14" font-weight="700" letter-spacing="3">ENG</text>
+  <text x="372" y="189" text-anchor="end" font-family="Tektur, 'Tektur', 'Inter', 'Helvetica Neue', sans-serif" font-size="22" fill="#ff3c14" font-weight="700" opacity="0.3">E</text>
+  <text x="128" y="215" font-family="Tektur, 'Tektur', 'Inter', 'Helvetica Neue', sans-serif" font-size="16" fill="#f5f0eb" font-weight="700">ENGINEERING</text>
+  <line x1="128" y1="223" x2="372" y2="223" stroke="#2e2218" stroke-width="0.5"/>
+<text x="132" y="247" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="11" fill="#d4cfc8">▸ Autonomous code review</text><text x="132" y="265" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="11" fill="#d4cfc8">▸ CI monitoring + fixes</text><text x="132" y="283" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="11" fill="#d4cfc8">▸ Security scanning</text><text x="132" y="301" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="11" fill="#d4cfc8">▸ Documentation gen</text>
+  <rect x="560" y="165" width="280" height="165" fill="#12100e" stroke="#ffa050" stroke-width="1.5" filter="url(#glow-inner)"/>
+  <rect x="560" y="165" width="3" height="165" fill="#ffa050"/>
+  <text x="578" y="189" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="10" fill="#ffa050" font-weight="700" letter-spacing="3">MKT</text>
+  <text x="822" y="189" text-anchor="end" font-family="Tektur, 'Tektur', 'Inter', 'Helvetica Neue', sans-serif" font-size="22" fill="#ffa050" font-weight="700" opacity="0.3">M</text>
+  <text x="578" y="215" font-family="Tektur, 'Tektur', 'Inter', 'Helvetica Neue', sans-serif" font-size="16" fill="#f5f0eb" font-weight="700">MARKETING</text>
+  <line x1="578" y1="223" x2="822" y2="223" stroke="#2e2218" stroke-width="0.5"/>
+<text x="582" y="247" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="11" fill="#d4cfc8">▸ Multi-channel campaigns</text><text x="582" y="265" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="11" fill="#d4cfc8">▸ Content at scale</text><text x="582" y="283" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="11" fill="#d4cfc8">▸ Brand-voice consistency</text><text x="582" y="301" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="11" fill="#d4cfc8">▸ Human review gates</text>
+  <rect x="110" y="360" width="280" height="165" fill="#12100e" stroke="#06b6d4" stroke-width="1.5" filter="url(#glow-inner)"/>
+  <rect x="110" y="360" width="3" height="165" fill="#06b6d4"/>
+  <text x="128" y="384" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="10" fill="#06b6d4" font-weight="700" letter-spacing="3">RES</text>
+  <text x="372" y="384" text-anchor="end" font-family="Tektur, 'Tektur', 'Inter', 'Helvetica Neue', sans-serif" font-size="22" fill="#06b6d4" font-weight="700" opacity="0.3">R</text>
+  <text x="128" y="410" font-family="Tektur, 'Tektur', 'Inter', 'Helvetica Neue', sans-serif" font-size="16" fill="#f5f0eb" font-weight="700">RESEARCH</text>
+  <line x1="128" y1="418" x2="372" y2="418" stroke="#2e2218" stroke-width="0.5"/>
+<text x="132" y="442" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="11" fill="#d4cfc8">▸ Deep synthesis</text><text x="132" y="460" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="11" fill="#d4cfc8">▸ Multi-source recall</text><text x="132" y="478" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="11" fill="#d4cfc8">▸ Compounding context</text><text x="132" y="496" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="11" fill="#d4cfc8">▸ Citation tracking</text>
+  <rect x="560" y="360" width="280" height="165" fill="#12100e" stroke="#22c55e" stroke-width="1.5" filter="url(#glow-inner)"/>
+  <rect x="560" y="360" width="3" height="165" fill="#22c55e"/>
+  <text x="578" y="384" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="10" fill="#22c55e" font-weight="700" letter-spacing="3">OPS</text>
+  <text x="822" y="384" text-anchor="end" font-family="Tektur, 'Tektur', 'Inter', 'Helvetica Neue', sans-serif" font-size="22" fill="#22c55e" font-weight="700" opacity="0.3">O</text>
+  <text x="578" y="410" font-family="Tektur, 'Tektur', 'Inter', 'Helvetica Neue', sans-serif" font-size="16" fill="#f5f0eb" font-weight="700">OPERATIONS</text>
+  <line x1="578" y1="418" x2="822" y2="418" stroke="#2e2218" stroke-width="0.5"/>
+<text x="582" y="442" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="11" fill="#d4cfc8">▸ Fleet monitoring</text><text x="582" y="460" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="11" fill="#d4cfc8">▸ Incident response</text><text x="582" y="478" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="11" fill="#d4cfc8">▸ Proactive runbooks</text><text x="582" y="496" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="11" fill="#d4cfc8">▸ On-call automation</text>
+  <circle cx="450.0" cy="320" r="55" fill="url(#orb-crimson)" opacity="0.5"/>
+  <circle cx="450.0" cy="320" r="38" fill="#050403" stroke="#ff6842" stroke-width="2" filter="url(#glow-strong)"/>
+  <text x="450.0" y="315" text-anchor="middle" font-family="Tektur, 'Tektur', 'Inter', 'Helvetica Neue', sans-serif" font-size="13" fill="#f5f0eb" font-weight="700">FOUNDER</text>
+  <text x="450.0" y="330" text-anchor="middle" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="10" fill="#ff6842">on a single Mac</text>
+
+  <text x="450.0" y="555" text-anchor="middle" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="11" fill="#5a5650" font-style="italic">Internal vs External · Operational vs Creative · One platform covers the matrix</text>
 </svg>

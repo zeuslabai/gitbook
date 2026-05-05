@@ -1,58 +1,174 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 580">
   <defs>
-    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
-      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    <!-- Glow filters -->
+    <filter id="glow-soft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
-    <filter id="glowGreen" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    <filter id="glow-strong" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="8" result="b1"/>
+      <feGaussianBlur stdDeviation="3" in="SourceGraphic" result="b2"/>
+      <feMerge><feMergeNode in="b1"/><feMergeNode in="b2"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
+    <filter id="glow-inner" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <!-- Background gradient -->
+    <radialGradient id="bg-rad" cx="50%" cy="40%" r="80%">
+      <stop offset="0%" stop-color="#12100e" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#050403" stop-opacity="1"/>
+    </radialGradient>
+
+    <!-- Scan lines pattern -->
+    <pattern id="scanlines" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="4" y2="0" stroke="#ff3c14" stroke-width="0.4" opacity="0.04"/>
+    </pattern>
+
+    <!-- Grid pattern -->
+    <pattern id="grid" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ff3c14" stroke-width="0.5" opacity="0.05"/>
+    </pattern>
+
+    <!-- Arrow markers -->
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,1 L0,9 L10,5 Z" fill="#ff3c14"/>
+    </marker>
+    <marker id="arrow-amber" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,1 L0,9 L10,5 Z" fill="#ffa050"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,1 L0,9 L10,5 Z" fill="#22c55e"/>
+    </marker>
+    <marker id="arrow-cyan" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,1 L0,9 L10,5 Z" fill="#06b6d4"/>
+    </marker>
+
+    <!-- Focal core gradient -->
+    <radialGradient id="core-rad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff6842" stop-opacity="0.9"/>
+      <stop offset="60%" stop-color="#ff3c14" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#ff3c14" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Glow orb gradients per accent -->
+    <radialGradient id="orb-crimson" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff3c14" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#ff3c14" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orb-amber" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffa050" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#ffa050" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orb-green" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#22c55e" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#22c55e" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orb-cyan" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0"/>
+    </radialGradient>
   </defs>
-  <rect width="800" height="520" fill="#0a0a0f"/>
-  <text x="400" y="30" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="15" font-weight="bold" letter-spacing="2">TITAN FLEET CONSTELLATION</text>
-  <text x="400" y="48" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="10">5 specialized Titans · A2A coordination · Persistent memory · Fleet intelligence</text>
-  <!-- Zeus — Coordinator (center, largest) -->
-  <circle cx="400" cy="230" r="55" fill="#1a1a2e" stroke="#ff3c14" stroke-width="3" filter="url(#glow)"/>
-  <circle cx="400" cy="230" r="45" fill="#0a0a0f" stroke="#ff3c14" stroke-width="1" stroke-dasharray="4,3" opacity="0.5"/>
-  <text x="400" y="218" text-anchor="middle" fill="#ff3c14" font-family="monospace" font-size="13" font-weight="bold">ZEUS100</text>
-  <text x="400" y="233" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">Coordinator</text>
-  <text x="400" y="248" text-anchor="middle" fill="#22c55e" font-family="monospace" font-size="9">● ONLINE</text>
-  <!-- Zeus112 — top -->
-  <circle cx="400" cy="80" r="40" fill="#1a1a2e" stroke="#ff3c14" stroke-width="2" filter="url(#glow)"/>
-  <text x="400" y="70" text-anchor="middle" fill="#ff3c14" font-family="monospace" font-size="11" font-weight="bold">ZEUS112</text>
-  <text x="400" y="84" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="8">Research</text>
-  <text x="400" y="96" text-anchor="middle" fill="#22c55e" font-family="monospace" font-size="8">● ONLINE</text>
-  <line x1="400" y1="120" x2="400" y2="170" stroke="#ff3c14" stroke-width="1.5" stroke-dasharray="5,4"/>
-  <!-- Aegis — bottom left -->
-  <circle cx="200" cy="360" r="40" fill="#1a1a2e" stroke="#ff3c14" stroke-width="2" filter="url(#glow)"/>
-  <text x="200" y="350" text-anchor="middle" fill="#ff3c14" font-family="monospace" font-size="11" font-weight="bold">ZEUS107</text>
-  <text x="200" y="364" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="8">Coding</text>
-  <text x="200" y="376" text-anchor="middle" fill="#22c55e" font-family="monospace" font-size="8">● ONLINE</text>
-  <line x1="230" y1="335" x2="320" y2="280" stroke="#ff3c14" stroke-width="1.5" stroke-dasharray="5,4"/>
-  <!-- Mnemosyne — bottom center -->
-  <circle cx="400" cy="400" r="40" fill="#1a1a2e" stroke="#ff3c14" stroke-width="2" filter="url(#glow)"/>
-  <text x="400" y="390" text-anchor="middle" fill="#ff3c14" font-family="monospace" font-size="11" font-weight="bold">ZEUSMOLTY</text>
-  <text x="400" y="404" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="8">Data</text>
-  <text x="400" y="416" text-anchor="middle" fill="#22c55e" font-family="monospace" font-size="8">● ONLINE</text>
-  <line x1="400" y1="360" x2="400" y2="290" stroke="#ff3c14" stroke-width="1.5" stroke-dasharray="5,4"/>
-  <!-- fbsd2 — right -->
-  <circle cx="600" cy="360" r="40" fill="#1a1a2e" stroke="#ff3c14" stroke-width="2" filter="url(#glow)"/>
-  <text x="600" y="350" text-anchor="middle" fill="#ff3c14" font-family="monospace" font-size="11" font-weight="bold">FBSD2</text>
-  <text x="600" y="364" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="8">Systems</text>
-  <text x="600" y="376" text-anchor="middle" fill="#22c55e" font-family="monospace" font-size="8">● ONLINE</text>
-  <line x1="570" y1="335" x2="480" y2="280" stroke="#ff3c14" stroke-width="1.5" stroke-dasharray="5,4"/>
-  <!-- Your Titan — top right -->
-  <circle cx="660" cy="80" r="40" fill="#1a1a2e" stroke="#ff3c14" stroke-width="2" filter="url(#glow)"/>
-  <text x="660" y="70" text-anchor="middle" fill="#ff3c14" font-family="monospace" font-size="11" font-weight="bold">YOUR TITAN</text>
-  <text x="660" y="84" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="8">Custom</text>
-  <text x="660" y="96" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="8">○ AVAILABLE</text>
-  <line x1="625" y1="100" x2="565" y2="140" stroke="#ff3c14" stroke-width="1.5" stroke-dasharray="5,4"/>
-  <!-- Fleet bus -->
-  <ellipse cx="400" cy="290" rx="280" ry="60" fill="none" stroke="rgba(255,60,20,0.2)" stroke-width="1" stroke-dasharray="6,4"/>
-  <text x="400" y="295" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">A2A fleet bus · shared context</text>
-  <!-- Capabilities panel -->
-  <rect x="40" y="460" width="720" height="45" rx="6" fill="#1a1a2e" stroke="rgba(255,60,20,0.25)" stroke-width="1"/>
-  <text x="400" y="480" text-anchor="middle" fill="#ff3c14" font-family="monospace" font-size="11" font-weight="bold">FLEET CAPABILITIES</text>
-  <text x="400" y="497" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="10">Persistent memory per Titan · A2A task handoff · pantheon mission new · Fleet-level observability · zeus titan invoke &lt;name&gt;</text>
+  
+  <!-- Background layers -->
+  <rect width="900" height="580" fill="#050403"/>
+  <rect width="900" height="580" fill="url(#bg-rad)"/>
+  <rect width="900" height="580" fill="url(#grid)"/>
+  <rect width="900" height="580" fill="url(#scanlines)"/>
+
+  <!-- Corner brackets -->
+  <g stroke="#a0301a" stroke-width="1.5" fill="none" opacity="0.6">
+    <path d="M 14 14 L 14 36 M 14 14 L 36 14"/>
+    <path d="M 886 14 L 886 36 M 886 14 L 864 14"/>
+    <path d="M 14 566 L 14 544 M 14 566 L 36 566"/>
+    <path d="M 886 566 L 886 544 M 886 566 L 864 566"/>
+  </g>
+
+  <!-- Top header bar -->
+  <line x1="40" y1="46" x2="100" y2="46" stroke="#ff3c14" stroke-width="1.5"/>
+  <text x="40" y="40" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#ff3c14" font-weight="700" letter-spacing="4">ZEUS</text>
+  <text x="120" y="40" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#8a8278" letter-spacing="3">04 · FLEET</text>
+  <text x="860" y="40" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#5a5650" text-anchor="end" letter-spacing="2">NOVAXAI · 2026</text>
+
+  <!-- Title -->
+  <text x="40" y="80" font-family="Tektur, 'Tektur', 'Inter', 'Helvetica Neue', sans-serif" font-size="24" fill="#f5f0eb" font-weight="700" letter-spacing="2">Titan Fleet Constellation</text>
+  <text x="40" y="102" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="13" fill="#8a8278" font-style="italic" letter-spacing="0.5">Multi-host autonomous coordination · Discord-routed</text>
+
+  
+  <circle cx="450" cy="290" r="200" fill="url(#orb-crimson)" opacity="0.4"/>
+  <circle cx="450" cy="290" r="145" fill="none" stroke="#a0301a" stroke-width="0.6" opacity="0.4" stroke-dasharray="2,5"/>
+
+  <circle cx="450" cy="290" r="48" fill="#050403" stroke="#ff3c14" stroke-width="2" filter="url(#glow-strong)"/>
+  <circle cx="450" cy="290" r="28" fill="url(#core-rad)"/>
+  <circle cx="450" cy="290" r="11" fill="#f5f0eb"/>
+  <text x="450" y="358" text-anchor="middle" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="10" fill="#ff3c14" font-weight="700" letter-spacing="3">HERMES</text>
+  <text x="450" y="372" text-anchor="middle" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="9" fill="#8a8278" font-style="italic">Coordinator · MacBook M5</text>
+
+  <line x1="450.0" y1="242.0" x2="450.0" y2="167.0" stroke="#ff3c14" stroke-width="1" opacity="0.4" stroke-dasharray="3,3"/>
+  <circle cx="450.0" cy="145.0" r="26" fill="url(#orb-crimson)" opacity="0.4"/>
+  <circle cx="450.0" cy="145.0" r="18" fill="#050403" stroke="#ff3c14" stroke-width="1.5" filter="url(#glow-soft)"/>
+  <circle cx="450.0" cy="145.0" r="9" fill="#ff3c14" opacity="0.7"/>
+  <circle cx="450.0" cy="145.0" r="4" fill="#f5f0eb"/>
+
+  <text x="450.0" y="113.0" text-anchor="middle" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="10" fill="#ff3c14" font-weight="700" letter-spacing="2">Hephaestus</text>
+  <text x="450.0" y="126.0" text-anchor="middle" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="10" fill="#d4cfc8">Backend / Forge</text>
+
+  <line x1="491.56921938165306" y1="266.0" x2="556.5211246654859" y2="228.49999999999994" stroke="#a855f7" stroke-width="1" opacity="0.4" stroke-dasharray="3,3"/>
+  <circle cx="575.5736835487436" cy="217.49999999999994" r="26" fill="url(#orb-crimson)" opacity="0.4"/>
+  <circle cx="575.5736835487436" cy="217.49999999999994" r="18" fill="#050403" stroke="#a855f7" stroke-width="1.5" filter="url(#glow-soft)"/>
+  <circle cx="575.5736835487436" cy="217.49999999999994" r="9" fill="#a855f7" opacity="0.7"/>
+  <circle cx="575.5736835487436" cy="217.49999999999994" r="4" fill="#f5f0eb"/>
+
+  <text x="575.5736835487436" y="185.49999999999994" text-anchor="middle" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="10" fill="#a855f7" font-weight="700" letter-spacing="2">Prometheus</text>
+  <text x="575.5736835487436" y="198.49999999999994" text-anchor="middle" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="10" fill="#d4cfc8">Experimental</text>
+
+  <line x1="491.56921938165306" y1="314.0" x2="556.5211246654859" y2="351.5" stroke="#ff3c14" stroke-width="1" opacity="0.4" stroke-dasharray="3,3"/>
+  <circle cx="575.5736835487436" cy="362.5" r="26" fill="url(#orb-crimson)" opacity="0.4"/>
+  <circle cx="575.5736835487436" cy="362.5" r="18" fill="#050403" stroke="#ff3c14" stroke-width="1.5" filter="url(#glow-soft)"/>
+  <circle cx="575.5736835487436" cy="362.5" r="9" fill="#ff3c14" opacity="0.7"/>
+  <circle cx="575.5736835487436" cy="362.5" r="4" fill="#f5f0eb"/>
+
+  <text x="575.5736835487436" y="397.5" text-anchor="middle" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="10" fill="#ff3c14" font-weight="700" letter-spacing="2">Atlas</text>
+  <text x="575.5736835487436" y="410.5" text-anchor="middle" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="10" fill="#d4cfc8">Backend (dual)</text>
+
+  <line x1="450.0" y1="338.0" x2="450.0" y2="413.0" stroke="#ffa050" stroke-width="1" opacity="0.4" stroke-dasharray="3,3"/>
+  <circle cx="450.0" cy="435.0" r="26" fill="url(#orb-crimson)" opacity="0.4"/>
+  <circle cx="450.0" cy="435.0" r="18" fill="#050403" stroke="#ffa050" stroke-width="1.5" filter="url(#glow-soft)"/>
+  <circle cx="450.0" cy="435.0" r="9" fill="#ffa050" opacity="0.7"/>
+  <circle cx="450.0" cy="435.0" r="4" fill="#f5f0eb"/>
+
+  <text x="450.0" y="470.0" text-anchor="middle" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="10" fill="#ffa050" font-weight="700" letter-spacing="2">Calliope</text>
+  <text x="450.0" y="483.0" text-anchor="middle" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="10" fill="#d4cfc8">Marketing &amp; Voice</text>
+
+  <line x1="408.43078061834694" y1="314.0" x2="343.47887533451404" y2="351.5" stroke="#22c55e" stroke-width="1" opacity="0.4" stroke-dasharray="3,3"/>
+  <circle cx="324.4263164512564" cy="362.5" r="26" fill="url(#orb-crimson)" opacity="0.4"/>
+  <circle cx="324.4263164512564" cy="362.5" r="18" fill="#050403" stroke="#22c55e" stroke-width="1.5" filter="url(#glow-soft)"/>
+  <circle cx="324.4263164512564" cy="362.5" r="9" fill="#22c55e" opacity="0.7"/>
+  <circle cx="324.4263164512564" cy="362.5" r="4" fill="#f5f0eb"/>
+
+  <text x="324.4263164512564" y="397.5" text-anchor="middle" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="10" fill="#22c55e" font-weight="700" letter-spacing="2">Aegis</text>
+  <text x="324.4263164512564" y="410.5" text-anchor="middle" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="10" fill="#d4cfc8">Security &amp; CI</text>
+
+  <line x1="408.43078061834694" y1="266.0" x2="343.47887533451404" y2="228.5" stroke="#06b6d4" stroke-width="1" opacity="0.4" stroke-dasharray="3,3"/>
+  <circle cx="324.4263164512564" cy="217.5" r="26" fill="url(#orb-crimson)" opacity="0.4"/>
+  <circle cx="324.4263164512564" cy="217.5" r="18" fill="#050403" stroke="#06b6d4" stroke-width="1.5" filter="url(#glow-soft)"/>
+  <circle cx="324.4263164512564" cy="217.5" r="9" fill="#06b6d4" opacity="0.7"/>
+  <circle cx="324.4263164512564" cy="217.5" r="4" fill="#f5f0eb"/>
+
+  <text x="324.4263164512564" y="185.5" text-anchor="middle" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="10" fill="#06b6d4" font-weight="700" letter-spacing="2">Argus</text>
+  <text x="324.4263164512564" y="198.5" text-anchor="middle" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="10" fill="#d4cfc8">Provisioner / Watcher</text>
+<line x1="60" y1="515" x2="840" y2="515" stroke="#2e2218" stroke-width="0.5"/>
+  <text x="180.0" y="540" text-anchor="middle" font-family="Tektur, 'Tektur', 'Inter', 'Helvetica Neue', sans-serif" font-size="20" fill="#ff6842" font-weight="700">8</text>
+  <text x="180.0" y="555" text-anchor="middle" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#8a8278" letter-spacing="3">AGENTS</text>
+
+  <text x="360.0" y="540" text-anchor="middle" font-family="Tektur, 'Tektur', 'Inter', 'Helvetica Neue', sans-serif" font-size="20" fill="#ff6842" font-weight="700">7</text>
+  <text x="360.0" y="555" text-anchor="middle" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#8a8278" letter-spacing="3">PHYSICAL NODES</text>
+
+  <text x="540.0" y="540" text-anchor="middle" font-family="Tektur, 'Tektur', 'Inter', 'Helvetica Neue', sans-serif" font-size="20" fill="#ff6842" font-weight="700">80+</text>
+  <text x="540.0" y="555" text-anchor="middle" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#8a8278" letter-spacing="3">SPRINTS</text>
+
+  <text x="720.0" y="540" text-anchor="middle" font-family="Tektur, 'Tektur', 'Inter', 'Helvetica Neue', sans-serif" font-size="20" fill="#ff6842" font-weight="700">∞</text>
+  <text x="720.0" y="555" text-anchor="middle" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#8a8278" letter-spacing="3">AUTONOMOUS COORD</text>
+
 </svg>
