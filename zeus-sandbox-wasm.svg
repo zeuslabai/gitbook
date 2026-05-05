@@ -1,84 +1,54 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
   <defs>
-    <filter id="glow10">
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
       <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
-      <feMerge>
-        <feMergeNode in="coloredBlur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
+    <marker id="arrow" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L7,3 z" fill="#ff3c14"/>
+    </marker>
   </defs>
-  
-  <rect width="800" height="600" fill="#0a0a14"/>
-  
-  <!-- Title -->
-  <text x="400" y="35" text-anchor="middle" fill="#ffffff" font-family="monospace" font-size="16" font-weight="bold" letter-spacing="2">ZEUS SANDBOX — WASM ISOLATION</text>
-  <text x="400" y="55" text-anchor="middle" fill="#666" font-family="monospace" font-size="11">WebAssembly runtime · Millisecond execution · Formal isolation guarantees</text>
-  
-  <!-- Zeus Core - outer boundary -->
-  <rect x="40" y="90" width="720" height="400" rx="12" fill="none" stroke="#00d4ff" stroke-width="2" stroke-dasharray="8,4"/>
-  <text x="400" y="115" text-anchor="middle" fill="#00d4ff" font-family="monospace" font-size="12" opacity="0.7">ZEUS CORE PROCESS</text>
-  
-  <!-- WASM Sandbox boundary -->
-  <rect x="100" y="140" width="600" height="300" rx="10" fill="rgba(0,212,255,0.03)" stroke="#00ff88" stroke-width="2"/>
-  <text x="400" y="165" text-anchor="middle" fill="#00ff88" font-family="monospace" font-size="11" font-weight="bold">zeus-sandbox — WASM RUNTIME</text>
-  <text x="400" y="182" text-anchor="middle" fill="#888" font-family="monospace" font-size="9">Capability-based security · Fine-grained access control</text>
-  
-  <!-- Skill 1 - Rust -->
-  <rect x="130" y="210" width="160" height="90" rx="8" fill="#1a1a2e" stroke="#ff44cc" stroke-width="2"/>
-  <text x="210" y="240" text-anchor="middle" fill="#ff44cc" font-family="monospace" font-size="13" font-weight="bold">Skill A (Rust)</text>
-  <text x="210" y="260" text-anchor="middle" fill="#888" font-family="monospace" font-size="10">Compiled to WASM</text>
-  <text x="210" y="280" text-anchor="middle" fill="#666" font-family="monospace" font-size="9">Sandboxed execution</text>
-  <text x="210" y="295" text-anchor="middle" fill="#00ff88" font-family="monospace" font-size="9">● Isolated</text>
-  
-  <!-- Skill 2 - Python (via Pyodide) -->
-  <rect x="320" y="210" width="160" height="90" rx="8" fill="#1a1a2e" stroke="#ffaa00" stroke-width="2"/>
-  <text x="400" y="240" text-anchor="middle" fill="#ffaa00" font-family="monospace" font-size="13" font-weight="bold">Skill B (Python)</text>
-  <text x="400" y="260" text-anchor="middle" fill="#888" font-family="monospace" font-size="10">Pyodide WASM build</text>
-  <text x="400" y="280" text-anchor="middle" fill="#666" font-family="monospace" font-size="9">Sandboxed execution</text>
-  <text x="400" y="295" text-anchor="middle" fill="#00ff88" font-family="monospace" font-size="9">● Isolated</text>
-  
-  <!-- Skill 3 - Go -->
-  <rect x="510" y="210" width="160" height="90" rx="8" fill="#1a1a2e" stroke="#00d4ff" stroke-width="2"/>
-  <text x="590" y="240" text-anchor="middle" fill="#00d4ff" font-family="monospace" font-size="13" font-weight="bold">Skill C (Go)</text>
-  <text x="590" y="260" text-anchor="middle" fill="#888" font-family="monospace" font-size="10">TinyGo → WASM</text>
-  <text x="590" y="280" text-anchor="middle" fill="#666" font-family="monospace" font-size="9">Sandboxed execution</text>
-  <text x="590" y="295" text-anchor="middle" fill="#00ff88" font-family="monospace" font-size="9">● Isolated</text>
-  
-  <!-- Capability grants -->
-  <text x="400" y="340" text-anchor="middle" fill="#888" font-family="monospace" font-size="10">CAPABILITY GRANTS (WASI-style)</text>
-  
-  <!-- File system access -->
-  <rect x="130" y="355" width="160" height="30" rx="4" fill="rgba(0,255,136,0.08)" stroke="#00ff88" stroke-width="1"/>
-  <text x="210" y="375" text-anchor="middle" fill="#00ff88" font-family="monospace" font-size="10">FS: ./data/  (granted)</text>
-  
-  <rect x="320" y="355" width="160" height="30" rx="4" fill="rgba(255,68,204,0.08)" stroke="#ff44cc" stroke-width="1"/>
-  <text x="400" y="375" text-anchor="middle" fill="#ff44cc" font-family="monospace" font-size="10">FS: DENIED</text>
-  
-  <rect x="510" y="355" width="160" height="30" rx="4" fill="rgba(0,255,136,0.08)" stroke="#00ff88" stroke-width="1"/>
-  <text x="590" y="375" text-anchor="middle" fill="#00ff88" font-family="monospace" font-size="10">FS: ./logs/  (granted)</text>
-  
-  <!-- Network access -->
-  <rect x="130" y="395" width="160" height="30" rx="4" fill="rgba(255,68,204,0.08)" stroke="#ff44cc" stroke-width="1"/>
-  <text x="210" y="415" text-anchor="middle" fill="#ff44cc" font-family="monospace" font-size="10">NET: DENIED</text>
-  
-  <rect x="320" y="395" width="160" height="30" rx="4" fill="rgba(0,255,136,0.08)" stroke="#00ff88" stroke-width="1"/>
-  <text x="400" y="415" text-anchor="middle" fill="#00ff88" font-family="monospace" font-size="10">NET: api.stripe.com</text>
-  
-  <rect x="510" y="395" width="160" height="30" rx="4" fill="rgba(0,255,136,0.08)" stroke="#00ff88" stroke-width="1"/>
-  <text x="590" y="415" text-anchor="middle" fill="#00ff88" font-family="monospace" font-size="10">NET: DENIED</text>
-  
-  <!-- Comparison: containers vs sandbox -->
-  <text x="400" y="510" text-anchor="middle" fill="#888" font-family="monospace" font-size="11">VS TRADITIONAL ISOLATION</text>
-  
-  <rect x="60" y="520" width="320" height="50" rx="6" fill="#1a1a2e" stroke="#ff44cc" stroke-width="1.5"/>
-  <text x="220" y="545" text-anchor="middle" fill="#ff44cc" font-family="monospace" font-size="11">Docker Container</text>
-  <text x="220" y="562" text-anchor="middle" fill="#888" font-family="monospace" font-size="10">Cold start: seconds · Overhead: high</text>
-  
-  <rect x="420" y="520" width="320" height="50" rx="6" fill="#1a1a2e" stroke="#00ff88" stroke-width="1.5"/>
-  <text x="580" y="545" text-anchor="middle" fill="#00ff88" font-family="monospace" font-size="11">zeus-sandbox WASM</text>
-  <text x="580" y="562" text-anchor="middle" fill="#888" font-family="monospace" font-size="10">Cold start: milliseconds · Overhead: near-zero</text>
-  
-  <!-- Footer -->
-  <text x="400" y="590" text-anchor="middle" fill="#444" font-family="monospace" font-size="10">Millisecond skill execution · Formal isolation · WASI-style capability model</text>
+  <rect width="800" height="500" fill="#0a0a0f"/>
+  <text x="400" y="30" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="15" font-weight="bold" letter-spacing="2">ZEUS SANDBOX + WASM</text>
+  <text x="400" y="48" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="10">Isolated code execution · WASM plugin runtime · Zero systemic risk</text>
+  <!-- Sandbox boundary -->
+  <rect x="120" y="75" width="560" height="320" rx="12" fill="#1a1a2e" stroke="#ff3c14" stroke-width="2" stroke-dasharray="8,5" filter="url(#glow)"/>
+  <text x="400" y="100" text-anchor="middle" fill="#ff3c14" font-family="monospace" font-size="12" font-weight="bold">SANDBOXED EXECUTION ENVIRONMENT</text>
+  <text x="400" y="116" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">WASM runtime · Memory isolated · No filesystem access · Network blocked</text>
+  <!-- Code input -->
+  <rect x="160" y="135" width="200" height="90" rx="8" fill="#0a0a0f" stroke="#ff3c14" stroke-width="1.5"/>
+  <text x="260" y="158" text-anchor="middle" fill="#ff3c14" font-family="monospace" font-size="11" font-weight="bold">CODE INPUT</text>
+  <text x="260" y="178" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">Python · JavaScript</text>
+  <text x="260" y="194" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">Rust compiled to WASM</text>
+  <text x="260" y="215" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">zeus exec --sandbox</text>
+  <!-- Arrow -->
+  <line x1="360" y1="180" x2="400" y2="180" stroke="#ff3c14" stroke-width="2" marker-end="url(#arrow)"/>
+  <!-- WASM Runtime -->
+  <rect x="400" y="135" width="250" height="90" rx="8" fill="#1a1a2e" stroke="#ff3c14" stroke-width="2" filter="url(#glow)"/>
+  <text x="525" y="158" text-anchor="middle" fill="#ff3c14" font-family="monospace" font-size="12" font-weight="bold">WASM PLUGIN RUNTIME</text>
+  <text x="525" y="178" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">Wasmtime · WASMER · WasmEdge</text>
+  <text x="525" y="195" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">Sandboxed by design · Capability-based</text>
+  <text x="525" y="212" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">security model</text>
+  <!-- Output -->
+  <rect x="250" y="250" width="300" height="60" rx="8" fill="#0a0a0f" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="400" y="275" text-anchor="middle" fill="#22c55e" font-family="monospace" font-size="11" font-weight="bold">OUTPUT / RESULT</text>
+  <text x="400" y="295" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">stdout · return value · structured JSON</text>
+  <!-- Arrow down to result -->
+  <line x1="400" y1="310" x2="400" y2="350" stroke="#22c55e" stroke-width="2" marker-end="url(#arrow)"/>
+  <!-- Features row -->
+  <rect x="160" y="360" width="150" height="70" rx="6" fill="#1a1a2e" stroke="rgba(255,60,20,0.25)" stroke-width="1"/>
+  <text x="235" y="385" text-anchor="middle" fill="#ff3c14" font-family="monospace" font-size="10" font-weight="bold">MEMORY ISOLATION</text>
+  <text x="235" y="403" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">No cross-request state</text>
+  <text x="235" y="418" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">leakage possible</text>
+  <rect x="325" y="360" width="150" height="70" rx="6" fill="#1a1a2e" stroke="rgba(255,60,20,0.25)" stroke-width="1"/>
+  <text x="400" y="385" text-anchor="middle" fill="#ff3c14" font-family="monospace" font-size="10" font-weight="bold">NETWORK BLOCKED</text>
+  <text x="400" y="403" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">No outbound connections</text>
+  <text x="400" y="418" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">from sandboxed code</text>
+  <rect x="490" y="360" width="150" height="70" rx="6" fill="#1a1a2e" stroke="rgba(255,60,20,0.25)" stroke-width="1"/>
+  <text x="565" y="385" text-anchor="middle" fill="#ff3c14" font-family="monospace" font-size="10" font-weight="bold">TIMEOUT ENFORCED</text>
+  <text x="565" y="403" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">Max execution time</text>
+  <text x="565" y="418" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">enforced at runtime</text>
+  <!-- Bottom note -->
+  <rect x="40" y="450" width="720" height="40" rx="6" fill="#1a1a2e" stroke="rgba(255,60,20,0.25)" stroke-width="1"/>
+  <text x="400" y="472" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="10">Skills run inside sandbox · zeus exec --sandbox &lt;code&gt; · WASM plugins via zeus plugin install</text>
 </svg>

@@ -1,128 +1,109 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
   <defs>
-    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#0a0e27"/>
-      <stop offset="100%" style="stop-color:#0f1629"/>
-    </linearGradient>
-    <linearGradient id="feat" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#ffd700;stop-opacity:0.3"/>
-      <stop offset="100%" style="stop-color:#ffd700;stop-opacity:0.05"/>
-    </linearGradient>
-    <linearGradient id="cloud" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:0.3"/>
-      <stop offset="100%" style="stop-color:#00d4ff;stop-opacity:0.05"/>
-    </linearGradient>
-    <linearGradient id="local" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#00ff88;stop-opacity:0.3"/>
-      <stop offset="100%" style="stop-color:#00ff88;stop-opacity:0.05"/>
-    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
   </defs>
-  <rect width="900" height="520" fill="url(#bg2)" rx="16"/>
-
-  <text x="450" y="38" text-anchor="middle" fill="#e6edf3" font-size="15" font-weight="700" font-family="system-ui">PROVIDER FREEDOM</text>
-  <text x="450" y="56" text-anchor="middle" fill="#7d8590" font-size="9.5" font-family="system-ui">Choose your model. Switch anytime. Zero vendor lock-in.</text>
-
-  <text x="225" y="90" text-anchor="middle" fill="#ffd700" font-size="10" font-weight="600" font-family="system-ui">FEATURED</text>
-  <text x="225" y="104" text-anchor="middle" fill="#ffd700" font-size="7.5" font-family="system-ui" opacity="0.7">Anthropic · OpenAI · Google</text>
-
-  <text x="550" y="90" text-anchor="middle" fill="#00d4ff" font-size="10" font-weight="600" font-family="system-ui">CLOUD PROVIDERS</text>
-  <text x="550" y="104" text-anchor="middle" fill="#00d4ff" font-size="7.5" font-family="system-ui" opacity="0.7">Groq · Mistral · Together · Fireworks · Azure · DeepSeek · xAI</text>
-
-  <text x="810" y="90" text-anchor="middle" fill="#00ff88" font-size="10" font-weight="600" font-family="system-ui">LOCAL / ON-PREMISE</text>
-  <text x="810" y="104" text-anchor="middle" fill="#00ff88" font-size="7.5" font-family="system-ui" opacity="0.7">Ollama · LM Studio · Custom · Bedrock</text>
-
-  <line x1="375" y1="115" x2="375" y2="480" stroke="#1e2a5a" stroke-width="1"/>
-  <line x1="685" y1="115" x2="685" y2="480" stroke="#1e2a5a" stroke-width="1"/>
-  <line x1="50" y1="115" x2="850" y2="115" stroke="#1e2a5a" stroke-width="1"/>
-
-  <!-- Anthropic -->
-  <g transform="translate(50,130)">
-    <rect width="310" height="78" rx="10" fill="url(#feat)" stroke="#ffd700" stroke-width="1" stroke-opacity="0.3"/>
-    <rect width="310" height="26" rx="10" fill="#ffd700" fill-opacity="0.15"/>
-    <text x="15" y="17" fill="#ffd700" font-size="10" font-weight="700" font-family="system-ui">Anthropic</text>
-    <text x="15" y="42" fill="#e6edf3" font-size="8.5" font-family="system-ui">Claude 4.5 Sonnet · Opus · Haiku</text>
-    <text x="15" y="58" fill="#8892a4" font-size="7.5" font-family="system-ui">Function calling · Tool use · Vision</text>
-    <circle cx="283" cy="13" r="5" fill="#ffd700" opacity="0.8"/>
-    <text x="283" y="17" text-anchor="middle" fill="#0d1117" font-size="7" font-weight="700">Y</text>
-  </g>
-  <!-- OpenAI -->
-  <g transform="translate(50,218)">
-    <rect width="310" height="78" rx="10" fill="url(#feat)" stroke="#ffd700" stroke-width="1" stroke-opacity="0.3"/>
-    <rect width="310" height="26" rx="10" fill="#ffd700" fill-opacity="0.15"/>
-    <text x="15" y="17" fill="#ffd700" font-size="10" font-weight="700" font-family="system-ui">OpenAI</text>
-    <text x="15" y="42" fill="#e6edf3" font-size="8.5" font-family="system-ui">GPT-4o · o1 · o1 Mini</text>
-    <text x="15" y="58" fill="#8892a4" font-size="7.5" font-family="system-ui">Realtime API · Vision · Fine-tuning</text>
-    <circle cx="283" cy="13" r="5" fill="#ffd700" opacity="0.8"/>
-    <text x="283" y="17" text-anchor="middle" fill="#0d1117" font-size="7" font-weight="700">Y</text>
-  </g>
-  <!-- Google -->
-  <g transform="translate(50,306)">
-    <rect width="310" height="78" rx="10" fill="url(#feat)" stroke="#ffd700" stroke-width="1" stroke-opacity="0.3"/>
-    <rect width="310" height="26" rx="10" fill="#ffd700" fill-opacity="0.15"/>
-    <text x="15" y="17" fill="#ffd700" font-size="10" font-weight="700" font-family="system-ui">Google Gemini</text>
-    <text x="15" y="42" fill="#e6edf3" font-size="8.5" font-family="system-ui">Gemini 2.0 Flash · Pro · Ultra</text>
-    <text x="15" y="58" fill="#8892a4" font-size="7.5" font-family="system-ui">Long context · Native multimodal</text>
-    <circle cx="283" cy="13" r="5" fill="#ffd700" opacity="0.8"/>
-    <text x="283" y="17" text-anchor="middle" fill="#0d1117" font-size="7" font-weight="700">Y</text>
-  </g>
-
-  <!-- Cloud tiles -->
-  <g transform="translate(390,130)">
-    <rect width="280" height="58" rx="8" fill="url(#cloud)" stroke="#00d4ff" stroke-width="1" stroke-opacity="0.25"/>
-    <text x="14" y="20" fill="#00d4ff" font-size="9" font-weight="700" font-family="system-ui">Groq</text>
-    <text x="14" y="36" fill="#e6edf3" font-size="7.5" font-family="system-ui">Llama3 · Mixtral · Gemma</text>
-    <text x="14" y="50" fill="#8892a4" font-size="7" font-family="system-ui">Fast inference · Free tier</text>
-  </g>
-  <g transform="translate(390,198)">
-    <rect width="280" height="58" rx="8" fill="url(#cloud)" stroke="#00d4ff" stroke-width="1" stroke-opacity="0.25"/>
-    <text x="14" y="20" fill="#00d4ff" font-size="9" font-weight="700" font-family="system-ui">Mistral</text>
-    <text x="14" y="36" fill="#e6edf3" font-size="7.5" font-family="system-ui">Mistral Large · Codestral</text>
-    <text x="14" y="50" fill="#8892a4" font-size="7" font-family="system-ui">EU-hosted · Developer-friendly</text>
-  </g>
-  <g transform="translate(390,266)">
-    <rect width="280" height="58" rx="8" fill="url(#cloud)" stroke="#00d4ff" stroke-width="1" stroke-opacity="0.25"/>
-    <text x="14" y="20" fill="#00d4ff" font-size="9" font-weight="700" font-family="system-ui">Together AI</text>
-    <text x="14" y="36" fill="#e6edf3" font-size="7.5" font-family="system-ui">Llama3 · Qwen · DeepSeek</text>
-    <text x="14" y="50" fill="#8892a4" font-size="7" font-family="system-ui">Open model playground</text>
-  </g>
-  <g transform="translate(390,334)">
-    <rect width="280" height="58" rx="8" fill="url(#cloud)" stroke="#00d4ff" stroke-width="1" stroke-opacity="0.25"/>
-    <text x="14" y="20" fill="#00d4ff" font-size="9" font-weight="700" font-family="system-ui">Fireworks</text>
-    <text x="14" y="36" fill="#e6edf3" font-size="7.5" font-family="system-ui">Llama3 · Function calling</text>
-    <text x="14" y="50" fill="#8892a4" font-size="7" font-family="system-ui">Fast spec-compliant inference</text>
-  </g>
-  <g transform="translate(390,402)">
-    <rect width="280" height="58" rx="8" fill="url(#cloud)" stroke="#00d4ff" stroke-width="1" stroke-opacity="0.25"/>
-    <text x="14" y="20" fill="#00d4ff" font-size="9" font-weight="700" font-family="system-ui">Azure OpenAI</text>
-    <text x="14" y="36" fill="#e6edf3" font-size="7.5" font-family="system-ui">GPT-4o · o1 · Enterprise SLA</text>
-    <text x="14" y="50" fill="#8892a4" font-size="7" font-family="system-ui">Enterprise compliance · SOC2</text>
-  </g>
-
-  <!-- Local tiles -->
-  <g transform="translate(700,130)">
-    <rect width="170" height="68" rx="8" fill="url(#local)" stroke="#00ff88" stroke-width="1" stroke-opacity="0.25"/>
-    <text x="12" y="20" fill="#00ff88" font-size="9" font-weight="700" font-family="system-ui">Ollama</text>
-    <text x="12" y="36" fill="#e6edf3" font-size="7.5" font-family="system-ui">Llama3 · Phi · Gemma</text>
-    <text x="12" y="50" fill="#8892a4" font-size="7" font-family="system-ui">100% local · No data leaves</text>
-  </g>
-  <g transform="translate(700,208)">
-    <rect width="170" height="68" rx="8" fill="url(#local)" stroke="#00ff88" stroke-width="1" stroke-opacity="0.25"/>
-    <text x="12" y="20" fill="#00ff88" font-size="9" font-weight="700" font-family="system-ui">LM Studio</text>
-    <text x="12" y="36" fill="#e6edf3" font-size="7.5" font-family="system-ui">Any GGUF model</text>
-    <text x="12" y="50" fill="#8892a4" font-size="7" font-family="system-ui">GPU accel · Full privacy</text>
-  </g>
-  <g transform="translate(700,286)">
-    <rect width="170" height="68" rx="8" fill="url(#local)" stroke="#00ff88" stroke-width="1" stroke-opacity="0.25"/>
-    <text x="12" y="20" fill="#00ff88" font-size="9" font-weight="700" font-family="system-ui">Custom / OAI-Compat</text>
-    <text x="12" y="36" fill="#e6edf3" font-size="7.5" font-family="system-ui">Any OpenAI-compatible API</text>
-    <text x="12" y="50" fill="#8892a4" font-size="7" font-family="system-ui">Plug in any model server</text>
-  </g>
-  <g transform="translate(700,364)">
-    <rect width="170" height="68" rx="8" fill="url(#local)" stroke="#00ff88" stroke-width="1" stroke-opacity="0.25"/>
-    <text x="12" y="20" fill="#00ff88" font-size="9" font-weight="700" font-family="system-ui">AWS Bedrock</text>
-    <text x="12" y="36" fill="#e6edf3" font-size="7.5" font-family="system-ui">Claude · Llama · Titan</text>
-    <text x="12" y="50" fill="#8892a4" font-size="7" font-family="system-ui">AWS-native · VPC deployment</text>
-  </g>
-
-  <text x="450" y="495" text-anchor="middle" fill="#7d8590" font-size="8" font-family="system-ui">19 providers · Switch in one config line · No code changes required</text>
+  <rect width="800" height="500" fill="#0a0a0f"/>
+  <text x="400" y="30" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="15" font-weight="bold" letter-spacing="2">PROVIDER FREEDOM MATRIX</text>
+  <text x="400" y="48" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="10">19 providers · One config · Swap without code changes</text>
+  <!-- Header row -->
+  <rect x="30" y="65" width="130" height="30" rx="4" fill="#1a1a2e" stroke="rgba(255,60,20,0.25)" stroke-width="1"/>
+  <text x="95" y="84" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9" font-weight="bold">PROVIDER</text>
+  <rect x="165" y="65" width="90" height="30" rx="4" fill="#1a1a2e" stroke="rgba(255,60,20,0.25)" stroke-width="1"/>
+  <text x="210" y="84" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9" font-weight="bold">MODELS</text>
+  <rect x="260" y="65" width="90" height="30" rx="4" fill="#1a1a2e" stroke="rgba(255,60,20,0.25)" stroke-width="1"/>
+  <text x="305" y="84" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9" font-weight="bold">CONTEXT</text>
+  <rect x="355" y="65" width="70" height="30" rx="4" fill="#1a1a2e" stroke="rgba(255,60,20,0.25)" stroke-width="1"/>
+  <text x="390" y="84" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9" font-weight="bold">TOOLS</text>
+  <rect x="430" y="65" width="80" height="30" rx="4" fill="#1a1a2e" stroke="rgba(255,60,20,0.25)" stroke-width="1"/>
+  <text x="470" y="84" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9" font-weight="bold">VISION</text>
+  <rect x="515" y="65" width="70" height="30" rx="4" fill="#1a1a2e" stroke="rgba(255,60,20,0.25)" stroke-width="1"/>
+  <text x="550" y="84" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9" font-weight="bold">STREAM</text>
+  <rect x="590" y="65" width="90" height="30" rx="4" fill="#1a1a2e" stroke="rgba(255,60,20,0.25)" stroke-width="1"/>
+  <text x="635" y="84" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9" font-weight="bold">STATUS</text>
+  <rect x="685" y="65" width="85" height="30" rx="4" fill="#1a1a2e" stroke="rgba(255,60,20,0.25)" stroke-width="1"/>
+  <text x="727" y="84" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9" font-weight="bold">COST</text>
+  <!-- Row 1: Anthropic -->
+  <rect x="30" y="100" width="130" height="32" rx="4" fill="#1a1a2e" stroke="#ff3c14" stroke-width="1.5"/>
+  <text x="95" y="120" text-anchor="middle" fill="#ff3c14" font-family="monospace" font-size="9" font-weight="bold">Anthropic</text>
+  <rect x="165" y="100" width="90" height="32" rx="0" fill="#1a1a2e" stroke="none"/>
+  <text x="210" y="120" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">Claude 3.5/3.7</text>
+  <rect x="260" y="100" width="90" height="32" rx="0" fill="#1a1a2e" stroke="none"/>
+  <text x="305" y="120" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">200K</text>
+  <rect x="355" y="100" width="70" height="32" rx="0" fill="#1a1a2e" stroke="none"/>
+  <text x="390" y="120" text-anchor="middle" fill="#22c55e" font-family="monospace" font-size="9">✓</text>
+  <rect x="430" y="100" width="80" height="32" rx="0" fill="#1a1a2e" stroke="none"/>
+  <text x="470" y="120" text-anchor="middle" fill="#22c55e" font-family="monospace" font-size="9">✓</text>
+  <rect x="515" y="100" width="70" height="32" rx="0" fill="#1a1a2e" stroke="none"/>
+  <text x="550" y="120" text-anchor="middle" fill="#22c55e" font-family="monospace" font-size="9">✓</text>
+  <rect x="590" y="100" width="90" height="32" rx="0" fill="#1a1a2e" stroke="none"/>
+  <text x="635" y="120" text-anchor="middle" fill="#22c55e" font-family="monospace" font-size="9">● ACTIVE</text>
+  <rect x="685" y="100" width="85" height="32" rx="0 4 4 0" fill="#1a1a2e" stroke="none"/>
+  <text x="727" y="120" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="8">Pay-per-use</text>
+  <!-- Row 2: OpenAI -->
+  <rect x="30" y="136" width="130" height="32" rx="4" fill="#1a1a2e" stroke="rgba(255,60,20,0.25)" stroke-width="1"/>
+  <text x="95" y="156" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9" font-weight="bold">OpenAI</text>
+  <rect x="165" y="136" width="90" height="32" rx="0" fill="#1a1a2e" stroke="none"/>
+  <text x="210" y="156" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">GPT-4o/o1/o3</text>
+  <rect x="260" y="136" width="90" height="32" rx="0" fill="#1a1a2e" stroke="none"/>
+  <text x="305" y="156" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">128K</text>
+  <rect x="355" y="136" width="70" height="32" rx="0" fill="#1a1a2e" stroke="none"/>
+  <text x="390" y="156" text-anchor="middle" fill="#22c55e" font-family="monospace" font-size="9">✓</text>
+  <rect x="430" y="136" width="80" height="32" rx="0" fill="#1a1a2e" stroke="none"/>
+  <text x="470" y="156" text-anchor="middle" fill="#22c55e" font-family="monospace" font-size="9">✓</text>
+  <rect x="515" y="136" width="70" height="32" rx="0" fill="#1a1a2e" stroke="none"/>
+  <text x="550" y="156" text-anchor="middle" fill="#22c55e" font-family="monospace" font-size="9">✓</text>
+  <rect x="590" y="136" width="90" height="32" rx="0" fill="#1a1a2e" stroke="none"/>
+  <text x="635" y="156" text-anchor="middle" fill="#22c55e" font-family="monospace" font-size="9">● ACTIVE</text>
+  <rect x="685" y="136" width="85" height="32" rx="0 4 4 0" fill="#1a1a2e" stroke="none"/>
+  <text x="727" y="156" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="8">Pay-per-use</text>
+  <!-- Row 3: Google -->
+  <rect x="30" y="172" width="130" height="32" rx="4" fill="#1a1a2e" stroke="rgba(255,60,20,0.25)" stroke-width="1"/>
+  <text x="95" y="192" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9" font-weight="bold">Google</text>
+  <rect x="165" y="172" width="90" height="32" rx="0" fill="#1a1a2e" stroke="none"/>
+  <text x="210" y="192" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">Gemini 1.5/2.0</text>
+  <rect x="260" y="172" width="90" height="32" rx="0" fill="#1a1a2e" stroke="none"/>
+  <text x="305" y="192" text-anchor="middle" fill="#22c55e" font-family="monospace" font-size="9">2M</text>
+  <rect x="355" y="172" width="70" height="32" rx="0" fill="#1a1a2e" stroke="none"/>
+  <text x="390" y="192" text-anchor="middle" fill="#22c55e" font-family="monospace" font-size="9">✓</text>
+  <rect x="430" y="172" width="80" height="32" rx="0" fill="#1a1a2e" stroke="none"/>
+  <text x="470" y="192" text-anchor="middle" fill="#22c55e" font-family="monospace" font-size="9">✓</text>
+  <rect x="515" y="172" width="70" height="32" rx="0" fill="#1a1a2e" stroke="none"/>
+  <text x="550" y="192" text-anchor="middle" fill="#22c55e" font-family="monospace" font-size="9">✓</text>
+  <rect x="590" y="172" width="90" height="32" rx="0" fill="#1a1a2e" stroke="none"/>
+  <text x="635" y="192" text-anchor="middle" fill="#22c55e" font-family="monospace" font-size="9">● ACTIVE</text>
+  <rect x="685" y="172" width="85" height="32" rx="0 4 4 0" fill="#1a1a2e" stroke="none"/>
+  <text x="727" y="192" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="8">Pay-per-use</text>
+  <!-- Rows 4-7 (grouped) -->
+  <rect x="30" y="208" width="130" height="100" rx="4" fill="#1a1a2e" stroke="rgba(255,60,20,0.25)" stroke-width="1"/>
+  <text x="95" y="235" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">Ollama · Groq</text>
+  <text x="95" y="250" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">Mistral · Together</text>
+  <text x="95" y="265" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">Fireworks · Azure</text>
+  <text x="95" y="290" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">+ 9 more</text>
+  <rect x="165" y="208" width="90" height="100" rx="0" fill="#1a1a2e" stroke="none"/>
+  <text x="210" y="250" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">Local +</text>
+  <text x="210" y="265" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">cloud models</text>
+  <rect x="260" y="208" width="90" height="100" rx="0" fill="#1a1a2e" stroke="none"/>
+  <text x="305" y="250" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">varies</text>
+  <rect x="355" y="208" width="70" height="100" rx="0" fill="#1a1a2e" stroke="none"/>
+  <text x="390" y="250" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">mostly</text>
+  <rect x="430" y="208" width="80" height="100" rx="0" fill="#1a1a2e" stroke="none"/>
+  <text x="470" y="250" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">varies</text>
+  <rect x="515" y="208" width="70" height="100" rx="0" fill="#1a1a2e" stroke="none"/>
+  <text x="550" y="250" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">mostly</text>
+  <rect x="590" y="208" width="90" height="100" rx="0" fill="#1a1a2e" stroke="none"/>
+  <text x="635" y="250" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">● READY</text>
+  <rect x="685" y="208" width="85" height="100" rx="0 4 4 0" fill="#1a1a2e" stroke="none"/>
+  <text x="727" y="240" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">Free</text>
+  <text x="727" y="258" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">(local)</text>
+  <text x="727" y="276" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">or</text>
+  <text x="727" y="294" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">pay-per-use</text>
+  <!-- Footer -->
+  <rect x="30" y="315" width="740" height="45" rx="6" fill="#1a1a2e" stroke="#ff3c14" stroke-width="1.5" filter="url(#glow)"/>
+  <text x="400" y="335" text-anchor="middle" fill="#ff3c14" font-family="monospace" font-size="11" font-weight="bold">PROVIDER-AGNOSTIC RUNTIME</text>
+  <text x="400" y="352" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="10">Swap provider in config.toml · Zero code changes · All tools work across all providers</text>
+  <text x="30" y="390" text-anchor="left" fill="#7d8590" font-family="monospace" font-size="9">Supported: Anthropic · OpenAI · Google · Ollama · Groq · Mistral · Together · Fireworks · Azure · Bedrock · DeepSeek · xAI · Cerebras · Moonshot · Zhipu · Qwen · Novita · Lepton · AiDev · Hyper</text>
+  <text x="400" y="470" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="10">config.toml: provider = "anthropic" · zeus config set provider openai · No reinstallation needed</text>
 </svg>

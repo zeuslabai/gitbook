@@ -12,48 +12,20 @@
       </feMerge>
     </filter>
   </defs>
-  
-  <!-- Background -->
-  <rect width="800" height="600" fill="#0a0a14"/>
-  
-  <!-- Shield outline -->
-  <path d="M400 60 L620 140 L620 340 Q620 480 400 560 Q180 480 180 340 L180 140 Z" 
-        fill="none" stroke="#00d4ff" stroke-width="3" filter="url(#glow)"/>
-  
-  <!-- Layer 4: Audit (outermost) -->
-  <path d="M400 85 L595 155 L595 330 Q595 455 400 530 Q205 455 205 330 L205 155 Z" 
-        fill="rgba(0,212,255,0.05)" stroke="#00d4ff" stroke-width="1.5" stroke-dasharray="8,4"/>
-  
-  <!-- Layer 3: Execution -->
-  <path d="M400 110 L570 170 L570 320 Q570 430 400 500 Q230 430 230 320 L230 170 Z" 
-        fill="rgba(0,255,136,0.05)" stroke="#00ff88" stroke-width="1.5" stroke-dasharray="8,4"/>
-  
-  <!-- Layer 2: Channel -->
-  <path d="M400 135 L545 185 L545 310 Q545 405 400 470 Q255 405 255 310 L255 185 Z" 
-        fill="rgba(255,170,0,0.05)" stroke="#ffaa00" stroke-width="1.5" stroke-dasharray="8,4"/>
-  
-  <!-- Layer 1: Identity (innermost) -->
-  <path d="M400 160 L520 200 L520 300 Q520 380 400 440 Q280 380 280 300 L280 200 Z" 
-        fill="rgba(255,68,204,0.08)" stroke="#ff44cc" stroke-width="2"/>
-  
-  <!-- Layer labels -->
-  <text x="400" y="200" text-anchor="middle" fill="#ff44cc" font-family="monospace" font-size="14" font-weight="bold">IDENTITY</text>
-  <text x="400" y="218" text-anchor="middle" fill="#ff44cc" font-family="monospace" font-size="10" opacity="0.8">Verify · Auth · Claims</text>
-  
-  <text x="400" y="275" text-anchor="middle" fill="#ffaa00" font-family="monospace" font-size="14" font-weight="bold">CHANNEL</text>
-  <text x="400" y="293" text-anchor="middle" fill="#ffaa00" font-family="monospace" font-size="10" opacity="0.8">Discord · Telegram · Slack</text>
-  
-  <text x="400" y="350" text-anchor="middle" fill="#00ff88" font-family="monospace" font-size="14" font-weight="bold">EXECUTION</text>
-  <text x="400" y="368" text-anchor="middle" fill="#00ff88" font-family="monospace" font-size="10" opacity="0.8">WASM Sandbox · Isolated</text>
-  
-  <text x="400" y="425" text-anchor="middle" fill="#00d4ff" font-family="monospace" font-size="14" font-weight="bold">AUDIT</text>
-  <text x="400" y="443" text-anchor="middle" fill="#00d4ff" font-family="monospace" font-size="10" opacity="0.8">Immutable Log · Compliance</text>
-  
-  <!-- Title -->
-  <text x="400" y="40" text-anchor="middle" fill="#ffffff" font-family="monospace" font-size="18" font-weight="bold" letter-spacing="3">AEGIS SECURITY</text>
-  <text x="400" y="580" text-anchor="middle" fill="#666" font-family="monospace" font-size="11">Zero-Trust Defense in Depth · 4 Independent Layers</text>
-  
-  <!-- Checkmark at center -->
-  <circle cx="400" cy="310" r="25" fill="none" stroke="#00ff88" stroke-width="2"/>
-  <path d="M388 310 L396 318 L414 300" fill="none" stroke="#00ff88" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect width="800" height="600" fill="#0a0a0f"/>
+  <path d="M400 60 L620 140 L620 340 Q620 480 400 560 Q180 480 180 340 L180 140 Z" fill="none" stroke="#ff3c14" stroke-width="3" filter="url(#glow)"/>
+  <path d="M400 85 L595 155 L595 330 Q595 455 400 530 Q205 455 205 330 L205 155 Z" fill="rgba(255,60,20,0.05)" stroke="#ff3c14" stroke-width="1.5" stroke-dasharray="8,4"/>
+  <path d="M400 110 L570 170 L570 320 Q570 430 400 500 Q230 430 230 320 L230 170 Z" fill="rgba(34,197,94,0.05)" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="8,4"/>
+  <path d="M400 135 L545 185 L545 310 Q545 405 400 470 Q255 405 255 310 L255 185 Z" fill="rgba(255,60,20,0.08)" stroke="#ff3c14" stroke-width="1.5" stroke-dasharray="8,4"/>
+  <path d="M400 160 L520 200 L520 300 Q520 380 400 440 Q280 380 280 300 L280 200 Z" fill="rgba(255,60,20,0.12)" stroke="#ff3c14" stroke-width="2"/>
+  <circle cx="400" cy="310" r="22" fill="none" stroke="#22c55e" stroke-width="2"/>
+  <path d="M388 310 L396 318 L414 300" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="400" y="220" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="14" font-weight="bold">AEGIS SECURITY</text>
+  <text x="400" y="240" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="10">Zero-Trust Defense in Depth · 4 Independent Layers</text>
+  <text x="400" y="285" text-anchor="middle" fill="#ff3c14" font-family="monospace" font-size="12" font-weight="bold">ID AUTH</text>
+  <text x="400" y="335" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="12" font-weight="bold">CHANNEL AUTH</text>
+  <text x="400" y="390" text-anchor="middle" fill="#ff3c14" font-family="monospace" font-size="12" font-weight="bold">EXEC BOUND</text>
+  <text x="400" y="440" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="12" font-weight="bold">AUDIT</text>
+  <text x="400" y="458" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9" opacity="0.8">Immutable Log · Compliance</text>
+  <text x="400" y="580" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="10">Identity → Channel → Execution → Audit · All Independent</text>
 </svg>

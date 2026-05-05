@@ -1,100 +1,70 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
   <defs>
-    <filter id="glow3">
-      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
-      <feMerge>
-        <feMergeNode in="coloredBlur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
+    <marker id="arrow" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L7,3 z" fill="#ff3c14"/>
+    </marker>
   </defs>
-  
-  <rect width="800" height="600" fill="#0a0a14"/>
-  
-  <!-- Title -->
-  <text x="400" y="35" text-anchor="middle" fill="#ffffff" font-family="monospace" font-size="16" font-weight="bold" letter-spacing="2">PANTHEON ORCHESTRATION</text>
-  <text x="400" y="55" text-anchor="middle" fill="#666" font-family="monospace" font-size="11">Multi-Agent Collaboration at Scale · War Rooms · Missions · Plan Cards</text>
-  
-  <!-- Pantheon Supervisor at top -->
-  <ellipse cx="400" cy="110" rx="100" ry="40" fill="rgba(0,212,255,0.1)" stroke="#00d4ff" stroke-width="2"/>
-  <text x="400" y="105" text-anchor="middle" fill="#00d4ff" font-family="monospace" font-size="12" font-weight="bold">PANTHEON</text>
-  <text x="400" y="122" text-anchor="middle" fill="#888" font-family="monospace" font-size="10">Supervisor</text>
-  
-  <!-- War Room -->
-  <rect x="200" y="170" width="400" height="50" rx="8" fill="rgba(255,170,0,0.08)" stroke="#ffaa00" stroke-width="2"/>
-  <text x="400" y="195" text-anchor="middle" fill="#ffaa00" font-family="monospace" font-size="13" font-weight="bold">WAR ROOM: Production Incident</text>
-  <text x="400" y="212" text-anchor="middle" fill="#888" font-family="monospace" font-size="10">Institutional knowledge · Collaborative context · Shared memory</text>
-  
-  <!-- Connecting lines from supervisor to war room -->
-  <path d="M340 150 L340 170" fill="none" stroke="#00d4ff" stroke-width="1.5"/>
-  <path d="M400 150 L400 170" fill="none" stroke="#00d4ff" stroke-width="1.5"/>
-  <path d="M460 150 L460 170" fill="none" stroke="#00d4ff" stroke-width="1.5"/>
-  
-  <!-- Agent nodes -->
-  <!-- Agent 1: Zeus -->
-  <rect x="80" y="250" width="130" height="80" rx="8" fill="#1a1a2e" stroke="#ff44cc" stroke-width="2" filter="url(#glow3)"/>
-  <text x="145" y="278" text-anchor="middle" fill="#ff44cc" font-family="monospace" font-size="12" font-weight="bold">ZEUS</text>
-  <text x="145" y="295" text-anchor="middle" fill="#888" font-family="monospace" font-size="9">Planner</text>
-  <rect x="95" y="305" width="100" height="16" rx="3" fill="rgba(255,68,204,0.15)" stroke="#ff44cc" stroke-width="1"/>
-  <text x="145" y="316" text-anchor="middle" fill="#ff44cc" font-family="monospace" font-size="8">system-admin skill</text>
-  
-  <!-- Agent 2: Titan A -->
-  <rect x="240" y="250" width="130" height="80" rx="8" fill="#1a1a2e" stroke="#00ff88" stroke-width="2" filter="url(#glow3)"/>
-  <text x="305" y="278" text-anchor="middle" fill="#00ff88" font-family="monospace" font-size="12" font-weight="bold">TITAN A</text>
-  <text x="305" y="295" text-anchor="middle" fill="#888" font-family="monospace" font-size="9">Frontend</text>
-  <rect x="255" y="305" width="100" height="16" rx="3" fill="rgba(0,255,136,0.15)" stroke="#00ff88" stroke-width="1"/>
-  <text x="305" y="316" text-anchor="middle" fill="#00ff88" font-family="monospace" font-size="8">code skill</text>
-  
-  <!-- Agent 3: Titan B -->
-  <rect x="400" y="250" width="130" height="80" rx="8" fill="#1a1a2e" stroke="#00d4ff" stroke-width="2" filter="url(#glow3)"/>
-  <text x="465" y="278" text-anchor="middle" fill="#00d4ff" font-family="monospace" font-size="12" font-weight="bold">TITAN B</text>
-  <text x="465" y="295" text-anchor="middle" fill="#888" font-family="monospace" font-size="9">Backend</text>
-  <rect x="415" y="305" width="100" height="16" rx="3" fill="rgba(0,212,255,0.15)" stroke="#00d4ff" stroke-width="1"/>
-  <text x="465" y="316" text-anchor="middle" fill="#00d4ff" font-family="monospace" font-size="8">code + database</text>
-  
-  <!-- Agent 4: Mnemosyne -->
-  <rect x="560" y="250" width="130" height="80" rx="8" fill="#1a1a2e" stroke="#ffaa00" stroke-width="2" filter="url(#glow3)"/>
-  <text x="625" y="278" text-anchor="middle" fill="#ffaa00" font-family="monospace" font-size="12" font-weight="bold">MNEMOSYNE</text>
-  <text x="625" y="295" text-anchor="middle" fill="#888" font-family="monospace" font-size="9">Memory</text>
-  <rect x="575" y="305" width="100" height="16" rx="3" fill="rgba(255,170,0,0.15)" stroke="#ffaa00" stroke-width="1"/>
-  <text x="625" y="316" text-anchor="middle" fill="#ffaa00" font-family="monospace" font-size="8">memory skill</text>
-  
-  <!-- Connecting lines from war room to agents -->
-  <path d="M280 220 L145 250" fill="none" stroke="#ffaa00" stroke-width="1.5" stroke-dasharray="5,3"/>
-  <path d="M340 220 L305 250" fill="none" stroke="#ffaa00" stroke-width="1.5" stroke-dasharray="5,3"/>
-  <path d="M460 220 L465 250" fill="none" stroke="#ffaa00" stroke-width="1.5" stroke-dasharray="5,3"/>
-  <path d="M520 220 L625 250" fill="none" stroke="#ffaa00" stroke-width="1.5" stroke-dasharray="5,3"/>
-  
-  <!-- Mission box -->
-  <rect x="80" y="370" width="260" height="60" rx="6" fill="rgba(0,212,255,0.06)" stroke="#00d4ff" stroke-width="1.5"/>
-  <text x="210" y="395" text-anchor="middle" fill="#00d4ff" font-family="monospace" font-size="11" font-weight="bold">MISSION</text>
-  <text x="210" y="412" text-anchor="middle" fill="#888" font-family="monospace" font-size="9">Structured complex work</text>
-  <text x="210" y="425" text-anchor="middle" fill="#666" font-family="monospace" font-size="9">Objective · Tasks · Deadlines</text>
-  
-  <!-- Plan Cards -->
-  <rect x="370" y="370" width="180" height="60" rx="6" fill="rgba(255,68,204,0.06)" stroke="#ff44cc" stroke-width="1.5"/>
-  <text x="460" y="395" text-anchor="middle" fill="#ff44cc" font-family="monospace" font-size="11" font-weight="bold">PLAN CARDS</text>
-  <text x="460" y="412" text-anchor="middle" fill="#888" font-family="monospace" font-size="9">Granular tracking</text>
-  <text x="460" y="425" text-anchor="middle" fill="#666" font-family="monospace" font-size="9">Status · Assignment · Notes</text>
-  
-  <!-- Operator oversight -->
-  <rect x="580" y="370" width="160" height="60" rx="6" fill="rgba(0,255,136,0.06)" stroke="#00ff88" stroke-width="1.5"/>
-  <text x="660" y="395" text-anchor="middle" fill="#00ff88" font-family="monospace" font-size="11" font-weight="bold">OPERATOR</text>
-  <text x="660" y="412" text-anchor="middle" fill="#888" font-family="monospace" font-size="9">Human oversight</text>
-  <text x="660" y="425" text-anchor="middle" fill="#666" font-family="monospace" font-size="9">Approve · Intervene · Cancel</text>
-  
-  <!-- Connecting lines to mission/plan/operator -->
-  <path d="M145 330 L145 370" fill="none" stroke="#666" stroke-width="1"/>
-  <path d="M145 400 L210 400" fill="none" stroke="#666" stroke-width="1"/>
-  <path d="M305 330 L305 370" fill="none" stroke="#666" stroke-width="1"/>
-  <path d="M305 400 L380 400" fill="none" stroke="#666" stroke-width="1"/>
-  <path d="M465 330 L465 370" fill="none" stroke="#666" stroke-width="1"/>
-  <path d="M465 400 L460 400" fill="none" stroke="#666" stroke-width="1"/>
-  <path d="M625 330 L660 370" fill="none" stroke="#666" stroke-width="1"/>
-  
-  <!-- Key concept -->
-  <text x="400" y="480" text-anchor="middle" fill="#888" font-family="monospace" font-size="11">A Pantheon of Titans working in concert — each deity bringing their domain of expertise</text>
-  
-  <!-- Footer -->
-  <text x="400" y="575" text-anchor="middle" fill="#444" font-family="monospace" font-size="10">One Titan is powerful · A Pantheon of Titans is unstoppable</text>
+  <rect width="800" height="500" fill="#0a0a0f"/>
+  <text x="400" y="30" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="15" font-weight="bold" letter-spacing="2">PANTHEON ORCHESTRATION</text>
+  <text x="400" y="48" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="10">Multi-agent coordination framework · Fleet-level mission control</text>
+  <!-- Pantheon (top) -->
+  <rect x="300" y="70" width="200" height="55" rx="8" fill="#1a1a2e" stroke="#ff3c14" stroke-width="2.5" filter="url(#glow)"/>
+  <text x="400" y="92" text-anchor="middle" fill="#ff3c14" font-family="monospace" font-size="13" font-weight="bold">PANTHEON COORDINATOR</text>
+  <text x="400" y="108" text-anchor="middle" fill="#22c55e" font-family="monospace" font-size="10">● MISSION ACTIVE</text>
+  <!-- Arrows down to 4 titans -->
+  <line x1="330" y1="125" x2="150" y2="190" stroke="#ff3c14" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="380" y1="125" x2="370" y2="190" stroke="#ff3c14" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="420" y1="125" x2="430" y2="190" stroke="#ff3c14" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="470" y1="125" x2="650" y2="190" stroke="#ff3c14" stroke-width="2" marker-end="url(#arrow)"/>
+  <!-- Titan A -->
+  <rect x="50" y="200" width="160" height="70" rx="8" fill="#1a1a2e" stroke="#ff3c14" stroke-width="2" filter="url(#glow)"/>
+  <text x="130" y="225" text-anchor="middle" fill="#ff3c14" font-family="monospace" font-size="11" font-weight="bold">ZEUS112</text>
+  <text x="130" y="243" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">Research Titan</text>
+  <text x="130" y="258" text-anchor="middle" fill="#22c55e" font-family="monospace" font-size="9">● RUNNING</text>
+  <!-- Titan B -->
+  <rect x="280" y="200" width="160" height="70" rx="8" fill="#1a1a2e" stroke="#ff3c14" stroke-width="2" filter="url(#glow)"/>
+  <text x="360" y="225" text-anchor="middle" fill="#ff3c14" font-family="monospace" font-size="11" font-weight="bold">ZEUS107</text>
+  <text x="360" y="243" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">Code Titan</text>
+  <text x="360" y="258" text-anchor="middle" fill="#22c55e" font-family="monospace" font-size="9">● RUNNING</text>
+  <!-- Titan C -->
+  <rect x="510" y="200" width="160" height="70" rx="8" fill="#1a1a2e" stroke="#ff3c14" stroke-width="2" filter="url(#glow)"/>
+  <text x="590" y="225" text-anchor="middle" fill="#ff3c14" font-family="monospace" font-size="11" font-weight="bold">ZEUS112</text>
+  <text x="590" y="243" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">Security Titan</text>
+  <text x="590" y="258" text-anchor="middle" fill="#22c55e" font-family="monospace" font-size="9">● RUNNING</text>
+  <!-- Titan D -->
+  <rect x="590" y="200" width="160" height="70" rx="8" fill="#1a1a2e" stroke="#ff3c14" stroke-width="2" filter="url(#glow)"/>
+  <text x="670" y="225" text-anchor="middle" fill="#ff3c14" font-family="monospace" font-size="11" font-weight="bold">ZEUSMOLTY</text>
+  <text x="670" y="243" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">Data Titan</text>
+  <text x="670" y="258" text-anchor="middle" fill="#22c55e" font-family="monospace" font-size="9">● RUNNING</text>
+  <!-- Horizontal fleet bus -->
+  <line x1="130" y1="270" x2="130" y2="310" stroke="#ff3c14" stroke-width="1.5"/>
+  <line x1="360" y1="270" x2="360" y2="310" stroke="#ff3c14" stroke-width="1.5"/>
+  <line x1="590" y1="270" x2="590" y2="310" stroke="#ff3c14" stroke-width="1.5"/>
+  <line x1="670" y1="270" x2="670" y2="310" stroke="#ff3c14" stroke-width="1.5"/>
+  <line x1="130" y1="310" x2="670" y2="310" stroke="#ff3c14" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <text x="400" y="318" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">A2A fleet bus · shared mission context</text>
+  <!-- Lower panels -->
+  <rect x="30" y="330" width="230" height="120" rx="8" fill="#1a1a2e" stroke="rgba(255,60,20,0.25)" stroke-width="1"/>
+  <text x="145" y="355" text-anchor="middle" fill="#ff3c14" font-family="monospace" font-size="11" font-weight="bold">MISSION CONTROL</text>
+  <text x="145" y="378" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">pantheon mission new</text>
+  <text x="145" y="395" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">pantheon mission status</text>
+  <text x="145" y="412" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">pantheon mission abort</text>
+  <text x="145" y="435" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">Fleet-level observability</text>
+  <rect x="285" y="330" width="230" height="120" rx="8" fill="#1a1a2e" stroke="rgba(255,60,20,0.25)" stroke-width="1"/>
+  <text x="400" y="355" text-anchor="middle" fill="#ff3c14" font-family="monospace" font-size="11" font-weight="bold">A2A PROTOCOL</text>
+  <text x="400" y="378" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">Agent-to-agent messaging</text>
+  <text x="400" y="395" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">Shared state negotiation</text>
+  <text x="400" y="412" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">Distributed task handoff</text>
+  <text x="400" y="435" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">Open standard · No vendor lock-in</text>
+  <rect x="540" y="330" width="230" height="120" rx="8" fill="#1a1a2e" stroke="rgba(255,60,20,0.25)" stroke-width="1"/>
+  <text x="655" y="355" text-anchor="middle" fill="#ff3c14" font-family="monospace" font-size="11" font-weight="bold">RESULTS AGGREGATION</text>
+  <text x="655" y="378" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">Sub-agent outputs merged</text>
+  <text x="655" y="395" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">Consensus resolution</text>
+  <text x="655" y="412" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">Final deliverable to user</text>
+  <text x="655" y="435" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">Structured JSON output</text>
+  <text x="400" y="475" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="10">Pantheon · Zeus100 · Zeus112 · zeus107 · zeusmolty · Any Titan · yours</text>
 </svg>
