@@ -1,85 +1,161 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 580">
   <defs>
-    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
-      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    <!-- Glow filters -->
+    <filter id="glow-soft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
-    <marker id="arrow" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto">
-      <path d="M0,0 L0,6 L7,3 z" fill="#ff3c14"/>
+    <filter id="glow-strong" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="8" result="b1"/>
+      <feGaussianBlur stdDeviation="3" in="SourceGraphic" result="b2"/>
+      <feMerge><feMergeNode in="b1"/><feMergeNode in="b2"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glow-inner" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <!-- Background gradient -->
+    <radialGradient id="bg-rad" cx="50%" cy="40%" r="80%">
+      <stop offset="0%" stop-color="#12100e" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#050403" stop-opacity="1"/>
+    </radialGradient>
+
+    <!-- Scan lines pattern -->
+    <pattern id="scanlines" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="4" y2="0" stroke="#ff3c14" stroke-width="0.4" opacity="0.04"/>
+    </pattern>
+
+    <!-- Grid pattern -->
+    <pattern id="grid" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ff3c14" stroke-width="0.5" opacity="0.05"/>
+    </pattern>
+
+    <!-- Arrow markers -->
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,1 L0,9 L10,5 Z" fill="#ff3c14"/>
     </marker>
+    <marker id="arrow-amber" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,1 L0,9 L10,5 Z" fill="#ffa050"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,1 L0,9 L10,5 Z" fill="#22c55e"/>
+    </marker>
+    <marker id="arrow-cyan" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,1 L0,9 L10,5 Z" fill="#06b6d4"/>
+    </marker>
+
+    <!-- Focal core gradient -->
+    <radialGradient id="core-rad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff6842" stop-opacity="0.9"/>
+      <stop offset="60%" stop-color="#ff3c14" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#ff3c14" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Glow orb gradients per accent -->
+    <radialGradient id="orb-crimson" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff3c14" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#ff3c14" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orb-amber" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffa050" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#ffa050" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orb-green" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#22c55e" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#22c55e" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orb-cyan" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0"/>
+    </radialGradient>
   </defs>
-  <rect width="800" height="500" fill="#0a0a0f"/>
-  <text x="400" y="32" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="15" font-weight="bold" letter-spacing="2">COGNITIVE ENGINE PIPELINE</text>
-  <text x="400" y="50" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="10">Observe → Think → Act → Remember → Coordinate</text>
-  <!-- Stage 1: Observe -->
-  <rect x="20" y="80" width="120" height="70" rx="8" fill="#1a1a2e" stroke="#ff3c14" stroke-width="2" filter="url(#glow)"/>
-  <text x="80" y="108" text-anchor="middle" fill="#ff3c14" font-family="monospace" font-size="11" font-weight="bold">OBSERVE</text>
-  <text x="80" y="124" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">Parse input</text>
-  <text x="80" y="138" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">Channel events</text>
-  <!-- Arrow 1→2 -->
-  <line x1="140" y1="115" x2="170" y2="115" stroke="#ff3c14" stroke-width="2" marker-end="url(#arrow)"/>
-  <!-- Stage 2: Think -->
-  <rect x="180" y="80" width="120" height="70" rx="8" fill="#1a1a2e" stroke="#ff3c14" stroke-width="2" filter="url(#glow)"/>
-  <text x="240" y="108" text-anchor="middle" fill="#ff3c14" font-family="monospace" font-size="11" font-weight="bold">THINK</text>
-  <text x="240" y="124" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">LLM reasoning</text>
-  <text x="240" y="138" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">Tool selection</text>
-  <!-- Arrow 2→3 -->
-  <line x1="300" y1="115" x2="330" y2="115" stroke="#ff3c14" stroke-width="2" marker-end="url(#arrow)"/>
-  <!-- Stage 3: Act -->
-  <rect x="340" y="80" width="120" height="70" rx="8" fill="#1a1a2e" stroke="#ff3c14" stroke-width="2" filter="url(#glow)"/>
-  <text x="400" y="108" text-anchor="middle" fill="#ff3c14" font-family="monospace" font-size="11" font-weight="bold">ACT</text>
-  <text x="400" y="124" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">Execute tools</text>
-  <text x="400" y="138" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">API calls</text>
-  <!-- Arrow 3→4 -->
-  <line x1="460" y1="115" x2="490" y2="115" stroke="#ff3c14" stroke-width="2" marker-end="url(#arrow)"/>
-  <!-- Stage 4: Remember -->
-  <rect x="500" y="80" width="120" height="70" rx="8" fill="#1a1a2e" stroke="#22c55e" stroke-width="2" filter="url(#glow)"/>
-  <text x="560" y="108" text-anchor="middle" fill="#22c55e" font-family="monospace" font-size="11" font-weight="bold">REMEMBER</text>
-  <text x="560" y="124" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">Mnemosyne</text>
-  <text x="560" y="138" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">Vector store</text>
-  <!-- Arrow 4→5 -->
-  <line x1="620" y1="115" x2="650" y2="115" stroke="#22c55e" stroke-width="2" marker-end="url(#arrow)"/>
-  <!-- Stage 5: Coordinate -->
-  <rect x="660" y="80" width="120" height="70" rx="8" fill="#1a1a2e" stroke="#ff3c14" stroke-width="2" filter="url(#glow)"/>
-  <text x="720" y="108" text-anchor="middle" fill="#ff3c14" font-family="monospace" font-size="11" font-weight="bold">COORDINATE</text>
-  <text x="720" y="124" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">Titan dispatch</text>
-  <text x="720" y="138" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">Fleet comms</text>
-  <!-- Loop arrow -->
-  <path d="M720 150 Q720 195 400 195 Q80 195 80 150" fill="none" stroke="#ff3c14" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.6"/>
-  <text x="400" y="190" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="10">event loop · continuous cycle</text>
-  <!-- Context panel -->
-  <rect x="20" y="220" width="230" height="200" rx="8" fill="#1a1a2e" stroke="rgba(255,60,20,0.25)" stroke-width="1"/>
-  <text x="135" y="245" text-anchor="middle" fill="#ff3c14" font-family="monospace" font-size="11" font-weight="bold">INJECTED CONTEXT</text>
-  <text x="135" y="270" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">Session history</text>
-  <text x="135" y="285" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">Memory (vector + FTS)</text>
-  <text x="135" y="300" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">Titan identity</text>
-  <text x="135" y="315" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">Channel personality</text>
-  <text x="135" y="330" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">Skills registry</text>
-  <text x="135" y="345" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">Platform state</text>
-  <text x="135" y="370" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">Context injected on every</text>
-  <text x="135" y="384" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">cognitive loop iteration</text>
-  <!-- Tools panel -->
-  <rect x="285" y="220" width="230" height="200" rx="8" fill="#1a1a2e" stroke="rgba(255,60,20,0.25)" stroke-width="1"/>
-  <text x="400" y="245" text-anchor="middle" fill="#ff3c14" font-family="monospace" font-size="11" font-weight="bold">AVAILABLE TOOLS (212)</text>
-  <text x="400" y="270" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">Code execution</text>
-  <text x="400" y="285" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">File read/write</text>
-  <text x="400" y="300" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">Web search + fetch</text>
-  <text x="400" y="315" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">Shell command</text>
-  <text x="400" y="330" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">Discord/Telegram/Slack</text>
-  <text x="400" y="345" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">MCP tool bridging</text>
-  <text x="400" y="370" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">Skills extend toolset</text>
-  <text x="400" y="384" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">dynamically at runtime</text>
-  <!-- Providers panel -->
-  <rect x="550" y="220" width="230" height="200" rx="8" fill="#1a1a2e" stroke="rgba(255,60,20,0.25)" stroke-width="1"/>
-  <text x="665" y="245" text-anchor="middle" fill="#ff3c14" font-family="monospace" font-size="11" font-weight="bold">LLM PROVIDERS (19)</text>
-  <text x="665" y="270" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">Anthropic Claude</text>
-  <text x="665" y="285" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">OpenAI GPT-5.5</text>
-  <text x="665" y="300" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">Google Gemini</text>
-  <text x="665" y="315" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">Ollama · Groq · Mistral</text>
-  <text x="665" y="330" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">Together · Fireworks</text>
-  <text x="665" y="345" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">Azure · Bedrock · DeepSeek</text>
-  <text x="665" y="370" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">Provider-agnostic runtime</text>
-  <text x="665" y="384" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">swap without code changes</text>
-  <!-- Footer -->
-  <text x="400" y="475" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="10">Event-driven · Non-blocking · Streaming token output · Full tool fidelity</text>
+  
+  <!-- Background layers -->
+  <rect width="900" height="580" fill="#050403"/>
+  <rect width="900" height="580" fill="url(#bg-rad)"/>
+  <rect width="900" height="580" fill="url(#grid)"/>
+  <rect width="900" height="580" fill="url(#scanlines)"/>
+
+  <!-- Corner brackets -->
+  <g stroke="#a0301a" stroke-width="1.5" fill="none" opacity="0.6">
+    <path d="M 14 14 L 14 36 M 14 14 L 36 14"/>
+    <path d="M 886 14 L 886 36 M 886 14 L 864 14"/>
+    <path d="M 14 566 L 14 544 M 14 566 L 36 566"/>
+    <path d="M 886 566 L 886 544 M 886 566 L 864 566"/>
+  </g>
+
+  <!-- Top header bar -->
+  <line x1="40" y1="46" x2="100" y2="46" stroke="#ff3c14" stroke-width="1.5"/>
+  <text x="40" y="40" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#ff3c14" font-weight="700" letter-spacing="4">ZEUS</text>
+  <text x="120" y="40" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#8a8278" letter-spacing="3">02 · ENGINE</text>
+  <text x="860" y="40" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#5a5650" text-anchor="end" letter-spacing="2">NOVAXAI · 2026</text>
+
+  <!-- Title -->
+  <text x="40" y="80" font-family="Tektur, 'Tektur', 'Inter', 'Helvetica Neue', sans-serif" font-size="24" fill="#f5f0eb" font-weight="700" letter-spacing="2">Cognitive Engine Pipeline</text>
+  <text x="40" y="102" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="13" fill="#8a8278" font-style="italic" letter-spacing="0.5">Observe → Think → Act → Remember → Coordinate</text>
+
+  <circle cx="135.0" cy="210" r="80" fill="url(#orb-crimson)" opacity="0.3"/>
+  <rect x="60" y="165" width="150" height="90" fill="#12100e" stroke="#ff3c14" stroke-width="1.5" filter="url(#glow-inner)"/>
+  <rect x="60" y="165" width="150" height="3" fill="#ff3c14"/>
+  <!-- Step number -->
+  <text x="72" y="187" font-family="Tektur, 'Tektur', 'Inter', 'Helvetica Neue', sans-serif" font-size="22" fill="#ff3c14" font-weight="700" opacity="0.4">01</text>
+  <text x="198" y="187" text-anchor="end" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#ff3c14" font-weight="700" letter-spacing="2">OBS</text>
+  <text x="135.0" y="215" text-anchor="middle" font-family="Tektur, 'Tektur', 'Inter', 'Helvetica Neue', sans-serif" font-size="14" fill="#f5f0eb" font-weight="700" letter-spacing="2">OBSERVE</text>
+  <text x="135.0" y="235" text-anchor="middle" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="10" fill="#8a8278">Parse input · Channel events</text>
+<line x1="211" y1="210" x2="221" y2="210" stroke="#ff3c14" stroke-width="1.5" marker-end="url(#arrow)"/><circle cx="297.0" cy="210" r="80" fill="url(#orb-crimson)" opacity="0.3"/>
+  <rect x="222" y="165" width="150" height="90" fill="#12100e" stroke="#ff3c14" stroke-width="1.5" filter="url(#glow-inner)"/>
+  <rect x="222" y="165" width="150" height="3" fill="#ff3c14"/>
+  <!-- Step number -->
+  <text x="234" y="187" font-family="Tektur, 'Tektur', 'Inter', 'Helvetica Neue', sans-serif" font-size="22" fill="#ff3c14" font-weight="700" opacity="0.4">02</text>
+  <text x="360" y="187" text-anchor="end" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#ff3c14" font-weight="700" letter-spacing="2">THK</text>
+  <text x="297.0" y="215" text-anchor="middle" font-family="Tektur, 'Tektur', 'Inter', 'Helvetica Neue', sans-serif" font-size="14" fill="#f5f0eb" font-weight="700" letter-spacing="2">THINK</text>
+  <text x="297.0" y="235" text-anchor="middle" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="10" fill="#8a8278">LLM reasoning · Tool selection</text>
+<line x1="373" y1="210" x2="383" y2="210" stroke="#ff3c14" stroke-width="1.5" marker-end="url(#arrow)"/><circle cx="459.0" cy="210" r="80" fill="url(#orb-crimson)" opacity="0.3"/>
+  <rect x="384" y="165" width="150" height="90" fill="#12100e" stroke="#ff3c14" stroke-width="1.5" filter="url(#glow-inner)"/>
+  <rect x="384" y="165" width="150" height="3" fill="#ff3c14"/>
+  <!-- Step number -->
+  <text x="396" y="187" font-family="Tektur, 'Tektur', 'Inter', 'Helvetica Neue', sans-serif" font-size="22" fill="#ff3c14" font-weight="700" opacity="0.4">03</text>
+  <text x="522" y="187" text-anchor="end" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#ff3c14" font-weight="700" letter-spacing="2">ACT</text>
+  <text x="459.0" y="215" text-anchor="middle" font-family="Tektur, 'Tektur', 'Inter', 'Helvetica Neue', sans-serif" font-size="14" fill="#f5f0eb" font-weight="700" letter-spacing="2">ACT</text>
+  <text x="459.0" y="235" text-anchor="middle" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="10" fill="#8a8278">Execute tools · API calls</text>
+<line x1="535" y1="210" x2="545" y2="210" stroke="#ff3c14" stroke-width="1.5" marker-end="url(#arrow)"/><circle cx="621.0" cy="210" r="80" fill="url(#orb-crimson)" opacity="0.3"/>
+  <rect x="546" y="165" width="150" height="90" fill="#12100e" stroke="#ffa050" stroke-width="1.5" filter="url(#glow-inner)"/>
+  <rect x="546" y="165" width="150" height="3" fill="#ffa050"/>
+  <!-- Step number -->
+  <text x="558" y="187" font-family="Tektur, 'Tektur', 'Inter', 'Helvetica Neue', sans-serif" font-size="22" fill="#ffa050" font-weight="700" opacity="0.4">04</text>
+  <text x="684" y="187" text-anchor="end" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#ffa050" font-weight="700" letter-spacing="2">MEM</text>
+  <text x="621.0" y="215" text-anchor="middle" font-family="Tektur, 'Tektur', 'Inter', 'Helvetica Neue', sans-serif" font-size="14" fill="#f5f0eb" font-weight="700" letter-spacing="2">REMEMBER</text>
+  <text x="621.0" y="235" text-anchor="middle" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="10" fill="#8a8278">Mnemosyne · Vector store</text>
+<line x1="697" y1="210" x2="707" y2="210" stroke="#ffa050" stroke-width="1.5" marker-end="url(#arrow-amber)"/><circle cx="783.0" cy="210" r="80" fill="url(#orb-crimson)" opacity="0.3"/>
+  <rect x="708" y="165" width="150" height="90" fill="#12100e" stroke="#22c55e" stroke-width="1.5" filter="url(#glow-inner)"/>
+  <rect x="708" y="165" width="150" height="3" fill="#22c55e"/>
+  <!-- Step number -->
+  <text x="720" y="187" font-family="Tektur, 'Tektur', 'Inter', 'Helvetica Neue', sans-serif" font-size="22" fill="#22c55e" font-weight="700" opacity="0.4">05</text>
+  <text x="846" y="187" text-anchor="end" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#22c55e" font-weight="700" letter-spacing="2">COR</text>
+  <text x="783.0" y="215" text-anchor="middle" font-family="Tektur, 'Tektur', 'Inter', 'Helvetica Neue', sans-serif" font-size="14" fill="#f5f0eb" font-weight="700" letter-spacing="2">COORDINATE</text>
+  <text x="783.0" y="235" text-anchor="middle" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="10" fill="#8a8278">Titan dispatch · Fleet comms</text>
+
+  <path d="M 858 255 Q 450.0 315 60 255"
+        fill="none" stroke="#a0301a" stroke-width="1" stroke-dasharray="6,4" opacity="0.6"/>
+  <text x="450.0" y="313" text-anchor="middle" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="10" fill="#8a8278" letter-spacing="2">EVENT LOOP · CONTINUOUS CYCLE</text>
+
+  <rect x="57.0" y="350" width="250" height="170" fill="#12100e" stroke="#2e2218" stroke-width="0.75"/>
+  <rect x="57.0" y="350" width="3" height="170" fill="#ff3c14"/>
+  <text x="75.0" y="372" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="10" fill="#ff3c14" font-weight="700" letter-spacing="3">INJECTED CONTEXT</text>
+  <line x1="75.0" y1="380" x2="289.0" y2="380" stroke="#2e2218" stroke-width="0.5"/>
+<text x="79.0" y="400" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="11" fill="#d4cfc8">▸ Session history</text><text x="79.0" y="416" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="11" fill="#d4cfc8">▸ Memory (vector + FTS)</text><text x="79.0" y="432" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="11" fill="#d4cfc8">▸ Titan identity</text><text x="79.0" y="448" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="11" fill="#d4cfc8">▸ Channel personality</text><text x="79.0" y="464" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="11" fill="#d4cfc8">▸ Skills registry</text><text x="79.0" y="480" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="11" fill="#d4cfc8">▸ Platform state</text><text x="75.0" y="505" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="10" fill="#5a5650" font-style="italic">Injected on every loop iteration</text>
+  <rect x="325.0" y="350" width="250" height="170" fill="#12100e" stroke="#2e2218" stroke-width="0.75"/>
+  <rect x="325.0" y="350" width="3" height="170" fill="#ff3c14"/>
+  <text x="343.0" y="372" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="10" fill="#ff3c14" font-weight="700" letter-spacing="3">AVAILABLE TOOLS · 365</text>
+  <line x1="343.0" y1="380" x2="557.0" y2="380" stroke="#2e2218" stroke-width="0.5"/>
+<text x="347.0" y="400" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="11" fill="#d4cfc8">▸ Code execution</text><text x="347.0" y="416" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="11" fill="#d4cfc8">▸ File read / write</text><text x="347.0" y="432" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="11" fill="#d4cfc8">▸ Web search + fetch</text><text x="347.0" y="448" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="11" fill="#d4cfc8">▸ Shell command</text><text x="347.0" y="464" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="11" fill="#d4cfc8">▸ Discord / Telegram / Slack</text><text x="347.0" y="480" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="11" fill="#d4cfc8">▸ MCP tool bridging</text><text x="343.0" y="505" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="10" fill="#5a5650" font-style="italic">Skills extend toolset dynamically</text>
+  <rect x="593.0" y="350" width="250" height="170" fill="#12100e" stroke="#2e2218" stroke-width="0.75"/>
+  <rect x="593.0" y="350" width="3" height="170" fill="#ff3c14"/>
+  <text x="611.0" y="372" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="10" fill="#ff3c14" font-weight="700" letter-spacing="3">LLM PROVIDERS · 11</text>
+  <line x1="611.0" y1="380" x2="825.0" y2="380" stroke="#2e2218" stroke-width="0.5"/>
+<text x="615.0" y="400" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="11" fill="#d4cfc8">▸ Anthropic Claude</text><text x="615.0" y="416" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="11" fill="#d4cfc8">▸ OpenAI GPT-4o</text><text x="615.0" y="432" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="11" fill="#d4cfc8">▸ Google Gemini</text><text x="615.0" y="448" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="11" fill="#d4cfc8">▸ Ollama · Groq · Mistral</text><text x="615.0" y="464" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="11" fill="#d4cfc8">▸ MiniMax · Together</text><text x="615.0" y="480" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="11" fill="#d4cfc8">▸ Azure · Bedrock</text><text x="611.0" y="505" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="10" fill="#5a5650" font-style="italic">Provider-agnostic runtime</text>
+
+  <!-- Bottom note -->
+  <text x="450.0" y="555" text-anchor="middle" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="11" fill="#5a5650" font-style="italic">Event-driven · Non-blocking · Streaming token output · Full tool fidelity</text>
 </svg>

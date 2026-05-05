@@ -1,31 +1,143 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 580">
   <defs>
-    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#1a1a2e"/>
-      <stop offset="100%" style="stop-color:#16213e"/>
-    </linearGradient>
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-      <feMerge>
-        <feMergeNode in="coloredBlur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
+    <!-- Glow filters -->
+    <filter id="glow-soft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
+    <filter id="glow-strong" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="8" result="b1"/>
+      <feGaussianBlur stdDeviation="3" in="SourceGraphic" result="b2"/>
+      <feMerge><feMergeNode in="b1"/><feMergeNode in="b2"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glow-inner" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <!-- Background gradient -->
+    <radialGradient id="bg-rad" cx="50%" cy="40%" r="80%">
+      <stop offset="0%" stop-color="#12100e" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#050403" stop-opacity="1"/>
+    </radialGradient>
+
+    <!-- Scan lines pattern -->
+    <pattern id="scanlines" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="4" y2="0" stroke="#ff3c14" stroke-width="0.4" opacity="0.04"/>
+    </pattern>
+
+    <!-- Grid pattern -->
+    <pattern id="grid" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ff3c14" stroke-width="0.5" opacity="0.05"/>
+    </pattern>
+
+    <!-- Arrow markers -->
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,1 L0,9 L10,5 Z" fill="#ff3c14"/>
+    </marker>
+    <marker id="arrow-amber" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,1 L0,9 L10,5 Z" fill="#ffa050"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,1 L0,9 L10,5 Z" fill="#22c55e"/>
+    </marker>
+    <marker id="arrow-cyan" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,1 L0,9 L10,5 Z" fill="#06b6d4"/>
+    </marker>
+
+    <!-- Focal core gradient -->
+    <radialGradient id="core-rad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff6842" stop-opacity="0.9"/>
+      <stop offset="60%" stop-color="#ff3c14" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#ff3c14" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Glow orb gradients per accent -->
+    <radialGradient id="orb-crimson" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff3c14" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#ff3c14" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orb-amber" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffa050" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#ffa050" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orb-green" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#22c55e" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#22c55e" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orb-cyan" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0"/>
+    </radialGradient>
   </defs>
-  <rect width="800" height="600" fill="#0a0a0f"/>
-  <path d="M400 60 L620 140 L620 340 Q620 480 400 560 Q180 480 180 340 L180 140 Z" fill="none" stroke="#ff3c14" stroke-width="3" filter="url(#glow)"/>
-  <path d="M400 85 L595 155 L595 330 Q595 455 400 530 Q205 455 205 330 L205 155 Z" fill="rgba(255,60,20,0.05)" stroke="#ff3c14" stroke-width="1.5" stroke-dasharray="8,4"/>
-  <path d="M400 110 L570 170 L570 320 Q570 430 400 500 Q230 430 230 320 L230 170 Z" fill="rgba(34,197,94,0.05)" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="8,4"/>
-  <path d="M400 135 L545 185 L545 310 Q545 405 400 470 Q255 405 255 310 L255 185 Z" fill="rgba(255,60,20,0.08)" stroke="#ff3c14" stroke-width="1.5" stroke-dasharray="8,4"/>
-  <path d="M400 160 L520 200 L520 300 Q520 380 400 440 Q280 380 280 300 L280 200 Z" fill="rgba(255,60,20,0.12)" stroke="#ff3c14" stroke-width="2"/>
-  <circle cx="400" cy="310" r="22" fill="none" stroke="#22c55e" stroke-width="2"/>
-  <path d="M388 310 L396 318 L414 300" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-  <text x="400" y="220" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="14" font-weight="bold">AEGIS SECURITY</text>
-  <text x="400" y="240" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="10">Zero-Trust Defense in Depth · 4 Independent Layers</text>
-  <text x="400" y="285" text-anchor="middle" fill="#ff3c14" font-family="monospace" font-size="12" font-weight="bold">ID AUTH</text>
-  <text x="400" y="335" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="12" font-weight="bold">CHANNEL AUTH</text>
-  <text x="400" y="390" text-anchor="middle" fill="#ff3c14" font-family="monospace" font-size="12" font-weight="bold">EXEC BOUND</text>
-  <text x="400" y="440" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="12" font-weight="bold">AUDIT</text>
-  <text x="400" y="458" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9" opacity="0.8">Immutable Log · Compliance</text>
-  <text x="400" y="580" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="10">Identity → Channel → Execution → Audit · All Independent</text>
+  
+  <!-- Background layers -->
+  <rect width="900" height="580" fill="#050403"/>
+  <rect width="900" height="580" fill="url(#bg-rad)"/>
+  <rect width="900" height="580" fill="url(#grid)"/>
+  <rect width="900" height="580" fill="url(#scanlines)"/>
+
+  <!-- Corner brackets -->
+  <g stroke="#a0301a" stroke-width="1.5" fill="none" opacity="0.6">
+    <path d="M 14 14 L 14 36 M 14 14 L 36 14"/>
+    <path d="M 886 14 L 886 36 M 886 14 L 864 14"/>
+    <path d="M 14 566 L 14 544 M 14 566 L 36 566"/>
+    <path d="M 886 566 L 886 544 M 886 566 L 864 566"/>
+  </g>
+
+  <!-- Top header bar -->
+  <line x1="40" y1="46" x2="100" y2="46" stroke="#ff3c14" stroke-width="1.5"/>
+  <text x="40" y="40" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#ff3c14" font-weight="700" letter-spacing="4">ZEUS</text>
+  <text x="120" y="40" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#8a8278" letter-spacing="3">03 · SECURITY</text>
+  <text x="860" y="40" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#5a5650" text-anchor="end" letter-spacing="2">NOVAXAI · 2026</text>
+
+  <!-- Title -->
+  <text x="40" y="80" font-family="Tektur, 'Tektur', 'Inter', 'Helvetica Neue', sans-serif" font-size="24" fill="#f5f0eb" font-weight="700" letter-spacing="2">Aegis · 4-Layer Defense</text>
+  <text x="40" y="102" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="13" fill="#8a8278" font-style="italic" letter-spacing="0.5">Concentric sandbox model · OS to WASM</text>
+
+  <circle cx="450" cy="310" r="240" fill="url(#orb-crimson)" opacity="0.4"/>
+  <circle cx="450" cy="310" r="200" fill="none" stroke="#6b1018" stroke-width="2" opacity="0.85"/>
+  <circle cx="450" cy="310" r="198" fill="none" stroke="#6b1018" stroke-width="0.5" opacity="0.4"/>
+
+  <circle cx="450" cy="310" r="160" fill="none" stroke="#8a2018" stroke-width="2" opacity="0.85"/>
+  <circle cx="450" cy="310" r="158" fill="none" stroke="#8a2018" stroke-width="0.5" opacity="0.4"/>
+
+  <circle cx="450" cy="310" r="120" fill="none" stroke="#b03018" stroke-width="2" opacity="0.85"/>
+  <circle cx="450" cy="310" r="118" fill="none" stroke="#b03018" stroke-width="0.5" opacity="0.4"/>
+
+  <circle cx="450" cy="310" r="80" fill="none" stroke="#ff3c14" stroke-width="2" opacity="0.85"/>
+  <circle cx="450" cy="310" r="78" fill="none" stroke="#ff3c14" stroke-width="0.5" opacity="0.4"/>
+
+  <circle cx="450" cy="310" r="40" fill="#050403" stroke="#ff6842" stroke-width="2" filter="url(#glow-strong)"/>
+  <circle cx="450" cy="310" r="32" fill="none" stroke="#ff3c14" stroke-width="0.5" opacity="0.5"/>
+  <!-- Lock icon: rectangle body + arc top -->
+  <rect x="441" y="307" width="18" height="12" fill="#ff6842" rx="1"/>
+  <path d="M 444 307 L 444 301 A 6 6 0 0 1 456 301 L 456 307" fill="none" stroke="#ff6842" stroke-width="2"/>
+  <text x="450" y="335" text-anchor="middle" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="8" fill="#f5f0eb" font-weight="700" letter-spacing="2">YOUR DATA</text>
+
+  <line x1="308.5786437626905" y1="451.4213562373095" x2="273.22330470336317" y2="486.7766952966369" stroke="#6b1018" stroke-width="0.75" opacity="0.6"/>
+  <circle cx="273.22330470336317" cy="486.7766952966369" r="3" fill="#6b1018"/>
+
+  <text x="261.22330470336317" y="480.7766952966369" text-anchor="end" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#6b1018" font-weight="700" letter-spacing="2">L1 · OS SANDBOX</text>
+  <text x="261.22330470336317" y="496.7766952966369" text-anchor="end" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="10" fill="#8a8278">Seatbelt · macOS</text>
+
+  <line x1="563.1370849898476" y1="423.1370849898476" x2="626.776695296637" y2="486.77669529663683" stroke="#8a2018" stroke-width="0.75" opacity="0.6"/>
+  <circle cx="626.776695296637" cy="486.77669529663683" r="3" fill="#8a2018"/>
+
+  <text x="638.776695296637" y="480.77669529663683" text-anchor="start" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#8a2018" font-weight="700" letter-spacing="2">L2 · CMD FILTER</text>
+  <text x="638.776695296637" y="496.77669529663683" text-anchor="start" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="10" fill="#8a8278">Allowlists · approval gates</text>
+
+  <line x1="534.8528137423857" y1="225.1471862576143" x2="626.7766952966368" y2="133.22330470336308" stroke="#b03018" stroke-width="0.75" opacity="0.6"/>
+  <circle cx="626.7766952966368" cy="133.22330470336308" r="3" fill="#b03018"/>
+
+  <text x="638.7766952966368" y="127.22330470336308" text-anchor="start" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#b03018" font-weight="700" letter-spacing="2">L3 · AUDIT TRAIL</text>
+  <text x="638.7766952966368" y="143.22330470336308" text-anchor="start" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="10" fill="#8a8278">JSONL · 0600 perms</text>
+
+  <line x1="393.4314575050762" y1="253.4314575050762" x2="273.22330470336306" y2="133.22330470336314" stroke="#ff3c14" stroke-width="0.75" opacity="0.6"/>
+  <circle cx="273.22330470336306" cy="133.22330470336314" r="3" fill="#ff3c14"/>
+
+  <text x="261.22330470336306" y="127.22330470336314" text-anchor="end" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#ff3c14" font-weight="700" letter-spacing="2">L4 · WASM SANDBOX</text>
+  <text x="261.22330470336306" y="143.22330470336314" text-anchor="end" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="10" fill="#8a8278">Capability isolation</text>
+<text x="225.0" y="535" text-anchor="middle" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="10" fill="#22c55e" font-weight="700" letter-spacing="2">● 0600 PERMS</text><text x="375.0" y="535" text-anchor="middle" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="10" fill="#ff3c14" font-weight="700" letter-spacing="2">● ZERO TRUST</text><text x="525.0" y="535" text-anchor="middle" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="10" fill="#ffa050" font-weight="700" letter-spacing="2">● APPROVAL GATES</text><text x="675.0" y="535" text-anchor="middle" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="10" fill="#06b6d4" font-weight="700" letter-spacing="2">● SEATBELT</text>
+  <text x="450.0" y="555" text-anchor="middle" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="11" fill="#5a5650" font-style="italic">Identity · Channels · Execution · Audit · No independent state</text>
 </svg>
