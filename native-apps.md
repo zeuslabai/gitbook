@@ -31,7 +31,7 @@ Zeus leverages Tailscale to solve the hardest problem in distributed systems: se
 
 This means your Desktop app running on a laptop in a coffee shop connects to your Zeus daemon running on a home server through Tailscale's relay infrastructure—no port forwarding, no dynamic DNS, no firewall wrestling. The Tailscale API integration handles authentication, address assignment, and connection management automatically, keeping your Zeus infrastructure invisible to the public internet while remaining accessible to your authorized tailnet.
 
-## Desktop App (macOS, Windows, Linux)
+## Desktop App (macOS, Linux, Windows — Coming Soon)
 
 The Zeus Desktop application delivers a full-featured graphical interface for managing your entire agent infrastructure. Built with Tauri for native performance and a small binary footprint, the desktop app provides the most comprehensive view of your Zeus environment.
 

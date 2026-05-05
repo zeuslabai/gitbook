@@ -22,7 +22,7 @@ Zeus runs anywhere Rust runs:
 | **Linux (ARM/RPI)** | ✅ Full | Raspberry Pi, OrangePi, ARM SBCs |
 | **FreeBSD** | ✅ Full | Via `cargo install` or binary |
 | **RISC-V** | ✅ Full | For embedded/edge deployments |
-| **Windows (WSL2)** | ✅ Full | Recommended on Windows |
+| **Windows** | 🔜 Coming Soon | Native Windows support in development |
 | **Docker** | ✅ Full | Official images on GitHub Container Registry |
 
 **Minimum requirements:** 2GB RAM, 1GB disk space. Full TUI/desktop experience needs 4GB+.
