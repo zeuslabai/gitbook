@@ -98,7 +98,7 @@ base_url = "https://api.openai.com/v1"
 
 [providers.anthropic]
 api_key = "sk-ant-..."
-model = "claude-3-5-sonnet-20241022"
+model = "claude-sonnet-4-6"
 
 [providers.ollama]
 base_url = "http://localhost:11434"
