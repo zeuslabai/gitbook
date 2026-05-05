@@ -1,70 +1,148 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 580">
   <defs>
-    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
-      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    <!-- Glow filters -->
+    <filter id="glow-soft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
-    <marker id="arrow" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto">
-      <path d="M0,0 L0,6 L7,3 z" fill="#ff3c14"/>
+    <filter id="glow-strong" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="8" result="b1"/>
+      <feGaussianBlur stdDeviation="3" in="SourceGraphic" result="b2"/>
+      <feMerge><feMergeNode in="b1"/><feMergeNode in="b2"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glow-inner" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <!-- Background gradient -->
+    <radialGradient id="bg-rad" cx="50%" cy="40%" r="80%">
+      <stop offset="0%" stop-color="#12100e" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#050403" stop-opacity="1"/>
+    </radialGradient>
+
+    <!-- Scan lines pattern -->
+    <pattern id="scanlines" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="4" y2="0" stroke="#ff3c14" stroke-width="0.4" opacity="0.04"/>
+    </pattern>
+
+    <!-- Grid pattern -->
+    <pattern id="grid" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ff3c14" stroke-width="0.5" opacity="0.05"/>
+    </pattern>
+
+    <!-- Arrow markers -->
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,1 L0,9 L10,5 Z" fill="#ff3c14"/>
     </marker>
+    <marker id="arrow-amber" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,1 L0,9 L10,5 Z" fill="#ffa050"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,1 L0,9 L10,5 Z" fill="#22c55e"/>
+    </marker>
+    <marker id="arrow-cyan" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,1 L0,9 L10,5 Z" fill="#06b6d4"/>
+    </marker>
+
+    <!-- Focal core gradient -->
+    <radialGradient id="core-rad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff6842" stop-opacity="0.9"/>
+      <stop offset="60%" stop-color="#ff3c14" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#ff3c14" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Glow orb gradients per accent -->
+    <radialGradient id="orb-crimson" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff3c14" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#ff3c14" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orb-amber" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffa050" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#ffa050" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orb-green" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#22c55e" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#22c55e" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orb-cyan" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0"/>
+    </radialGradient>
   </defs>
-  <rect width="800" height="500" fill="#0a0a0f"/>
-  <text x="400" y="30" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="15" font-weight="bold" letter-spacing="2">PANTHEON ORCHESTRATION</text>
-  <text x="400" y="48" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="10">Multi-agent coordination framework · Fleet-level mission control</text>
-  <!-- Pantheon (top) -->
-  <rect x="300" y="70" width="200" height="55" rx="8" fill="#1a1a2e" stroke="#ff3c14" stroke-width="2.5" filter="url(#glow)"/>
-  <text x="400" y="92" text-anchor="middle" fill="#ff3c14" font-family="monospace" font-size="13" font-weight="bold">PANTHEON COORDINATOR</text>
-  <text x="400" y="108" text-anchor="middle" fill="#22c55e" font-family="monospace" font-size="10">● MISSION ACTIVE</text>
-  <!-- Arrows down to 4 titans -->
-  <line x1="330" y1="125" x2="150" y2="190" stroke="#ff3c14" stroke-width="2" marker-end="url(#arrow)"/>
-  <line x1="380" y1="125" x2="370" y2="190" stroke="#ff3c14" stroke-width="2" marker-end="url(#arrow)"/>
-  <line x1="420" y1="125" x2="430" y2="190" stroke="#ff3c14" stroke-width="2" marker-end="url(#arrow)"/>
-  <line x1="470" y1="125" x2="650" y2="190" stroke="#ff3c14" stroke-width="2" marker-end="url(#arrow)"/>
-  <!-- Titan A -->
-  <rect x="50" y="200" width="160" height="70" rx="8" fill="#1a1a2e" stroke="#ff3c14" stroke-width="2" filter="url(#glow)"/>
-  <text x="130" y="225" text-anchor="middle" fill="#ff3c14" font-family="monospace" font-size="11" font-weight="bold">ZEUS112</text>
-  <text x="130" y="243" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">Research Titan</text>
-  <text x="130" y="258" text-anchor="middle" fill="#22c55e" font-family="monospace" font-size="9">● RUNNING</text>
-  <!-- Titan B -->
-  <rect x="280" y="200" width="160" height="70" rx="8" fill="#1a1a2e" stroke="#ff3c14" stroke-width="2" filter="url(#glow)"/>
-  <text x="360" y="225" text-anchor="middle" fill="#ff3c14" font-family="monospace" font-size="11" font-weight="bold">ZEUS107</text>
-  <text x="360" y="243" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">Code Titan</text>
-  <text x="360" y="258" text-anchor="middle" fill="#22c55e" font-family="monospace" font-size="9">● RUNNING</text>
-  <!-- Titan C -->
-  <rect x="510" y="200" width="160" height="70" rx="8" fill="#1a1a2e" stroke="#ff3c14" stroke-width="2" filter="url(#glow)"/>
-  <text x="590" y="225" text-anchor="middle" fill="#ff3c14" font-family="monospace" font-size="11" font-weight="bold">ZEUS112</text>
-  <text x="590" y="243" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">Security Titan</text>
-  <text x="590" y="258" text-anchor="middle" fill="#22c55e" font-family="monospace" font-size="9">● RUNNING</text>
-  <!-- Titan D -->
-  <rect x="590" y="200" width="160" height="70" rx="8" fill="#1a1a2e" stroke="#ff3c14" stroke-width="2" filter="url(#glow)"/>
-  <text x="670" y="225" text-anchor="middle" fill="#ff3c14" font-family="monospace" font-size="11" font-weight="bold">ZEUSMOLTY</text>
-  <text x="670" y="243" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">Data Titan</text>
-  <text x="670" y="258" text-anchor="middle" fill="#22c55e" font-family="monospace" font-size="9">● RUNNING</text>
-  <!-- Horizontal fleet bus -->
-  <line x1="130" y1="270" x2="130" y2="310" stroke="#ff3c14" stroke-width="1.5"/>
-  <line x1="360" y1="270" x2="360" y2="310" stroke="#ff3c14" stroke-width="1.5"/>
-  <line x1="590" y1="270" x2="590" y2="310" stroke="#ff3c14" stroke-width="1.5"/>
-  <line x1="670" y1="270" x2="670" y2="310" stroke="#ff3c14" stroke-width="1.5"/>
-  <line x1="130" y1="310" x2="670" y2="310" stroke="#ff3c14" stroke-width="1.5" stroke-dasharray="6,4"/>
-  <text x="400" y="318" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">A2A fleet bus · shared mission context</text>
-  <!-- Lower panels -->
-  <rect x="30" y="330" width="230" height="120" rx="8" fill="#1a1a2e" stroke="rgba(255,60,20,0.25)" stroke-width="1"/>
-  <text x="145" y="355" text-anchor="middle" fill="#ff3c14" font-family="monospace" font-size="11" font-weight="bold">MISSION CONTROL</text>
-  <text x="145" y="378" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">pantheon mission new</text>
-  <text x="145" y="395" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">pantheon mission status</text>
-  <text x="145" y="412" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">pantheon mission abort</text>
-  <text x="145" y="435" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">Fleet-level observability</text>
-  <rect x="285" y="330" width="230" height="120" rx="8" fill="#1a1a2e" stroke="rgba(255,60,20,0.25)" stroke-width="1"/>
-  <text x="400" y="355" text-anchor="middle" fill="#ff3c14" font-family="monospace" font-size="11" font-weight="bold">A2A PROTOCOL</text>
-  <text x="400" y="378" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">Agent-to-agent messaging</text>
-  <text x="400" y="395" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">Shared state negotiation</text>
-  <text x="400" y="412" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">Distributed task handoff</text>
-  <text x="400" y="435" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">Open standard · No vendor lock-in</text>
-  <rect x="540" y="330" width="230" height="120" rx="8" fill="#1a1a2e" stroke="rgba(255,60,20,0.25)" stroke-width="1"/>
-  <text x="655" y="355" text-anchor="middle" fill="#ff3c14" font-family="monospace" font-size="11" font-weight="bold">RESULTS AGGREGATION</text>
-  <text x="655" y="378" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">Sub-agent outputs merged</text>
-  <text x="655" y="395" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">Consensus resolution</text>
-  <text x="655" y="412" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">Final deliverable to user</text>
-  <text x="655" y="435" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">Structured JSON output</text>
-  <text x="400" y="475" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="10">Pantheon · Zeus · Hermes · Aegis · Mnemosyne · Any Titan · yours</text>
+  
+  <!-- Background layers -->
+  <rect width="900" height="580" fill="#050403"/>
+  <rect width="900" height="580" fill="url(#bg-rad)"/>
+  <rect width="900" height="580" fill="url(#grid)"/>
+  <rect width="900" height="580" fill="url(#scanlines)"/>
+
+  <!-- Corner brackets -->
+  <g stroke="#a0301a" stroke-width="1.5" fill="none" opacity="0.6">
+    <path d="M 14 14 L 14 36 M 14 14 L 36 14"/>
+    <path d="M 886 14 L 886 36 M 886 14 L 864 14"/>
+    <path d="M 14 566 L 14 544 M 14 566 L 36 566"/>
+    <path d="M 886 566 L 886 544 M 886 566 L 864 566"/>
+  </g>
+
+  <!-- Top header bar -->
+  <line x1="40" y1="46" x2="100" y2="46" stroke="#ff3c14" stroke-width="1.5"/>
+  <text x="40" y="40" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#ff3c14" font-weight="700" letter-spacing="4">ZEUS</text>
+  <text x="120" y="40" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#8a8278" letter-spacing="3">07 · PANTHEON</text>
+  <text x="860" y="40" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#5a5650" text-anchor="end" letter-spacing="2">NOVAXAI · 2026</text>
+
+  <!-- Title -->
+  <text x="40" y="80" font-family="Tektur, 'Tektur', 'Inter', 'Helvetica Neue', sans-serif" font-size="24" fill="#f5f0eb" font-weight="700" letter-spacing="2">Pantheon Orchestration</text>
+  <text x="40" y="102" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="13" fill="#8a8278" font-style="italic" letter-spacing="0.5">Where AI agents become a team · War rooms · Missions · A2A protocol</text>
+
+  
+  <!-- Coordinator halo -->
+  <circle cx="450.0" cy="190" r="120" fill="url(#orb-crimson)" opacity="0.4"/>
+
+  <!-- Coordinator node -->
+  <rect x="320.0" y="165" width="260" height="60" fill="#12100e" stroke="#ff3c14" stroke-width="2" filter="url(#glow-soft)"/>
+  <rect x="320.0" y="165" width="4" height="60" fill="#ff3c14"/>
+  <text x="450.0" y="187" text-anchor="middle" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="10" fill="#ff3c14" font-weight="700" letter-spacing="3">PANTHEON COORDINATOR</text>
+  <text x="450.0" y="209" text-anchor="middle" font-family="Tektur, 'Tektur', 'Inter', 'Helvetica Neue', sans-serif" font-size="14" fill="#f5f0eb" font-weight="700">Mission · v0.4.7 release prep</text>
+<line x1="450.0" y1="225" x2="194.0" y2="290" stroke="#ff3c14" stroke-width="1" opacity="0.4" stroke-dasharray="3,3"/>
+  <rect x="74.0" y="290" width="240" height="80" fill="#12100e" stroke="#ff3c14" stroke-width="1.5"/>
+  <rect x="74.0" y="290" width="3" height="80" fill="#ff3c14"/>
+  <circle cx="96.0" cy="315" r="6" fill="#ff3c14"/>
+  <text x="112.0" y="308" font-family="Tektur, 'Tektur', 'Inter', 'Helvetica Neue', sans-serif" font-size="14" fill="#f5f0eb" font-weight="700">ZEUS112</text>
+  <text x="112.0" y="324" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="10" fill="#8a8278">Backend &amp; Architecture</text>
+  <text x="92.0" y="348" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#22c55e" letter-spacing="2">● ACTIVE</text>
+  <text x="296.0" y="348" text-anchor="end" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#5a5650" letter-spacing="2">A2A · WAR ROOM</text>
+<line x1="450.0" y1="225" x2="450.0" y2="290" stroke="#ff3c14" stroke-width="1" opacity="0.4" stroke-dasharray="3,3"/>
+  <rect x="330.0" y="290" width="240" height="80" fill="#12100e" stroke="#ff3c14" stroke-width="1.5"/>
+  <rect x="330.0" y="290" width="3" height="80" fill="#ff3c14"/>
+  <circle cx="352.0" cy="315" r="6" fill="#ff3c14"/>
+  <text x="368.0" y="308" font-family="Tektur, 'Tektur', 'Inter', 'Helvetica Neue', sans-serif" font-size="14" fill="#f5f0eb" font-weight="700">zeus106</text>
+  <text x="368.0" y="324" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="10" fill="#8a8278">Code Review</text>
+  <text x="348.0" y="348" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#ffa050" letter-spacing="2">● RUNNING</text>
+  <text x="552.0" y="348" text-anchor="end" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#5a5650" letter-spacing="2">A2A · WAR ROOM</text>
+<line x1="450.0" y1="225" x2="706.0" y2="290" stroke="#ffa050" stroke-width="1" opacity="0.4" stroke-dasharray="3,3"/>
+  <rect x="586.0" y="290" width="240" height="80" fill="#12100e" stroke="#ffa050" stroke-width="1.5"/>
+  <rect x="586.0" y="290" width="3" height="80" fill="#ffa050"/>
+  <circle cx="608.0" cy="315" r="6" fill="#ffa050"/>
+  <text x="624.0" y="308" font-family="Tektur, 'Tektur', 'Inter', 'Helvetica Neue', sans-serif" font-size="14" fill="#f5f0eb" font-weight="700">ZeusMkt</text>
+  <text x="624.0" y="324" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="10" fill="#8a8278">Marketing</text>
+  <text x="604.0" y="348" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#ffa050" letter-spacing="2">● RUNNING</text>
+  <text x="808.0" y="348" text-anchor="end" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#5a5650" letter-spacing="2">A2A · WAR ROOM</text>
+
+  <rect x="48.0" y="405" width="260" height="115" fill="#12100e" stroke="#2e2218" stroke-width="0.75"/>
+  <rect x="48.0" y="405" width="3" height="115" fill="#ff3c14"/>
+  <text x="66.0" y="427" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="10" fill="#ff3c14" font-weight="700" letter-spacing="3">MISSION CONTROL</text>
+  <line x1="66.0" y1="435" x2="290.0" y2="435" stroke="#2e2218" stroke-width="0.5"/>
+<text x="70.0" y="455" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="11" fill="#d4cfc8">▸ pantheon mission start</text><text x="70.0" y="471" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="11" fill="#d4cfc8">▸ pantheon mission watch</text><text x="70.0" y="487" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="11" fill="#d4cfc8">▸ pantheon mission abort</text><text x="70.0" y="503" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="11" fill="#d4cfc8">▸ Plan card approval gates</text>
+  <rect x="320.0" y="405" width="260" height="115" fill="#12100e" stroke="#2e2218" stroke-width="0.75"/>
+  <rect x="320.0" y="405" width="3" height="115" fill="#ff3c14"/>
+  <text x="338.0" y="427" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="10" fill="#ff3c14" font-weight="700" letter-spacing="3">A2A PROTOCOL</text>
+  <line x1="338.0" y1="435" x2="562.0" y2="435" stroke="#2e2218" stroke-width="0.5"/>
+<text x="342.0" y="455" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="11" fill="#d4cfc8">▸ Agent-to-agent messaging</text><text x="342.0" y="471" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="11" fill="#d4cfc8">▸ Dynamic team negotiation</text><text x="342.0" y="487" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="11" fill="#d4cfc8">▸ Distributed task handoff</text><text x="342.0" y="503" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="11" fill="#d4cfc8">▸ Full event ledger</text>
+  <rect x="592.0" y="405" width="260" height="115" fill="#12100e" stroke="#2e2218" stroke-width="0.75"/>
+  <rect x="592.0" y="405" width="3" height="115" fill="#ff3c14"/>
+  <text x="610.0" y="427" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="10" fill="#ff3c14" font-weight="700" letter-spacing="3">RESULTS AGGREGATION</text>
+  <line x1="610.0" y1="435" x2="834.0" y2="435" stroke="#2e2218" stroke-width="0.5"/>
+<text x="614.0" y="455" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="11" fill="#d4cfc8">▸ Per-agent outputs merged</text><text x="614.0" y="471" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="11" fill="#d4cfc8">▸ Consensus resolution</text><text x="614.0" y="487" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="11" fill="#d4cfc8">▸ Final deliverable to user</text><text x="614.0" y="503" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="11" fill="#d4cfc8">▸ Mnemosyne archived</text>
+  <text x="450.0" y="555" text-anchor="middle" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="11" fill="#5a5650" font-style="italic">Plan-Approve-Assemble-Active-Reviewing-Completed · Human governance throughout</text>
 </svg>

@@ -1,109 +1,104 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 580">
   <defs>
-    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
-      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    <!-- Glow filters -->
+    <filter id="glow-soft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
+    <filter id="glow-strong" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="8" result="b1"/>
+      <feGaussianBlur stdDeviation="3" in="SourceGraphic" result="b2"/>
+      <feMerge><feMergeNode in="b1"/><feMergeNode in="b2"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glow-inner" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <!-- Background gradient -->
+    <radialGradient id="bg-rad" cx="50%" cy="40%" r="80%">
+      <stop offset="0%" stop-color="#12100e" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#050403" stop-opacity="1"/>
+    </radialGradient>
+
+    <!-- Scan lines pattern -->
+    <pattern id="scanlines" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="4" y2="0" stroke="#ff3c14" stroke-width="0.4" opacity="0.04"/>
+    </pattern>
+
+    <!-- Grid pattern -->
+    <pattern id="grid" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ff3c14" stroke-width="0.5" opacity="0.05"/>
+    </pattern>
+
+    <!-- Arrow markers -->
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,1 L0,9 L10,5 Z" fill="#ff3c14"/>
+    </marker>
+    <marker id="arrow-amber" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,1 L0,9 L10,5 Z" fill="#ffa050"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,1 L0,9 L10,5 Z" fill="#22c55e"/>
+    </marker>
+    <marker id="arrow-cyan" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,1 L0,9 L10,5 Z" fill="#06b6d4"/>
+    </marker>
+
+    <!-- Focal core gradient -->
+    <radialGradient id="core-rad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff6842" stop-opacity="0.9"/>
+      <stop offset="60%" stop-color="#ff3c14" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#ff3c14" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Glow orb gradients per accent -->
+    <radialGradient id="orb-crimson" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff3c14" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#ff3c14" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orb-amber" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffa050" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#ffa050" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orb-green" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#22c55e" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#22c55e" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orb-cyan" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0"/>
+    </radialGradient>
   </defs>
-  <rect width="800" height="500" fill="#0a0a0f"/>
-  <text x="400" y="30" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="15" font-weight="bold" letter-spacing="2">PROVIDER FREEDOM MATRIX</text>
-  <text x="400" y="48" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="10">19 providers · One config · Swap without code changes</text>
-  <!-- Header row -->
-  <rect x="30" y="65" width="130" height="30" rx="4" fill="#1a1a2e" stroke="rgba(255,60,20,0.25)" stroke-width="1"/>
-  <text x="95" y="84" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9" font-weight="bold">PROVIDER</text>
-  <rect x="165" y="65" width="90" height="30" rx="4" fill="#1a1a2e" stroke="rgba(255,60,20,0.25)" stroke-width="1"/>
-  <text x="210" y="84" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9" font-weight="bold">MODELS</text>
-  <rect x="260" y="65" width="90" height="30" rx="4" fill="#1a1a2e" stroke="rgba(255,60,20,0.25)" stroke-width="1"/>
-  <text x="305" y="84" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9" font-weight="bold">CONTEXT</text>
-  <rect x="355" y="65" width="70" height="30" rx="4" fill="#1a1a2e" stroke="rgba(255,60,20,0.25)" stroke-width="1"/>
-  <text x="390" y="84" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9" font-weight="bold">TOOLS</text>
-  <rect x="430" y="65" width="80" height="30" rx="4" fill="#1a1a2e" stroke="rgba(255,60,20,0.25)" stroke-width="1"/>
-  <text x="470" y="84" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9" font-weight="bold">VISION</text>
-  <rect x="515" y="65" width="70" height="30" rx="4" fill="#1a1a2e" stroke="rgba(255,60,20,0.25)" stroke-width="1"/>
-  <text x="550" y="84" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9" font-weight="bold">STREAM</text>
-  <rect x="590" y="65" width="90" height="30" rx="4" fill="#1a1a2e" stroke="rgba(255,60,20,0.25)" stroke-width="1"/>
-  <text x="635" y="84" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9" font-weight="bold">STATUS</text>
-  <rect x="685" y="65" width="85" height="30" rx="4" fill="#1a1a2e" stroke="rgba(255,60,20,0.25)" stroke-width="1"/>
-  <text x="727" y="84" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9" font-weight="bold">COST</text>
-  <!-- Row 1: Anthropic -->
-  <rect x="30" y="100" width="130" height="32" rx="4" fill="#1a1a2e" stroke="#ff3c14" stroke-width="1.5"/>
-  <text x="95" y="120" text-anchor="middle" fill="#ff3c14" font-family="monospace" font-size="9" font-weight="bold">Anthropic</text>
-  <rect x="165" y="100" width="90" height="32" rx="0" fill="#1a1a2e" stroke="none"/>
-  <text x="210" y="120" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">Claude 4.5/4.6/4.7</text>
-  <rect x="260" y="100" width="90" height="32" rx="0" fill="#1a1a2e" stroke="none"/>
-  <text x="305" y="120" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">200K</text>
-  <rect x="355" y="100" width="70" height="32" rx="0" fill="#1a1a2e" stroke="none"/>
-  <text x="390" y="120" text-anchor="middle" fill="#22c55e" font-family="monospace" font-size="9">✓</text>
-  <rect x="430" y="100" width="80" height="32" rx="0" fill="#1a1a2e" stroke="none"/>
-  <text x="470" y="120" text-anchor="middle" fill="#22c55e" font-family="monospace" font-size="9">✓</text>
-  <rect x="515" y="100" width="70" height="32" rx="0" fill="#1a1a2e" stroke="none"/>
-  <text x="550" y="120" text-anchor="middle" fill="#22c55e" font-family="monospace" font-size="9">✓</text>
-  <rect x="590" y="100" width="90" height="32" rx="0" fill="#1a1a2e" stroke="none"/>
-  <text x="635" y="120" text-anchor="middle" fill="#22c55e" font-family="monospace" font-size="9">● ACTIVE</text>
-  <rect x="685" y="100" width="85" height="32" rx="0 4 4 0" fill="#1a1a2e" stroke="none"/>
-  <text x="727" y="120" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="8">Pay-per-use</text>
-  <!-- Row 2: OpenAI -->
-  <rect x="30" y="136" width="130" height="32" rx="4" fill="#1a1a2e" stroke="rgba(255,60,20,0.25)" stroke-width="1"/>
-  <text x="95" y="156" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9" font-weight="bold">OpenAI</text>
-  <rect x="165" y="136" width="90" height="32" rx="0" fill="#1a1a2e" stroke="none"/>
-  <text x="210" y="156" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">GPT-5.5</text>
-  <rect x="260" y="136" width="90" height="32" rx="0" fill="#1a1a2e" stroke="none"/>
-  <text x="305" y="156" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">128K</text>
-  <rect x="355" y="136" width="70" height="32" rx="0" fill="#1a1a2e" stroke="none"/>
-  <text x="390" y="156" text-anchor="middle" fill="#22c55e" font-family="monospace" font-size="9">✓</text>
-  <rect x="430" y="136" width="80" height="32" rx="0" fill="#1a1a2e" stroke="none"/>
-  <text x="470" y="156" text-anchor="middle" fill="#22c55e" font-family="monospace" font-size="9">✓</text>
-  <rect x="515" y="136" width="70" height="32" rx="0" fill="#1a1a2e" stroke="none"/>
-  <text x="550" y="156" text-anchor="middle" fill="#22c55e" font-family="monospace" font-size="9">✓</text>
-  <rect x="590" y="136" width="90" height="32" rx="0" fill="#1a1a2e" stroke="none"/>
-  <text x="635" y="156" text-anchor="middle" fill="#22c55e" font-family="monospace" font-size="9">● ACTIVE</text>
-  <rect x="685" y="136" width="85" height="32" rx="0 4 4 0" fill="#1a1a2e" stroke="none"/>
-  <text x="727" y="156" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="8">Pay-per-use</text>
-  <!-- Row 3: Google -->
-  <rect x="30" y="172" width="130" height="32" rx="4" fill="#1a1a2e" stroke="rgba(255,60,20,0.25)" stroke-width="1"/>
-  <text x="95" y="192" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9" font-weight="bold">Google</text>
-  <rect x="165" y="172" width="90" height="32" rx="0" fill="#1a1a2e" stroke="none"/>
-  <text x="210" y="192" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">Gemini 3/3-Pro/3-Flash</text>
-  <rect x="260" y="172" width="90" height="32" rx="0" fill="#1a1a2e" stroke="none"/>
-  <text x="305" y="192" text-anchor="middle" fill="#22c55e" font-family="monospace" font-size="9">2M</text>
-  <rect x="355" y="172" width="70" height="32" rx="0" fill="#1a1a2e" stroke="none"/>
-  <text x="390" y="192" text-anchor="middle" fill="#22c55e" font-family="monospace" font-size="9">✓</text>
-  <rect x="430" y="172" width="80" height="32" rx="0" fill="#1a1a2e" stroke="none"/>
-  <text x="470" y="192" text-anchor="middle" fill="#22c55e" font-family="monospace" font-size="9">✓</text>
-  <rect x="515" y="172" width="70" height="32" rx="0" fill="#1a1a2e" stroke="none"/>
-  <text x="550" y="192" text-anchor="middle" fill="#22c55e" font-family="monospace" font-size="9">✓</text>
-  <rect x="590" y="172" width="90" height="32" rx="0" fill="#1a1a2e" stroke="none"/>
-  <text x="635" y="192" text-anchor="middle" fill="#22c55e" font-family="monospace" font-size="9">● ACTIVE</text>
-  <rect x="685" y="172" width="85" height="32" rx="0 4 4 0" fill="#1a1a2e" stroke="none"/>
-  <text x="727" y="192" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="8">Pay-per-use</text>
-  <!-- Rows 4-7 (grouped) -->
-  <rect x="30" y="208" width="130" height="100" rx="4" fill="#1a1a2e" stroke="rgba(255,60,20,0.25)" stroke-width="1"/>
-  <text x="95" y="235" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">Ollama · Groq</text>
-  <text x="95" y="250" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">Mistral · Together</text>
-  <text x="95" y="265" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">Fireworks · Azure</text>
-  <text x="95" y="290" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">+ 9 more</text>
-  <rect x="165" y="208" width="90" height="100" rx="0" fill="#1a1a2e" stroke="none"/>
-  <text x="210" y="250" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">Local +</text>
-  <text x="210" y="265" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">cloud models</text>
-  <rect x="260" y="208" width="90" height="100" rx="0" fill="#1a1a2e" stroke="none"/>
-  <text x="305" y="250" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">varies</text>
-  <rect x="355" y="208" width="70" height="100" rx="0" fill="#1a1a2e" stroke="none"/>
-  <text x="390" y="250" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">mostly</text>
-  <rect x="430" y="208" width="80" height="100" rx="0" fill="#1a1a2e" stroke="none"/>
-  <text x="470" y="250" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">varies</text>
-  <rect x="515" y="208" width="70" height="100" rx="0" fill="#1a1a2e" stroke="none"/>
-  <text x="550" y="250" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">mostly</text>
-  <rect x="590" y="208" width="90" height="100" rx="0" fill="#1a1a2e" stroke="none"/>
-  <text x="635" y="250" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">● READY</text>
-  <rect x="685" y="208" width="85" height="100" rx="0 4 4 0" fill="#1a1a2e" stroke="none"/>
-  <text x="727" y="240" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">Free</text>
-  <text x="727" y="258" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">(local)</text>
-  <text x="727" y="276" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">or</text>
-  <text x="727" y="294" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">pay-per-use</text>
-  <!-- Footer -->
-  <rect x="30" y="315" width="740" height="45" rx="6" fill="#1a1a2e" stroke="#ff3c14" stroke-width="1.5" filter="url(#glow)"/>
-  <text x="400" y="335" text-anchor="middle" fill="#ff3c14" font-family="monospace" font-size="11" font-weight="bold">PROVIDER-AGNOSTIC RUNTIME</text>
-  <text x="400" y="352" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="10">Swap provider in config.toml · Zero code changes · All tools work across all providers</text>
-  <text x="30" y="390" text-anchor="left" fill="#7d8590" font-family="monospace" font-size="9">Supported: Anthropic · OpenAI · Google · Ollama · Groq · Mistral · Together · Fireworks · Azure · Bedrock · DeepSeek · xAI · Cerebras · Moonshot · Zhipu · Qwen · Novita · Lepton · AiDev · Hyper</text>
-  <text x="400" y="470" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="10">config.toml: provider = "anthropic" · zeus config set provider openai · No reinstallation needed</text>
+  
+  <!-- Background layers -->
+  <rect width="900" height="580" fill="#050403"/>
+  <rect width="900" height="580" fill="url(#bg-rad)"/>
+  <rect width="900" height="580" fill="url(#grid)"/>
+  <rect width="900" height="580" fill="url(#scanlines)"/>
+
+  <!-- Corner brackets -->
+  <g stroke="#a0301a" stroke-width="1.5" fill="none" opacity="0.6">
+    <path d="M 14 14 L 14 36 M 14 14 L 36 14"/>
+    <path d="M 886 14 L 886 36 M 886 14 L 864 14"/>
+    <path d="M 14 566 L 14 544 M 14 566 L 36 566"/>
+    <path d="M 886 566 L 886 544 M 886 566 L 864 566"/>
+  </g>
+
+  <!-- Top header bar -->
+  <line x1="40" y1="46" x2="100" y2="46" stroke="#ff3c14" stroke-width="1.5"/>
+  <text x="40" y="40" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#ff3c14" font-weight="700" letter-spacing="4">ZEUS</text>
+  <text x="120" y="40" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#8a8278" letter-spacing="3">08 · PROVIDERS</text>
+  <text x="860" y="40" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#5a5650" text-anchor="end" letter-spacing="2">NOVAXAI · 2026</text>
+
+  <!-- Title -->
+  <text x="40" y="80" font-family="Tektur, 'Tektur', 'Inter', 'Helvetica Neue', sans-serif" font-size="24" fill="#f5f0eb" font-weight="700" letter-spacing="2">Provider Freedom Matrix</text>
+  <text x="40" y="102" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="13" fill="#8a8278" font-style="italic" letter-spacing="0.5">11 LLM providers · One interface · No code changes</text>
+
+  <rect x="40" y="145" width="820" height="32" fill="#1a1410" stroke="#a0301a" stroke-width="0.75"/><rect x="40" y="145" width="820" height="3" fill="#ff3c14"/><text x="70" y="166" text-anchor="start" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="10" fill="#ff3c14" font-weight="700" letter-spacing="3">PROVIDER</text><text x="220" y="166" text-anchor="start" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="10" fill="#ff3c14" font-weight="700" letter-spacing="3">MODELS</text><text x="380" y="166" text-anchor="start" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="10" fill="#ff3c14" font-weight="700" letter-spacing="3">CONTEXT</text><text x="470" y="166" text-anchor="middle" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="10" fill="#ff3c14" font-weight="700" letter-spacing="3">VISION</text><text x="555" y="166" text-anchor="middle" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="10" fill="#ff3c14" font-weight="700" letter-spacing="3">STREAM</text><text x="640" y="166" text-anchor="middle" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="10" fill="#ff3c14" font-weight="700" letter-spacing="3">STATUS</text><text x="750" y="166" text-anchor="middle" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="10" fill="#ff3c14" font-weight="700" letter-spacing="3">PRICING</text><rect x="40" y="187" width="820" height="30" fill="#12100e" opacity="0.5"/><rect x="40" y="187" width="3" height="30" fill="#ff3c14"/><text x="70" y="207" font-family="Tektur, 'Tektur', 'Inter', 'Helvetica Neue', sans-serif" font-size="13" fill="#f5f0eb" font-weight="700">Anthropic</text><text x="220" y="207" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="10" fill="#d4cfc8">Claude 3.5 / 4.7</text><text x="380" y="207" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="10" fill="#d4cfc8">1M ctx</text><text x="470" y="207" text-anchor="middle" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="13" fill="#22c55e" font-weight="700">✓</text><text x="555" y="207" text-anchor="middle" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="13" fill="#22c55e" font-weight="700">✓</text><text x="640" y="207" text-anchor="middle" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#22c55e" font-weight="700" letter-spacing="2">● ACTIVE</text><text x="750" y="207" text-anchor="middle" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="10" fill="#d4cfc8">$3-75/Mtok</text><rect x="40" y="219" width="820" height="30" fill="#0a0806" opacity="0.5"/><rect x="40" y="219" width="3" height="30" fill="#22c55e"/><text x="70" y="239" font-family="Tektur, 'Tektur', 'Inter', 'Helvetica Neue', sans-serif" font-size="13" fill="#f5f0eb" font-weight="700">OpenAI</text><text x="220" y="239" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="10" fill="#d4cfc8">GPT-4o / o1-pro</text><text x="380" y="239" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="10" fill="#d4cfc8">128K</text><text x="470" y="239" text-anchor="middle" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="13" fill="#22c55e" font-weight="700">✓</text><text x="555" y="239" text-anchor="middle" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="13" fill="#22c55e" font-weight="700">✓</text><text x="640" y="239" text-anchor="middle" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#22c55e" font-weight="700" letter-spacing="2">● ACTIVE</text><text x="750" y="239" text-anchor="middle" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="10" fill="#d4cfc8">$2-15/Mtok</text><rect x="40" y="251" width="820" height="30" fill="#12100e" opacity="0.5"/><rect x="40" y="251" width="3" height="30" fill="#ffa050"/><text x="70" y="271" font-family="Tektur, 'Tektur', 'Inter', 'Helvetica Neue', sans-serif" font-size="13" fill="#f5f0eb" font-weight="700">MiniMax</text><text x="220" y="271" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="10" fill="#d4cfc8">abab-7-chat</text><text x="380" y="271" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="10" fill="#d4cfc8">245K</text><text x="470" y="271" text-anchor="middle" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="13" fill="#22c55e" font-weight="700">✓</text><text x="555" y="271" text-anchor="middle" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="13" fill="#22c55e" font-weight="700">✓</text><text x="640" y="271" text-anchor="middle" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#22c55e" font-weight="700" letter-spacing="2">● ACTIVE</text><text x="750" y="271" text-anchor="middle" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="10" fill="#d4cfc8">$0.20/Mtok</text><rect x="40" y="283" width="820" height="30" fill="#0a0806" opacity="0.5"/><rect x="40" y="283" width="3" height="30" fill="#3b82f6"/><text x="70" y="303" font-family="Tektur, 'Tektur', 'Inter', 'Helvetica Neue', sans-serif" font-size="13" fill="#f5f0eb" font-weight="700">Google</text><text x="220" y="303" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="10" fill="#d4cfc8">Gemini 2.5 Pro</text><text x="380" y="303" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="10" fill="#d4cfc8">1M</text><text x="470" y="303" text-anchor="middle" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="13" fill="#22c55e" font-weight="700">✓</text><text x="555" y="303" text-anchor="middle" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="13" fill="#22c55e" font-weight="700">✓</text><text x="640" y="303" text-anchor="middle" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#22c55e" font-weight="700" letter-spacing="2">● ACTIVE</text><text x="750" y="303" text-anchor="middle" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="10" fill="#d4cfc8">$1.25-5/Mtok</text><rect x="40" y="315" width="820" height="30" fill="#12100e" opacity="0.5"/><rect x="40" y="315" width="3" height="30" fill="#06b6d4"/><text x="70" y="335" font-family="Tektur, 'Tektur', 'Inter', 'Helvetica Neue', sans-serif" font-size="13" fill="#f5f0eb" font-weight="700">Ollama</text><text x="220" y="335" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="10" fill="#d4cfc8">Llama / Qwen / Mistral</text><text x="380" y="335" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="10" fill="#d4cfc8">varies</text><text x="470" y="335" text-anchor="middle" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="13" fill="#5a5650" font-weight="700">○</text><text x="555" y="335" text-anchor="middle" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="13" fill="#22c55e" font-weight="700">✓</text><text x="640" y="335" text-anchor="middle" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#ffa050" font-weight="700" letter-spacing="2">● LOCAL</text><text x="750" y="335" text-anchor="middle" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="10" fill="#d4cfc8">Free</text><rect x="40" y="347" width="820" height="30" fill="#0a0806" opacity="0.5"/><rect x="40" y="347" width="3" height="30" fill="#a855f7"/><text x="70" y="367" font-family="Tektur, 'Tektur', 'Inter', 'Helvetica Neue', sans-serif" font-size="13" fill="#f5f0eb" font-weight="700">OpenRouter</text><text x="220" y="367" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="10" fill="#d4cfc8">100+ models</text><text x="380" y="367" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="10" fill="#d4cfc8">varies</text><text x="470" y="367" text-anchor="middle" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="13" fill="#22c55e" font-weight="700">✓</text><text x="555" y="367" text-anchor="middle" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="13" fill="#5a5650" font-weight="700">varies</text><text x="640" y="367" text-anchor="middle" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#22c55e" font-weight="700" letter-spacing="2">● ACTIVE</text><text x="750" y="367" text-anchor="middle" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="10" fill="#d4cfc8">varies</text><rect x="40" y="379" width="820" height="30" fill="#12100e" opacity="0.5"/><rect x="40" y="379" width="3" height="30" fill="#eab308"/><text x="70" y="399" font-family="Tektur, 'Tektur', 'Inter', 'Helvetica Neue', sans-serif" font-size="13" fill="#f5f0eb" font-weight="700">Groq</text><text x="220" y="399" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="10" fill="#d4cfc8">Llama-3.3-70B</text><text x="380" y="399" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="10" fill="#d4cfc8">128K</text><text x="470" y="399" text-anchor="middle" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="13" fill="#5a5650" font-weight="700">○</text><text x="555" y="399" text-anchor="middle" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="13" fill="#22c55e" font-weight="700">✓</text><text x="640" y="399" text-anchor="middle" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#06b6d4" font-weight="700" letter-spacing="2">● FAST</text><text x="750" y="399" text-anchor="middle" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="10" fill="#d4cfc8">$0.59-0.79</text><rect x="40" y="411" width="820" height="30" fill="#0a0806" opacity="0.5"/><rect x="40" y="411" width="3" height="30" fill="#ff3c14"/><text x="70" y="431" font-family="Tektur, 'Tektur', 'Inter', 'Helvetica Neue', sans-serif" font-size="13" fill="#f5f0eb" font-weight="700">Mistral</text><text x="220" y="431" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="10" fill="#d4cfc8">Large-2</text><text x="380" y="431" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="10" fill="#d4cfc8">128K</text><text x="470" y="431" text-anchor="middle" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="13" fill="#5a5650" font-weight="700">○</text><text x="555" y="431" text-anchor="middle" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="13" fill="#22c55e" font-weight="700">✓</text><text x="640" y="431" text-anchor="middle" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#22c55e" font-weight="700" letter-spacing="2">● ACTIVE</text><text x="750" y="431" text-anchor="middle" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="10" fill="#d4cfc8">$2-6/Mtok</text><rect x="40" y="443" width="820" height="30" fill="#12100e" opacity="0.5"/><rect x="40" y="443" width="3" height="30" fill="#5a5650"/><text x="70" y="463" font-family="Tektur, 'Tektur', 'Inter', 'Helvetica Neue', sans-serif" font-size="13" fill="#f5f0eb" font-weight="700">+ Together · Fireworks · Azure</text><text x="220" y="463" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="10" fill="#d4cfc8">etc.</text><text x="380" y="463" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="10" fill="#d4cfc8">—</text><text x="470" y="463" text-anchor="middle" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="13" fill="#5a5650" font-weight="700">—</text><text x="555" y="463" text-anchor="middle" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="13" fill="#5a5650" font-weight="700">—</text><text x="640" y="463" text-anchor="middle" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#5a5650" font-weight="700" letter-spacing="2">● AVAILABLE</text><text x="750" y="463" text-anchor="middle" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="10" fill="#d4cfc8">—</text>
+  <rect x="40" y="495" width="820" height="42" fill="#12100e" stroke="#ff3c14" stroke-width="1"/>
+  <rect x="40" y="495" width="3" height="42" fill="#ff3c14"/>
+  <text x="60" y="513" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#ff3c14" font-weight="700" letter-spacing="3">PROVIDER-AGNOSTIC RUNTIME</text>
+  <text x="60" y="528" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="11" fill="#d4cfc8">$ zeus config set provider/model anthropic/claude-opus-4-7</text>
+
 </svg>

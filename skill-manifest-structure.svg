@@ -1,75 +1,156 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 580">
   <defs>
-    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
-      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    <!-- Glow filters -->
+    <filter id="glow-soft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
-    <linearGradient id="skillGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#1a1a2e"/>
-      <stop offset="100%" style="stop-color:#0a0a0f"/>
-    </linearGradient>
+    <filter id="glow-strong" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="8" result="b1"/>
+      <feGaussianBlur stdDeviation="3" in="SourceGraphic" result="b2"/>
+      <feMerge><feMergeNode in="b1"/><feMergeNode in="b2"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glow-inner" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <!-- Background gradient -->
+    <radialGradient id="bg-rad" cx="50%" cy="40%" r="80%">
+      <stop offset="0%" stop-color="#12100e" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#050403" stop-opacity="1"/>
+    </radialGradient>
+
+    <!-- Scan lines pattern -->
+    <pattern id="scanlines" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="4" y2="0" stroke="#ff3c14" stroke-width="0.4" opacity="0.04"/>
+    </pattern>
+
+    <!-- Grid pattern -->
+    <pattern id="grid" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ff3c14" stroke-width="0.5" opacity="0.05"/>
+    </pattern>
+
+    <!-- Arrow markers -->
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,1 L0,9 L10,5 Z" fill="#ff3c14"/>
+    </marker>
+    <marker id="arrow-amber" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,1 L0,9 L10,5 Z" fill="#ffa050"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,1 L0,9 L10,5 Z" fill="#22c55e"/>
+    </marker>
+    <marker id="arrow-cyan" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,1 L0,9 L10,5 Z" fill="#06b6d4"/>
+    </marker>
+
+    <!-- Focal core gradient -->
+    <radialGradient id="core-rad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff6842" stop-opacity="0.9"/>
+      <stop offset="60%" stop-color="#ff3c14" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#ff3c14" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Glow orb gradients per accent -->
+    <radialGradient id="orb-crimson" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff3c14" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#ff3c14" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orb-amber" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffa050" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#ffa050" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orb-green" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#22c55e" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#22c55e" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orb-cyan" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0"/>
+    </radialGradient>
   </defs>
-  <rect width="800" height="500" fill="#0a0a0f"/>
-  <text x="400" y="30" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="15" font-weight="bold" letter-spacing="2">SKILL MANIFEST STRUCTURE</text>
-  <text x="400" y="48" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="10">zeus skill add &lt;name&gt; · Hot-reloadable at runtime</text>
-  <!-- Root block -->
-  <rect x="240" y="65" width="320" height="45" rx="8" fill="#1a1a2e" stroke="#ff3c14" stroke-width="2" filter="url(#glow)"/>
-  <text x="400" y="87" text-anchor="middle" fill="#ff3c14" font-family="monospace" font-size="12" font-weight="bold">SKILL MANIFEST (skill.yaml)</text>
-  <text x="400" y="102" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">version · name · description · tools · triggers</text>
-  <!-- Connector -->
-  <line x1="400" y1="110" x2="400" y2="140" stroke="#ff3c14" stroke-width="2"/>
-  <!-- version block -->
-  <rect x="40" y="150" width="180" height="55" rx="6" fill="#1a1a2e" stroke="rgba(255,60,20,0.25)" stroke-width="1"/>
-  <text x="130" y="173" text-anchor="middle" fill="#ff3c14" font-family="monospace" font-size="11" font-weight="bold">version</text>
-  <text x="130" y="190" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">"1.0.0" · semver</text>
-  <text x="130" y="203" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">manifest schema rev</text>
-  <!-- name block -->
-  <rect x="240" y="150" width="180" height="55" rx="6" fill="#1a1a2e" stroke="#ff3c14" stroke-width="2"/>
-  <text x="330" y="173" text-anchor="middle" fill="#ff3c14" font-family="monospace" font-size="11" font-weight="bold">name</text>
-  <text x="330" y="190" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">"code-review"</text>
-  <text x="330" y="203" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">unique identifier</text>
-  <!-- triggers block -->
-  <rect x="440" y="150" width="180" height="55" rx="6" fill="#1a1a2e" stroke="rgba(255,60,20,0.25)" stroke-width="1"/>
-  <text x="530" y="173" text-anchor="middle" fill="#ff3c14" font-family="monospace" font-size="11" font-weight="bold">triggers</text>
-  <text x="530" y="190" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">[keyword, intent, channel]</text>
-  <text x="530" y="203" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">event patterns</text>
-  <!-- tools block (larger) -->
-  <rect x="640" y="150" width="150" height="55" rx="6" fill="#1a1a2e" stroke="rgba(255,60,20,0.25)" stroke-width="1"/>
-  <text x="715" y="173" text-anchor="middle" fill="#ff3c14" font-family="monospace" font-size="11" font-weight="bold">tools[]</text>
-  <text x="715" y="190" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">tool definitions</text>
-  <text x="715" y="203" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">input/output schemas</text>
-  <!-- Second row connectors -->
-  <line x1="130" y1="205" x2="130" y2="240" stroke="rgba(255,60,20,0.25)" stroke-width="1"/>
-  <line x1="330" y1="205" x2="330" y2="240" stroke="#ff3c14" stroke-width="1"/>
-  <line x1="530" y1="205" x2="530" y2="240" stroke="rgba(255,60,20,0.25)" stroke-width="1"/>
-  <line x1="715" y1="205" x2="715" y2="240" stroke="rgba(255,60,20,0.25)" stroke-width="1"/>
-  <!-- Tool item (expanded) -->
-  <rect x="40" y="250" width="720" height="120" rx="8" fill="#1a1a2e" stroke="#ff3c14" stroke-width="1.5"/>
-  <text x="400" y="275" text-anchor="middle" fill="#ff3c14" font-family="monospace" font-size="12" font-weight="bold">TOOL DEFINITION EXAMPLE</text>
-  <text x="120" y="300" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="10">name: "grep"</text>
-  <text x="300" y="300" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="10">description: "Search"</text>
-  <text x="480" y="300" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="10">input_schema:</text>
-  <text x="650" y="300" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="10">path, pattern</text>
-  <text x="120" y="322" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="10">handler: "python"</text>
-  <text x="300" y="322" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="10">code or endpoint</text>
-  <text x="480" y="322" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="10">output_schema:</text>
-  <text x="650" y="322" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="10">matches[]</text>
-  <text x="400" y="350" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">Supports: Python · Node.js · Shell · HTTP endpoints · Built-in Zeus tools</text>
-  <!-- Bottom panels -->
-  <rect x="40" y="390" width="220" height="80" rx="6" fill="#1a1a2e" stroke="rgba(255,60,20,0.25)" stroke-width="1"/>
-  <text x="150" y="413" text-anchor="middle" fill="#ff3c14" font-family="monospace" font-size="10" font-weight="bold">BUILT-IN SKILLS (70+)</text>
-  <text x="150" y="432" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">web-search · code-exec</text>
-  <text x="150" y="447" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">file-ops · shell · pdf</text>
-  <text x="150" y="462" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">Full registry: zeus skill list</text>
-  <rect x="290" y="390" width="220" height="80" rx="6" fill="#1a1a2e" stroke="rgba(255,60,20,0.25)" stroke-width="1"/>
-  <text x="400" y="413" text-anchor="middle" fill="#ff3c14" font-family="monospace" font-size="10" font-weight="bold">MCP TOOL BRIDGING</text>
-  <text x="400" y="432" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">Any MCP server → Zeus tool</text>
-  <text x="400" y="447" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">seamless interoperability</text>
-  <text x="400" y="462" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">zeus mcp add &lt;server-url&gt;</text>
-  <rect x="540" y="390" width="220" height="80" rx="6" fill="#1a1a2e" stroke="rgba(255,60,20,0.25)" stroke-width="1"/>
-  <text x="650" y="413" text-anchor="middle" fill="#ff3c14" font-family="monospace" font-size="10" font-weight="bold">CUSTOM MANIFESTS</text>
-  <text x="650" y="432" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">Write skill.yaml · deploy</text>
-  <text x="650" y="447" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">Hot-reload at runtime</text>
-  <text x="650" y="462" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">zeus skill reload &lt;name&gt;</text>
-  <text x="400" y="490" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="10">Hot-reload · Versioned · Community-shareable · Self-hosted registry</text>
+  
+  <!-- Background layers -->
+  <rect width="900" height="580" fill="#050403"/>
+  <rect width="900" height="580" fill="url(#bg-rad)"/>
+  <rect width="900" height="580" fill="url(#grid)"/>
+  <rect width="900" height="580" fill="url(#scanlines)"/>
+
+  <!-- Corner brackets -->
+  <g stroke="#a0301a" stroke-width="1.5" fill="none" opacity="0.6">
+    <path d="M 14 14 L 14 36 M 14 14 L 36 14"/>
+    <path d="M 886 14 L 886 36 M 886 14 L 864 14"/>
+    <path d="M 14 566 L 14 544 M 14 566 L 36 566"/>
+    <path d="M 886 566 L 886 544 M 886 566 L 864 566"/>
+  </g>
+
+  <!-- Top header bar -->
+  <line x1="40" y1="46" x2="100" y2="46" stroke="#ff3c14" stroke-width="1.5"/>
+  <text x="40" y="40" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#ff3c14" font-weight="700" letter-spacing="4">ZEUS</text>
+  <text x="120" y="40" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#8a8278" letter-spacing="3">14 · SKILLS</text>
+  <text x="860" y="40" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#5a5650" text-anchor="end" letter-spacing="2">NOVAXAI · 2026</text>
+
+  <!-- Title -->
+  <text x="40" y="80" font-family="Tektur, 'Tektur', 'Inter', 'Helvetica Neue', sans-serif" font-size="24" fill="#f5f0eb" font-weight="700" letter-spacing="2">Skill Manifest Structure</text>
+  <text x="40" y="102" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="13" fill="#8a8278" font-style="italic" letter-spacing="0.5">Self-describing extensions · Hot-reloadable · Community-shareable</text>
+
+  
+  <rect x="280" y="165" width="340" height="56" fill="#12100e" stroke="#ff3c14" stroke-width="1.5"/>
+  <rect x="280" y="165" width="4" height="56" fill="#ff3c14"/>
+  <text x="450.0" y="187" text-anchor="middle" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#ff3c14" font-weight="700" letter-spacing="3">SKILL MANIFEST · skill.yaml</text>
+  <text x="450.0" y="209" text-anchor="middle" font-family="Tektur, 'Tektur', 'Inter', 'Helvetica Neue', sans-serif" font-size="14" fill="#f5f0eb" font-weight="700">$1.0 spec · self-contained</text>
+
+  <line x1="150" y1="221" x2="150" y2="265" stroke="#a0301a" stroke-width="0.75" stroke-dasharray="2,4" opacity="0.6"/>
+
+  <rect x="60" y="265" width="180" height="65" fill="#1a1410" stroke="#a0301a" stroke-width="1"/>
+  <rect x="60" y="265" width="3" height="65" fill="#ff3c14"/>
+  <text x="75" y="285" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#ff3c14" font-weight="700" letter-spacing="3">VER</text>
+  <text x="75" y="305" font-family="Tektur, 'Tektur', 'Inter', 'Helvetica Neue', sans-serif" font-size="13" fill="#f5f0eb" font-weight="700">version</text>
+  <text x="75" y="320" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#ff6842">1.0 spec</text>
+
+  <line x1="380" y1="221" x2="380" y2="265" stroke="#a0301a" stroke-width="0.75" stroke-dasharray="2,4" opacity="0.6"/>
+
+  <rect x="290" y="265" width="180" height="65" fill="#1a1410" stroke="#a0301a" stroke-width="1"/>
+  <rect x="290" y="265" width="3" height="65" fill="#ff3c14"/>
+  <text x="305" y="285" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#ff3c14" font-weight="700" letter-spacing="3">NAM</text>
+  <text x="305" y="305" font-family="Tektur, 'Tektur', 'Inter', 'Helvetica Neue', sans-serif" font-size="13" fill="#f5f0eb" font-weight="700">name</text>
+  <text x="305" y="320" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#ff6842">code-review-titan</text>
+
+  <line x1="610" y1="221" x2="610" y2="265" stroke="#a0301a" stroke-width="0.75" stroke-dasharray="2,4" opacity="0.6"/>
+
+  <rect x="520" y="265" width="180" height="65" fill="#1a1410" stroke="#a0301a" stroke-width="1"/>
+  <rect x="520" y="265" width="3" height="65" fill="#ff3c14"/>
+  <text x="535" y="285" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#ff3c14" font-weight="700" letter-spacing="3">TRG</text>
+  <text x="535" y="305" font-family="Tektur, 'Tektur', 'Inter', 'Helvetica Neue', sans-serif" font-size="13" fill="#f5f0eb" font-weight="700">triggers</text>
+  <text x="535" y="320" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#ff6842">[keyword, intent, ...]</text>
+
+  <line x1="840" y1="221" x2="840" y2="265" stroke="#a0301a" stroke-width="0.75" stroke-dasharray="2,4" opacity="0.6"/>
+
+  <rect x="750" y="265" width="180" height="65" fill="#1a1410" stroke="#a0301a" stroke-width="1"/>
+  <rect x="750" y="265" width="3" height="65" fill="#ff3c14"/>
+  <text x="765" y="285" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#ff3c14" font-weight="700" letter-spacing="3">TLS</text>
+  <text x="765" y="305" font-family="Tektur, 'Tektur', 'Inter', 'Helvetica Neue', sans-serif" font-size="13" fill="#f5f0eb" font-weight="700">tools[]</text>
+  <text x="765" y="320" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#ff6842">Tool definitions</text>
+
+  <rect x="60" y="355" width="780" height="120" fill="#050403" stroke="#2e2218" stroke-width="1"/>
+  <rect x="60" y="355" width="3" height="120" fill="#ff3c14"/>
+  <text x="80" y="377" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="10" fill="#ff3c14" font-weight="700" letter-spacing="3">TOOL DEFINITION EXAMPLE</text>
+  <line x1="80" y1="385" x2="820" y2="385" stroke="#2e2218" stroke-width="0.5"/>
+<text x="100" y="405" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="10"><tspan fill="#06b6d4">name</tspan><tspan fill="#5a5650">:</tspan><tspan fill="#ff6842"> "grep"</tspan></text><text x="100" y="418" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="10"><tspan fill="#06b6d4">description</tspan><tspan fill="#5a5650">:</tspan><tspan fill="#ff6842"> "Search files matching pattern"</tspan></text><text x="100" y="431" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="10"><tspan fill="#06b6d4">input_schema</tspan><tspan fill="#5a5650">:</tspan><tspan fill="#ff6842"></tspan></text><text x="100" y="444" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="10"><tspan fill="#06b6d4">  path</tspan><tspan fill="#5a5650">:</tspan><tspan fill="#ff6842"> { type: string, required: true }</tspan></text><text x="100" y="457" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="10"><tspan fill="#06b6d4">  pattern</tspan><tspan fill="#5a5650">:</tspan><tspan fill="#ff6842"> { type: string, required: true }</tspan></text><text x="100" y="470" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="10"><tspan fill="#06b6d4">handler</tspan><tspan fill="#5a5650">:</tspan><tspan fill="#ff6842"> "python: grep_handler.py"</tspan></text>
+  <rect x="74.0" y="495" width="240" height="42" fill="#12100e" stroke="#22c55e" stroke-width="1"/>
+  <rect x="74.0" y="495" width="3" height="42" fill="#22c55e"/>
+  <text x="89.0" y="513" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#22c55e" font-weight="700" letter-spacing="3">BUILT-IN</text>
+  <text x="89.0" y="529" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="10" fill="#d4cfc8" font-style="italic">Bundled in zeus-skills · 70+ at v1</text>
+
+  <rect x="330.0" y="495" width="240" height="42" fill="#12100e" stroke="#ffa050" stroke-width="1"/>
+  <rect x="330.0" y="495" width="3" height="42" fill="#ffa050"/>
+  <text x="345.0" y="513" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#ffa050" font-weight="700" letter-spacing="3">INSTALLED</text>
+  <text x="345.0" y="529" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="10" fill="#d4cfc8" font-style="italic">via zeus skill add · community-shareable</text>
+
+  <rect x="586.0" y="495" width="240" height="42" fill="#12100e" stroke="#a855f7" stroke-width="1"/>
+  <rect x="586.0" y="495" width="3" height="42" fill="#a855f7"/>
+  <text x="601.0" y="513" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace" font-size="9" fill="#a855f7" font-weight="700" letter-spacing="3">CUSTOM</text>
+  <text x="601.0" y="529" font-family="Rajdhani, 'Rajdhani', 'Inter', 'Helvetica Neue', sans-serif" font-size="10" fill="#d4cfc8" font-style="italic">Your own · drop in ~/.zeus/skills/</text>
+
 </svg>
