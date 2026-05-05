@@ -61,7 +61,7 @@ The desktop app organizes its interface into 19 sidebar sections, each drilling 
 
 ### System Tray Integration
 
-When minimized, Zeus runs as a system tray icon (macOS menu bar, Windows system tray, or Linux notification area depending on your platform). Right-click the tray icon to access a compact context menu with quick actions: view daemon health, see active Titan count, check for new alerts, or open the full interface. The tray icon itself reflects system status with color coding—green for healthy, yellow for warnings, red for critical issues—allowing at-a-glance monitoring without launching the full application.
+When minimized, Zeus runs as a system tray icon (macOS menu bar or Linux notification area depending on your platform — Windows system tray 🔜 Coming Soon). Right-click the tray icon to access a compact context menu with quick actions: view daemon health, see active Titan count, check for new alerts, or open the full interface. The tray icon itself reflects system status with color coding—green for healthy, yellow for warnings, red for critical issues—allowing at-a-glance monitoring without launching the full application.
 
 ### Native Notifications
 

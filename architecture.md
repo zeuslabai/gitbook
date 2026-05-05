@@ -209,7 +209,7 @@ The Zeus daemon runs natively on your platform:
 
 - **macOS**: Managed by `launchd`, integrated with the system's service management. Install via the Homebrew formula and the daemon starts automatically at login.
 - **Linux / FreeBSD**: Managed by `systemd`, with a properly installed service unit. Start, stop, restart, and check status with standard systemctl commands.
-- **Windows**: Runs as a Windows Service, managed via sc.exe or the Services MMC snap-in.
+- **Windows**: 🔜 Coming Soon — Runs as a Windows Service, managed via sc.exe or the Services MMC snap-in.
 
 The daemon is the single process that runs Zeus. Everything — the Cognitive Engine, Titan coordination, API server, WebSocket handler, skill loader — runs within this process or its supervised child processes.
 
