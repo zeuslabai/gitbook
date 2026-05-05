@@ -153,7 +153,7 @@ Define your LLM providers. Zeus supports **19 providers**. At least one is requi
 | `fireworks` | Yes | No | fireworks.ai inference |
 | `azure` | Yes | No | Azure OpenAI Service |
 | `bedrock` | Yes | No | AWS Bedrock |
-| `deepseek` | Yes | No | DeepSeek V2 |
+| `deepseek` | Yes | No | DeepSeek V4 |
 | `xai` | Yes | No | xAI Grok |
 | `cerebras` | Yes | No | Cerebras GPU cloud |
 | `moonshot` | Yes | No | Moonshot AI |
