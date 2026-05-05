@@ -148,18 +148,18 @@ Define your LLM providers. Zeus supports **19 providers**. At least one is requi
 | `ollama` | No | Yes | Local models (no API key) |
 | `openrouter` | Yes | No | Unified access to many models |
 | `groq` | Yes | No | Fast inference |
-| `mistral` | Yes | No | Mistral AI models |
-| `together` | Yes | No | Open models via Together API |
-| `fireworks` | Yes | No | fireworks.ai inference |
+| `mistral` | Yes | No | Mistral Large 3 (`mistral-large-3`) |
+| `together` | Yes | No | Together AI (`llama-4-70b`, `mistral-7b`) |
+| `fireworks` | Yes | No | Fireworks AI (`mixtral-8x22b`, `llama-4`) |
 | `azure` | Yes | No | Azure OpenAI Service |
-| `bedrock` | Yes | No | AWS Bedrock |
-| `deepseek` | Yes | No | DeepSeek V4 |
-| `xai` | Yes | No | xAI Grok |
-| `cerebras` | Yes | No | Cerebras GPU cloud |
-| `moonshot` | Yes | No | Moonshot AI |
-| `zhipu` | Yes | No | Zhipu GLM models |
-| `qwen` | Yes | No | Qwen models |
-| `minimax` | Yes | No | MiniMax models |
+| `bedrock` | Yes | No | AWS Bedrock (`region` + model in config) |
+| `deepseek` | Yes | No | DeepSeek V4 (`deepseek-v4`) |
+| `xai` | Yes | No | xAI Grok 4 (`grok-4`) |
+| `cerebras` | Yes | No | Cerebras (`llama-3.3-70b`) |
+| `moonshot` | Yes | No | Moonshot Kimi K2.6 (`kimi-k2.6`) |
+| `zhipu` | Yes | No | Zhipu GLM 5.1 (`glm-5.1`) |
+| `qwen` | Yes | No | Qwen 3.5 (`qwen3.5-72b`) |
+| `minimax` | Yes | No | MiniMax M2.7 (`minimax-m2.7`) |
 
 ---
 
