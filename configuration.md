@@ -142,9 +142,9 @@ Define your LLM providers. Zeus supports **19 providers**. At least one is requi
 
 | Provider | API Key Required | Self-Hosted | Notes |
 |---|---|---|---|
-| `anthropic` | Yes | No | Claude models |
-| `openai` | Yes | No | GPT-4o, GPT-4 Turbo |
-| `google` | Yes | No | Gemini Pro/Flash |
+| `anthropic` | Yes | No | Claude 4.5/4.6/4.7 Sonnet/Opus/Haiku |
+| `openai` | Yes | No | GPT-5.5 |
+| `google` | Yes | No | Gemini 3 Pro/3 Flash |
 | `ollama` | No | Yes | Local models (no API key) |
 | `openrouter` | Yes | No | Unified access to many models |
 | `groq` | Yes | No | Fast inference |
@@ -155,7 +155,7 @@ Define your LLM providers. Zeus supports **19 providers**. At least one is requi
 | `bedrock` | Yes | No | AWS Bedrock (`region` + model in config) |
 | `deepseek` | Yes | No | DeepSeek V4 (`deepseek-v4`) |
 | `xai` | Yes | No | xAI Grok 4 (`grok-4`) |
-| `cerebras` | Yes | No | Cerebras (`llama-3.3-70b`) |
+| `cerebras` | Yes | No | Cerebras (`llama-4-70b`) |
 | `moonshot` | Yes | No | Moonshot Kimi K2.6 (`kimi-k2.6`) |
 | `zhipu` | Yes | No | Zhipu GLM 5.1 (`glm-5.1`) |
 | `qwen` | Yes | No | Qwen 3.5 (`qwen3.5-72b`) |

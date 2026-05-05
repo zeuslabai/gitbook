@@ -26,7 +26,7 @@ One of Zeus's defining architectural decisions is **provider freedom** — the s
 
 - **Minimax** — Excellent cost-performance ratio, particularly for high-volume workloads
 - **Claude (Anthropic)** — Best-in-class reasoning and instruction following
-- **GPT-4 / GPT-4o (OpenAI)** — Versatile general intelligence with strong tool use
+- **GPT-5.5 (OpenAI)** — Versatile general intelligence with strong tool use
 - **Gemini (Google)** — Strong multimodal capabilities and long context windows
 - **Grok (xAI)** — Real-time knowledge and distinctive personality
 - **Local models** — Llama, Mistral, Command R via Ollama or LM Studio
@@ -37,7 +37,7 @@ The provider abstraction is deep, not surface-level. Zeus does not just forward 
 
 The **Model Router** is a critical component of Zeus Core. When a request arrives, the router evaluates the task characteristics — complexity, required domain expertise, latency tolerance, cost budget — and selects the optimal provider. The router supports:
 
-- **Fallback chains**: If the primary model fails (rate limit, API error, timeout), Zeus automatically escalates to the next provider in the chain. A complex reasoning task might try GPT-4o first, fall back to Claude if rate-limited, and finally to a local Llama instance if all cloud providers fail.
+- **Fallback chains**: If the primary model fails (rate limit, API error, timeout), Zeus automatically escalates to the next provider in the chain. A complex reasoning task might try GPT-5.5 first, fall back to Claude if rate-limited, and finally to a local Llama instance if all cloud providers fail.
 - **Cost weighting**: Zeus tracks cumulative token spend per provider and can balance load to stay within budget constraints. Expensive frontier models are reserved for tasks that genuinely require them.
 - **Latency optimization**: For interactive use cases, the router can select the fastest available provider rather than the cheapest or most capable. Background tasks can afford higher latency for cost savings.
 - **Quality routing**: Simple factual queries go to fast, cheap models. Complex multi-step reasoning goes to frontier models. Code generation goes to specialized code models.

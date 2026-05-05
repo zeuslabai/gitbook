@@ -29,7 +29,7 @@
   <rect x="30" y="100" width="130" height="32" rx="4" fill="#1a1a2e" stroke="#ff3c14" stroke-width="1.5"/>
   <text x="95" y="120" text-anchor="middle" fill="#ff3c14" font-family="monospace" font-size="9" font-weight="bold">Anthropic</text>
   <rect x="165" y="100" width="90" height="32" rx="0" fill="#1a1a2e" stroke="none"/>
-  <text x="210" y="120" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">Claude 3.5/3.7</text>
+  <text x="210" y="120" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">Claude 4.5/4.6/4.7</text>
   <rect x="260" y="100" width="90" height="32" rx="0" fill="#1a1a2e" stroke="none"/>
   <text x="305" y="120" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">200K</text>
   <rect x="355" y="100" width="70" height="32" rx="0" fill="#1a1a2e" stroke="none"/>
@@ -46,7 +46,7 @@
   <rect x="30" y="136" width="130" height="32" rx="4" fill="#1a1a2e" stroke="rgba(255,60,20,0.25)" stroke-width="1"/>
   <text x="95" y="156" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9" font-weight="bold">OpenAI</text>
   <rect x="165" y="136" width="90" height="32" rx="0" fill="#1a1a2e" stroke="none"/>
-  <text x="210" y="156" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">GPT-4o/o1/o3</text>
+  <text x="210" y="156" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">GPT-5.5</text>
   <rect x="260" y="136" width="90" height="32" rx="0" fill="#1a1a2e" stroke="none"/>
   <text x="305" y="156" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">128K</text>
   <rect x="355" y="136" width="70" height="32" rx="0" fill="#1a1a2e" stroke="none"/>
@@ -63,7 +63,7 @@
   <rect x="30" y="172" width="130" height="32" rx="4" fill="#1a1a2e" stroke="rgba(255,60,20,0.25)" stroke-width="1"/>
   <text x="95" y="192" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9" font-weight="bold">Google</text>
   <rect x="165" y="172" width="90" height="32" rx="0" fill="#1a1a2e" stroke="none"/>
-  <text x="210" y="192" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">Gemini 1.5/2.0</text>
+  <text x="210" y="192" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="9">Gemini 3/3-Pro/3-Flash</text>
   <rect x="260" y="172" width="90" height="32" rx="0" fill="#1a1a2e" stroke="none"/>
   <text x="305" y="192" text-anchor="middle" fill="#22c55e" font-family="monospace" font-size="9">2M</text>
   <rect x="355" y="172" width="70" height="32" rx="0" fill="#1a1a2e" stroke="none"/>
