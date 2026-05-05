@@ -28,8 +28,8 @@
   <!-- Titan Fleet (right) -->
   <rect x="470" y="140" width="160" height="130" rx="8" fill="#1a1a2e" stroke="#ff3c14" stroke-width="2" filter="url(#glow)"/>
   <text x="550" y="168" text-anchor="middle" fill="#ff3c14" font-family="monospace" font-size="12" font-weight="bold">TITAN FLEET</text>
-  <text x="550" y="188" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="10">Zeus100 · Zeus112</text>
-  <text x="550" y="205" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="10">zeus107 · zeusmolty</text>
+  <text x="550" y="188" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="10">Zeus · Hermes</text>
+  <text x="550" y="205" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="10">Aegis · Mnemosyne</text>
   <text x="550" y="222" text-anchor="middle" fill="#e6e6e6" font-family="monospace" font-size="10">fbsd2 · Your Titan</text>
   <text x="550" y="242" text-anchor="middle" fill="#7d8590" font-family="monospace" font-size="9">+ community Titans</text>
   <!-- Bottom tier: Provider, Memory, Channels -->
