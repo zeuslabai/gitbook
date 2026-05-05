@@ -30,16 +30,16 @@ session_ttl_hours = 720  # 30 days
 [providers]
 [providers.anthropic]
 api_key = "sk-ant-..."
-model = "claude-sonnet-4-20250514"
+model = "claude-sonnet-4-6"
 max_tokens = 8192
 
 [providers.openai]
 api_key = "sk-..."
-model = "gpt-4o"
+model = "gpt-5.5"
 
 [providers.ollama]
 endpoint = "http://localhost:11434"
-model = "llama3"
+model = "llama-4-70b-instruct"
 
 [llm]
 default_provider = "anthropic"

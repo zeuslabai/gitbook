@@ -121,7 +121,7 @@ default_provider = "anthropic"  # Which provider to use by default
 fallback_provider = "openai"    # If primary fails, try this
 
 [providers.anthropic]
-model = "claude-sonnet-4-20250514"  # Or opus-4, haiku-4
+model = "claude-sonnet-4-6"  # Or opus-4, haiku-4
 ```
 
 ---
@@ -172,7 +172,7 @@ zeus doctor
 # ✅ 2 providers configured (anthropic, openai)
 # ✅ 0 channels connected (configure channels to enable)
 # ✅ Memory system operational
-# ✅ LLM connection: anthropic/claude-sonnet-4 OK
+# ✅ LLM connection: anthropic/claude-sonnet-4-6 OK
 ```
 
 ---

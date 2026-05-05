@@ -93,7 +93,7 @@ Zeus connects to large language model providers through a unified interface. In 
 ```toml
 [providers.openai]
 api_key = "sk-..."
-model = "gpt-4-turbo"
+model = "gpt-5.5"
 base_url = "https://api.openai.com/v1"
 
 [providers.anthropic]
@@ -102,7 +102,7 @@ model = "claude-3-5-sonnet-20241022"
 
 [providers.ollama]
 base_url = "http://localhost:11434"
-model = "llama3.2"
+model = "llama-4-70b-instruct"
 ```
 
 You can run multiple providers simultaneously and route different Titans to different models based on capability requirements or cost constraints. The provider abstraction layer means switching models is a one-line configuration change—no code modifications required.
