@@ -121,7 +121,7 @@ default_provider = "anthropic"  # Which provider to use by default
 fallback_provider = "openai"    # If primary fails, try this
 
 [providers.anthropic]
-model = "claude-sonnet-4-6"  # Or opus-4, haiku-4
+model = "claude-sonnet-4-6"  # Or opus-4-7, haiku-4-5
 ```
 
 ---
