@@ -157,9 +157,9 @@ Define your LLM providers. Zeus supports **19 providers**. At least one is requi
 | `xai` | Yes | No | xAI Grok 4 (`grok-4`) |
 | `cerebras` | Yes | No | Cerebras (`llama-4-70b`) |
 | `moonshot` | Yes | No | Moonshot Kimi, pay-as-you-go |
-| `zai` | Yes | No | Zhipu/Z.ai GLM — `glm-5.2`, `glm-5-turbo`, `glm-4.7` live, pay-as-you-go |
-| `qwen` | Yes | No | Qwen — `qwen3-coder`, `qwen3.8-max-preview` live, pay-as-you-go |
-| `minimax` | Yes | No | MiniMax — `MiniMax-M3`, `MiniMax-M2.7`, `MiniMax-M2.5` live, pay-as-you-go |
+| `zai` | Yes | No | Zhipu/Z.ai GLM, pay-as-you-go — live model catalog polled from the provider |
+| `qwen` | Yes | No | Qwen, pay-as-you-go — live model catalog polled from the provider |
+| `minimax` | Yes | No | MiniMax, pay-as-you-go — live model catalog polled from the provider |
 
 ### Flat-Rate Subscription Providers
 
@@ -167,10 +167,12 @@ Separate from the pay-as-you-go providers above, four vendors also ship as **ded
 
 | Provider | API Key Required | Notes |
 |---|---|---|
-| `kimi-code` | Yes | Kimi Code subscription. Flagship: Kimi K3 (`k3`); also `kimi-for-coding`, `kimi-for-coding-highspeed` |
-| `glm-coding` | Yes | GLM Coding Plan subscription. Flagship: GLM-5.2 (`glm-5.2`); also `glm-5-turbo`, `glm-4.7` |
-| `qwen-coding` | Yes | Qwen Coding Token Plan subscription. Flagship: Qwen3.8 Max Preview (`qwen3.8-max-preview`); also `qwen3-coder` |
-| `minimax-coding` | Yes | MiniMax Token Plan subscription. Flagship: MiniMax-M3; also `MiniMax-M2.7`, `MiniMax-M2.5` |
+| `kimi-code` | Yes | Kimi Code subscription |
+| `glm-coding` | Yes | GLM Coding Plan subscription |
+| `qwen-coding` | Yes | Qwen Coding Token Plan subscription |
+| `minimax-coding` | Yes | MiniMax Token Plan subscription |
+
+Each subscription provider polls its vendor's live model catalog rather than pinning a fixed model list — new releases appear in onboarding automatically, no Zeus update required. (Kimi Code's flagship as of this writing is `k3` — an example of what the catalog currently surfaces, not a static entry.)
 
 Pick the plan per agent seat during onboarding — subscription and metered seats can coexist in the same fleet.
 

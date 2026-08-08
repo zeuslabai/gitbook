@@ -31,14 +31,9 @@ One of Zeus's defining architectural decisions is **provider freedom** — the s
 - **Grok (xAI)** — Real-time knowledge and distinctive personality
 - **Local models** — Llama, Mistral, Command R via Ollama or LM Studio
 
-**Flat-rate subscription integrations.** Beyond metered API keys, four providers ship as dedicated subscription-plan integrations — each with its own provider entry, credential fields, and onboarding step, distinct from that vendor's pay-as-you-go path:
+**Flat-rate subscription integrations.** Beyond metered API keys, four providers ship as dedicated subscription-plan integrations — each with its own provider entry, credential fields, and onboarding step, distinct from that vendor's pay-as-you-go path: **Kimi Code, GLM Coding Plan, Qwen Coding Token Plan, and MiniMax Token Plan.**
 
-| Plan | Flagship | Also live |
-|---|---|---|
-| Kimi Code | Kimi K3 | kimi-for-coding, kimi-for-coding-highspeed |
-| GLM Coding Plan | GLM-5.2 | glm-5-turbo, glm-4.7 |
-| Qwen Coding Token Plan | Qwen3.8 Max Preview | qwen3-coder |
-| MiniMax Token Plan | MiniMax-M3 | MiniMax-M2.7, MiniMax-M2.5 |
+Zeus polls each provider's live model catalog rather than shipping a frozen list — new releases surface in onboarding automatically, with no Zeus update required. (Kimi Code's flagship model as of this writing is `k3` — cited here as an example of what a subscription integration exposes, not as a fixed catalog.)
 
 Pick the plan per agent seat during onboarding — mix subscription seats with metered seats in the same fleet.
 
