@@ -22,14 +22,25 @@ This loop runs continuously, processing thousands of events per second on capabl
 
 ### Provider Freedom: Any LLM
 
-One of Zeus's defining architectural decisions is **provider freedom** — the system is not locked into any single AI provider. As long as a model speaks the OpenAI-compatible API (or has an adapter written for it), Zeus can use it. This includes:
+One of Zeus's defining architectural decisions is **provider freedom** — the system is not locked into any single AI provider. As long as a model speaks the OpenAI-compatible API (or has an adapter written for it), Zeus can use it. Zeus ships **25 LLM providers** today, including:
 
 - **Minimax** — Excellent cost-performance ratio, particularly for high-volume workloads
-- **Claude (Anthropic)** — Best-in-class reasoning and instruction following
+- **Claude (Anthropic)** — Best-in-class reasoning and instruction following, with live model-catalog polling so new Claude releases (Sonnet, Opus, Fable generations) appear in onboarding automatically, no manual config
 - **GPT-5.5 (OpenAI)** — Versatile general intelligence with strong tool use
 - **Gemini (Google)** — Strong multimodal capabilities and long context windows
 - **Grok (xAI)** — Real-time knowledge and distinctive personality
 - **Local models** — Llama, Mistral, Command R via Ollama or LM Studio
+
+**Flat-rate subscription integrations.** Beyond metered API keys, four providers ship as dedicated subscription-plan integrations — each with its own provider entry, credential fields, and onboarding step, distinct from that vendor's pay-as-you-go path:
+
+| Plan | Flagship model |
+|---|---|
+| Kimi Code | Kimi K3 |
+| GLM Coding Plan | GLM-5.2 |
+| Qwen Coding Token Plan | Qwen3.8 Max Preview |
+| MiniMax Token Plan | MiniMax-M3 |
+
+Pick the plan per agent seat during onboarding — mix subscription seats with metered seats in the same fleet.
 
 The provider abstraction is deep, not surface-level. Zeus does not just forward prompts — it maintains per-provider cost tracking, latency profiles, token budgets, and quality benchmarks. This enables intelligent, automatic provider selection based on the task at hand.
 

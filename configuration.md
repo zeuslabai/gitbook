@@ -142,7 +142,7 @@ Define your LLM providers. Zeus supports **19 providers**. At least one is requi
 
 | Provider | API Key Required | Self-Hosted | Notes |
 |---|---|---|---|
-| `anthropic` | Yes | No | Claude 4.5/4.6/4.7 Sonnet/Opus/Haiku |
+| `anthropic` | Yes | No | Claude Sonnet 5, Claude Fable 5, Opus/Haiku — live catalog polling surfaces new releases automatically |
 | `openai` | Yes | No | GPT-5.5 |
 | `google` | Yes | No | Gemini 3 Pro/3 Flash |
 | `ollama` | No | Yes | Local models (no API key) |
@@ -156,10 +156,23 @@ Define your LLM providers. Zeus supports **19 providers**. At least one is requi
 | `deepseek` | Yes | No | DeepSeek V4 (`deepseek-v4`) |
 | `xai` | Yes | No | xAI Grok 4 (`grok-4`) |
 | `cerebras` | Yes | No | Cerebras (`llama-4-70b`) |
-| `moonshot` | Yes | No | Moonshot Kimi K2.6 (`kimi-k2.6`) |
-| `zhipu` | Yes | No | Zhipu GLM 5.1 (`glm-5.1`) |
-| `qwen` | Yes | No | Qwen 3.5 (`qwen3.5-72b`) |
-| `minimax` | Yes | No | MiniMax M2.7 (`minimax-m2.7`) |
+| `moonshot` | Yes | No | Moonshot Kimi K2.7 Code (`kimi-k2.7-code`), pay-as-you-go |
+| `zai` | Yes | No | Zhipu/Z.ai GLM 5.2 (`glm-5.2`), pay-as-you-go |
+| `qwen` | Yes | No | Qwen3 Coder (`qwen3-coder`), pay-as-you-go |
+| `minimax` | Yes | No | MiniMax-M3 (`MiniMax-M3`), pay-as-you-go |
+
+### Flat-Rate Subscription Providers
+
+Separate from the pay-as-you-go providers above, four vendors also ship as **dedicated subscription-plan integrations** — their own provider id, credential fields, and onboarding step, billed at a flat membership rate instead of per-token:
+
+| Provider | API Key Required | Notes |
+|---|---|---|
+| `kimi-code` | Yes | Kimi Code subscription. Flagship: Kimi K3 (`k3`) |
+| `glm-coding` | Yes | GLM Coding Plan subscription. Flagship: GLM-5.2 (`glm-5.2`) |
+| `qwen-coding` | Yes | Qwen Coding Token Plan subscription. Flagship: Qwen3.8 Max Preview |
+| `minimax-coding` | Yes | MiniMax Token Plan subscription. Flagship: MiniMax-M3 |
+
+Pick the plan per agent seat during onboarding — subscription and metered seats can coexist in the same fleet.
 
 ---
 
