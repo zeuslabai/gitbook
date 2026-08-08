@@ -33,12 +33,12 @@ One of Zeus's defining architectural decisions is **provider freedom** — the s
 
 **Flat-rate subscription integrations.** Beyond metered API keys, four providers ship as dedicated subscription-plan integrations — each with its own provider entry, credential fields, and onboarding step, distinct from that vendor's pay-as-you-go path:
 
-| Plan | Flagship model |
-|---|---|
-| Kimi Code | Kimi K3 |
-| GLM Coding Plan | GLM-5.2 |
-| Qwen Coding Token Plan | Qwen3.8 Max Preview |
-| MiniMax Token Plan | MiniMax-M3 |
+| Plan | Flagship | Also live |
+|---|---|---|
+| Kimi Code | Kimi K3 | kimi-for-coding, kimi-for-coding-highspeed |
+| GLM Coding Plan | GLM-5.2 | glm-5-turbo, glm-4.7 |
+| Qwen Coding Token Plan | Qwen3.8 Max Preview | qwen3-coder |
+| MiniMax Token Plan | MiniMax-M3 | MiniMax-M2.7, MiniMax-M2.5 |
 
 Pick the plan per agent seat during onboarding — mix subscription seats with metered seats in the same fleet.
 

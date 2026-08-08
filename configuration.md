@@ -156,10 +156,10 @@ Define your LLM providers. Zeus supports **19 providers**. At least one is requi
 | `deepseek` | Yes | No | DeepSeek V4 (`deepseek-v4`) |
 | `xai` | Yes | No | xAI Grok 4 (`grok-4`) |
 | `cerebras` | Yes | No | Cerebras (`llama-4-70b`) |
-| `moonshot` | Yes | No | Moonshot Kimi K2.7 Code (`kimi-k2.7-code`), pay-as-you-go |
-| `zai` | Yes | No | Zhipu/Z.ai GLM 5.2 (`glm-5.2`), pay-as-you-go |
-| `qwen` | Yes | No | Qwen3 Coder (`qwen3-coder`), pay-as-you-go |
-| `minimax` | Yes | No | MiniMax-M3 (`MiniMax-M3`), pay-as-you-go |
+| `moonshot` | Yes | No | Moonshot Kimi, pay-as-you-go |
+| `zai` | Yes | No | Zhipu/Z.ai GLM — `glm-5.2`, `glm-5-turbo`, `glm-4.7` live, pay-as-you-go |
+| `qwen` | Yes | No | Qwen — `qwen3-coder`, `qwen3.8-max-preview` live, pay-as-you-go |
+| `minimax` | Yes | No | MiniMax — `MiniMax-M3`, `MiniMax-M2.7`, `MiniMax-M2.5` live, pay-as-you-go |
 
 ### Flat-Rate Subscription Providers
 
@@ -167,10 +167,10 @@ Separate from the pay-as-you-go providers above, four vendors also ship as **ded
 
 | Provider | API Key Required | Notes |
 |---|---|---|
-| `kimi-code` | Yes | Kimi Code subscription. Flagship: Kimi K3 (`k3`) |
-| `glm-coding` | Yes | GLM Coding Plan subscription. Flagship: GLM-5.2 (`glm-5.2`) |
-| `qwen-coding` | Yes | Qwen Coding Token Plan subscription. Flagship: Qwen3.8 Max Preview |
-| `minimax-coding` | Yes | MiniMax Token Plan subscription. Flagship: MiniMax-M3 |
+| `kimi-code` | Yes | Kimi Code subscription. Flagship: Kimi K3 (`k3`); also `kimi-for-coding`, `kimi-for-coding-highspeed` |
+| `glm-coding` | Yes | GLM Coding Plan subscription. Flagship: GLM-5.2 (`glm-5.2`); also `glm-5-turbo`, `glm-4.7` |
+| `qwen-coding` | Yes | Qwen Coding Token Plan subscription. Flagship: Qwen3.8 Max Preview (`qwen3.8-max-preview`); also `qwen3-coder` |
+| `minimax-coding` | Yes | MiniMax Token Plan subscription. Flagship: MiniMax-M3; also `MiniMax-M2.7`, `MiniMax-M2.5` |
 
 Pick the plan per agent seat during onboarding — subscription and metered seats can coexist in the same fleet.
 
